@@ -22,7 +22,7 @@
         
         <guid>https://pho3nix-jacki3.github.io/p/law/</guid>
         <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;#DescriptionhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.
-#Skills LearnedCVE Exploitation GLPI htmlawed (CVE-2022-35914) Privilege Escalation via cronjob #Solution#Finding the vulnerabilityautorecon shows ports 22 and 80 are open.</description>
+#Skills LearnedCVE exploitation GLPI htmlawed (CVE-2022-35914) Privilege escalation via cron job #Solution#Finding the vulnerabilityautorecon shows ports 22 and 80 are open.</description>
         </item>
         <item>
         <title>About</title>

