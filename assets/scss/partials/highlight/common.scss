@@ -1,0 +1,444 @@
+
+    
+
+
+/* Background */
+.chroma {
+    color: var(--code-text-color);
+    background-color: var(--code-background-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* Other */
+.chroma .x {
+}
+
+/* Error */
+.chroma .err {
+    color: $error-color;
+}
+
+/* LineTableTD */
+.chroma .lntd {
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* LineTable */
+.chroma .lntable {
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    display: block;
+
+    > tbody {
+        display: block;
+        width: 100%;
+        > tr {
+            display: flex;
+            width: 100%;
+            > td:last-child {
+                overflow-x: auto;
+            }
+        }
+    }
+}
+
+/* LineHighlight */
+.chroma .hl {
+    display: block;
+    width: 100%;
+    background-color: rgba(255, 255, 204, 0.835);
+}
+
+/* LineNumbersTable */
+.chroma .lnt {
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: var(--numbers-color);
+    display: block;
+}
+
+/* LineNumbers */
+.chroma .ln {
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: var(--numbers-color);
+}
+
+/* Keyword */
+.chroma .k {
+    color: var(--k-colors);
+}
+
+/* KeywordConstant */
+.chroma .kc {
+    color: var(--k-colors);
+}
+
+/* KeywordDeclaration */
+.chroma .kd {
+    color: var(--k-colors);
+}
+
+/* KeywordNamespace */
+.chroma .kn {
+    color: var(--k-colors);
+}
+
+/* KeywordPseudo */
+.chroma .kp {
+    color: var(--k-colors);
+}
+
+/* KeywordReserved */
+.chroma .kr {
+    color: var(--k-colors);
+}
+
+/* KeywordType */
+.chroma .kt {
+    color: var(--k-colors);
+}
+
+/* Name */
+.chroma .n {
+    color: var(--n-colors);
+}
+
+/* NameAttribute */
+.chroma .na {
+    color: var(--n-colors);
+}
+
+/* NameBuiltin */
+.chroma .nb {
+    color: var(--n-colors);
+}
+
+/* NameClass */
+.chroma .nc {
+    color: var(--n-colors);
+}
+
+/* NameConstant */
+.chroma .no {
+    color: var(--n-colors);
+}
+
+/* NameDecorator */
+.chroma .nd {
+    color: var(--n-colors);
+}
+
+/* NameEntity */
+.chroma .ni {
+    color: var(--n-colors);
+}
+
+/* NameException */
+.chroma .ne {
+    color: var(--n-colors);
+}
+
+/* NameFunction */
+.chroma .nf {
+    color: var(--n-colors);
+}
+
+/* NameLabel */
+.chroma .nl {
+    color: var(--n-colors);
+}
+
+/* NameNamespace */
+.chroma .nn {
+    color: var(--n-colors);
+}
+
+/* NameOther */
+.chroma .nx {
+    color: var(--n-colors);
+}
+
+/* NameProperty */
+.chroma .py {
+    color: var(--p-colors);
+}
+
+/* NameTag */
+.chroma .nt {
+    color: var(--n-colors);
+}
+
+/* NameVariable */
+.chroma .nv {
+    color: var(--n-colors);
+}
+
+.chroma .p {
+    color: var(--n-colors) !important;
+}
+
+/* NameBuiltinPseudo */
+.chroma .bp {
+    color: var(--b-colors);
+}
+
+/* NameBuiltinPseudo */
+.chroma .bp {
+    color: var(--b-colors);
+}
+
+/* NameVariableClass */
+.chroma .vc {
+    color: var(--b-colors);
+}
+
+/* NameVariableGlobal */
+.chroma .vg {
+    color: var(--v-colors);
+}
+
+/* NameVariableInstance */
+.chroma .vi {
+    color: var(--v-colors);
+}
+
+/* NameVariableMagic */
+.chroma .vm {
+    color: var(--v-colors);
+}
+
+/* Literal */
+.chroma .l {
+    color: var(--s-colors);
+}
+
+/* LiteralDate */
+.chroma .ld {
+    color: var(--s-colors);
+}
+
+/* LiteralString */
+.chroma .s {
+    color: var(--s-colors);
+}
+
+/* LiteralStringAffix */
+.chroma .sa {
+    color: var(--s-colors);
+}
+
+/* LiteralStringBacktick */
+.chroma .sb {
+    color: var(--s-colors);
+}
+
+/* LiteralStringChar */
+.chroma .sc {
+    color: var(--s-colors);
+}
+
+/* LiteralStringDelimiter */
+.chroma .dl {
+    color: var(--s-colors);
+}
+
+/* LiteralStringDoc */
+.chroma .sd {
+    color: var(--s-colors);
+}
+
+/* LiteralStringDouble */
+.chroma .s2 {
+    color: var(--s-colors);
+}
+
+/* LiteralStringEscape */
+.chroma .se {
+    color: var(--s-colors);
+}
+
+/* LiteralStringHeredoc */
+.chroma .sh {
+    color: var(--s-colors);
+}
+
+/* LiteralStringInterpol */
+.chroma .si {
+    color: var(--s-colors);
+}
+
+/* LiteralStringOther */
+.chroma .sx {
+    color: var(--s-colors);
+}
+
+/* LiteralStringRegex */
+.chroma .sr {
+    color: var(--s-colors);
+}
+
+/* LiteralStringSingle */
+.chroma .s1 {
+    color: var(--s-colors);
+}
+
+/* LiteralStringSymbol */
+.chroma .ss {
+    color: var(--s-colors);
+}
+
+/* LiteralNumber */
+.chroma .m {
+    color: var(--s-colors);
+}
+
+/* LiteralNumberBin */
+.chroma .mb {
+    color: var(--s-colors);
+}
+
+/* LiteralNumberFloat */
+.chroma .mf {
+    color: var(--s-colors);
+}
+
+/* LiteralNumberHex */
+.chroma .mh {
+    color: var(--s-colors);
+}
+
+/* LiteralNumberInteger */
+.chroma .mi {
+    color: var(--s-colors);
+}
+
+/* LiteralNumberIntegerLong */
+.chroma .il {
+    color: var(--s-colors);
+}
+
+/* LiteralNumberOct */
+.chroma .mo {
+    color: var(--s-colors);
+}
+
+/* NameFunctionMagic */
+.chroma .fm {
+    color: var(--b-colors);
+}
+
+/* Operator */
+.chroma .o {
+    color: var(--o-colors)
+}
+
+/* OperatorWord */
+.chroma .ow {
+    color: var(--o-colors)
+}
+
+/* Punctuation */
+.chroma .p {
+    color: var(--comment-color);
+}
+
+/* Comment */
+.chroma .c {
+    color: var(--comment-color);
+}
+
+/* CommentHashbang */
+.chroma .ch {
+    color: var(--comment-color);
+}
+
+/* CommentMultiline */
+.chroma .cm {
+    color: var(--comment-color);
+}
+
+/* CommentSingle */
+.chroma .cl {
+    color: var(--comment-color);
+}
+
+/* CommentSpecial */
+.chroma .cs {
+    color: var(--comment-color);
+}
+
+/* CommentPreproc */
+.chroma .cp {
+    color: var(--comment-color);
+}
+
+/* CommentPreprocFile */
+.chroma .cpf {
+    color: var(--comment-color);
+}
+
+/* Generic */
+.chroma .g {
+}
+
+/* GenericDeleted */
+.chroma .gd {
+    color: var(--deleted-color);
+}
+
+/* GenericEmph */
+.chroma .ge {
+    font-style: italic;
+}
+
+/* GenericError */
+.chroma .gr {
+    color: var(--deleted-color);
+}
+
+/* GenericHeading */
+.chroma .gh {
+}
+
+/* GenericInserted */
+.chroma .gi {
+    color: $name-color;
+}
+
+/* GenericOutput */
+.chroma .go {
+}
+
+/* GenericPrompt */
+.chroma .gp {
+}
+
+/* GenericStrong */
+.chroma .gs {
+    font-weight: bold;
+}
+
+/* GenericSubheading */
+.chroma .gu {
+    color: var(--comment-color);
+}
+
+/* GenericTraceback */
+.chroma .gt {
+}
+
+/* GenericUnderline */
+.chroma .gl {
+}
+
+/* TextWhitespace */
+.chroma .w {
+}

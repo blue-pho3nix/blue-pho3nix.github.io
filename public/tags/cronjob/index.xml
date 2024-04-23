@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cronjob on Blue Pho3nix</title>
+        <link>http://localhost:1313/tags/cronjob/</link>
+        <description>Recent content in Cronjob on Blue Pho3nix</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Mon, 22 Apr 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/cronjob/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Law</title>
+        <link>http://localhost:1313/p/law/</link>
+        <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/p/law/</guid>
+        <description>Description I discover htmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). As a result, I am able to gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. After gaining access, I then use a script which I have write access to, that is being run as a cronjob by root, to elevate my privileges to root.
+Skill Learned CVE Exploitation GLPI htmlawed (CVE-2022-35914) Privilege Escalation via cronjob Solution Finding the vulnerability I run autorecon and discovered that both port 22 and 80 open.</description>
+        </item>
+        
+    </channel>
+</rss>
