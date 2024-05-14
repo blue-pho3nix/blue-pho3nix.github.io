@@ -73,7 +73,7 @@ Port 80 also gives an error, this time as an image.
 
 ![](8.png)
 
-We run `Fuff` and find a `/askjeeves` directory on port 50000 that's running Jenkins.
+We run `ffuf` and find a `/askjeeves` directory on port 50000 that's running Jenkins.
 
 ```python
 ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://10.10.10.63:50000/FUZZ -recursion -recursion-depth 1
