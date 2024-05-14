@@ -11,7 +11,7 @@ image = "jeeves-icon.png"
 
 ## Description
 
->Jeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator's hash in the user's KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
+>Jeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator's hash in the user's KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
 
 ## Skills Learned
 
