@@ -6,20 +6,28 @@
         <description>Recent content in Tags on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 22 Apr 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Cron Job</title>
-        <link>https://pho3nix-jacki3.github.io/tags/cron-job/</link>
-        <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
+        <lastBuildDate>Tue, 14 May 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Medium</title>
+        <link>https://pho3nix-jacki3.github.io/tags/medium/</link>
+        <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/cron-job/</guid>
+        <guid>https://pho3nix-jacki3.github.io/tags/medium/</guid>
         <description></description>
         </item>
         <item>
-        <title>CVE-2022-35914</title>
-        <link>https://pho3nix-jacki3.github.io/tags/cve-2022-35914/</link>
-        <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
+        <title>TJNULL OSCP Prep</title>
+        <link>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</link>
+        <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/cve-2022-35914/</guid>
+        <guid>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Windows</title>
+        <link>https://pho3nix-jacki3.github.io/tags/windows/</link>
+        <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
+        
+        <guid>https://pho3nix-jacki3.github.io/tags/windows/</guid>
         <description></description>
         </item>
         <item>
@@ -31,11 +39,11 @@
         <description></description>
         </item>
         <item>
-        <title>Medium</title>
-        <link>https://pho3nix-jacki3.github.io/tags/medium/</link>
+        <title>Linux</title>
+        <link>https://pho3nix-jacki3.github.io/tags/linux/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/medium/</guid>
+        <guid>https://pho3nix-jacki3.github.io/tags/linux/</guid>
         <description></description>
         </item>
         <item>

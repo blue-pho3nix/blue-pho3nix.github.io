@@ -1,5 +1,5 @@
 ---
-title: "PortSwigger Web Academy"
+title: "PortSwigger Web Security Academy Walkthroughs"
 slug: "portswigger"
 image: "portswigger-edit.png"
 style:

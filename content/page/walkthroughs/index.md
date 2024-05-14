@@ -1,10 +1,10 @@
 ---
-title: "Cyber Walkthroughs"
+title: "Categories"
 layout: "archives"
-slug: "walkthroughs"
+slug: "archives"
 menu:
   main:
     weight: -70
     params:
-      icon: archives
+      icon: categories
 ---
