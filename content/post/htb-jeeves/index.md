@@ -222,7 +222,7 @@ kpcli
 ```
 
 ```shell
-open KEH.kdbx
+open CEH.kdbx
 ```
 
 After entering the `moonshine1` password we find 7 password entries.
