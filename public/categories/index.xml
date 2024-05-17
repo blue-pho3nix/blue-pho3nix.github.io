@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Blue Pho3nix</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://pho3nix-jacki3.github.io/categories/</link>
         <description>Recent content in Categories on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 14 May 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 14 May 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hack The Box Walkthroughs</title>
-        <link>http://localhost:1313/categories/htb/</link>
+        <link>https://pho3nix-jacki3.github.io/categories/htb/</link>
         <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/categories/htb/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/htb/htb-edit-large.png" alt="Featured image of post Hack The Box Walkthroughs" /&gt;</description>
+        <guid>https://pho3nix-jacki3.github.io/categories/htb/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/htb/htb-edit-large.png" alt="Featured image of post Hack The Box Walkthroughs" /&gt;</description>
         </item>
         <item>
         <title>OffSec Proving Grounds Walkthroughs</title>
-        <link>http://localhost:1313/categories/offsec/</link>
+        <link>https://pho3nix-jacki3.github.io/categories/offsec/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/categories/offsec/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/offsec/offsec-edit-large.png" alt="Featured image of post OffSec Proving Grounds Walkthroughs" /&gt;</description>
+        <guid>https://pho3nix-jacki3.github.io/categories/offsec/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit-large.png" alt="Featured image of post OffSec Proving Grounds Walkthroughs" /&gt;</description>
         </item>
         <item>
         <title>PortSwigger Web Security Academy Walkthroughs</title>
-        <link>http://localhost:1313/categories/portswigger/</link>
+        <link>https://pho3nix-jacki3.github.io/categories/portswigger/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/categories/portswigger/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post PortSwigger Web Security Academy Walkthroughs" /&gt;</description>
+        <guid>https://pho3nix-jacki3.github.io/categories/portswigger/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post PortSwigger Web Security Academy Walkthroughs" /&gt;</description>
         </item>
         
     </channel>
