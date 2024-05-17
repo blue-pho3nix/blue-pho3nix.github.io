@@ -325,7 +325,7 @@ dir /r
 ---
 
 We read the `root.txt`stream with `CMD` or `PowerShell`. <br>
-[Video timestamp 8:21](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=487s)
+[Video timestamp 8:21](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=501s)
 
 **CMD:**
 
