@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Medium on Blue Pho3nix</title>
-        <link>https://pho3nix-jacki3.github.io/tags/medium/</link>
+        <link>http://localhost:1313/tags/medium/</link>
         <description>Recent content in Medium on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 14 May 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 14 May 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/medium/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Jeeves</title>
-        <link>https://pho3nix-jacki3.github.io/p/jeeves/</link>
+        <link>http://localhost:1313/p/jeeves/</link>
         <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;#DescriptionJeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
+        <guid>http://localhost:1313/p/jeeves/</guid>
+        <description>&lt;img src="http://localhost:1313/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;#DescriptionJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
 #Skills LearnedJenkins Modifying Project exploit KeePass hacking #Solution#Finding the vulnerabilitynmap shows open ports 80, 135,445, and 50000 .</description>
         </item>
         <item>
         <title>Law</title>
-        <link>https://pho3nix-jacki3.github.io/p/law/</link>
+        <link>http://localhost:1313/p/law/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/law/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;#DescriptionhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.
+        <guid>http://localhost:1313/p/law/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;#DescriptionhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.
 #Skills LearnedCVE exploitation GLPI htmlawed (CVE-2022-35914) Privilege escalation via cron job #Solution#Finding the vulnerabilityautorecon shows ports 22 and 80 are open.</description>
         </item>
         

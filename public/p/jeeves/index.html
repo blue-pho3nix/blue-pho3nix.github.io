@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000 .">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000.">
 <title>Jeeves</title>
 
-<link rel='canonical' href='https://pho3nix-jacki3.github.io/p/jeeves/'>
+<link rel='canonical' href='http://localhost:1313/p/jeeves/'>
 
 <link rel="stylesheet" href="/scss/style.min.33b8a5c91ba8cfeb05ec46c3c5fdc518936151871fe775c2094cd25fd786d9e6.css"><meta property='og:title' content="Jeeves">
-<meta property='og:description' content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000 .">
-<meta property='og:url' content='https://pho3nix-jacki3.github.io/p/jeeves/'>
+<meta property='og:description' content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000.">
+<meta property='og:url' content='http://localhost:1313/p/jeeves/'>
 <meta property='og:site_name' content='Blue Pho3nix'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='TJNULL OSCP Prep' /><meta property='article:published_time' content='2024-05-14T07:07:07&#43;01:00'/><meta property='article:modified_time' content='2024-05-14T07:07:07&#43;01:00'/><meta property='og:image' content='https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='TJNULL OSCP Prep' /><meta property='article:published_time' content='2024-05-14T07:07:07&#43;01:00'/><meta property='article:modified_time' content='2024-05-14T07:07:07&#43;01:00'/><meta property='og:image' content='http://localhost:1313/p/jeeves/jeeves-icon.png' />
 <meta name="twitter:title" content="Jeeves">
-<meta name="twitter:description" content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000 ."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png' />
+<meta name="twitter:description" content="#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server. #\rSkills Learned\rJenkins Modifying Project exploit KeePass hacking #\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/jeeves/jeeves-icon.png' />
   
 
 
@@ -326,13 +326,13 @@
     <a href="#description" class="header-anchor">#</a>
     Description
 </h2><blockquote>
-<p>Jeeves is a fun box that starts with error messages. We directory fuzz with fuff and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.</p>
+<p>Jeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.</p>
 </blockquote>
 <h2 id="skills-learned">
     <a href="#skills-learned" class="header-anchor">#</a>
     Skills Learned
 </h2><ul>
-<li>Jenkins Modifying Project  exploit</li>
+<li>Jenkins Modifying Project exploit</li>
 <li>KeePass hacking</li>
 </ul>
 <h1 id="solution">
@@ -341,7 +341,9 @@
 </h1><h2 id="finding-the-vulnerability">
     <a href="#finding-the-vulnerability" class="header-anchor">#</a>
     Finding the vulnerability
-</h2><p><code>nmap</code> shows open ports 80, 135,445, and 50000 .</p>
+</h2><p><code>nmap</code> shows open ports 80, 135,445, and 50000. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=10s"  target="_blank" rel="noopener"
+    >Video timestamp 0:10</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -362,7 +364,7 @@
 		data-flex-basis="388px"
 	
 ></p>
-<p>We  run <code>-sCV</code> on the open ports.</p>
+<p>We run <code>-sCV</code> on the open ports.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -420,8 +422,18 @@
 	
 ></p>
 <hr>
-<p>We try to login to SMB, but it requires a password.</p>
-<p><img src="/p/jeeves/9.png"
+<p>We try to login to SMB, but it requires a password. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=15s"  target="_blank" rel="noopener"
+    >Video timestamp 0:15</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">smbclient -N -L <span class="se">\\\\</span>10.10.10.63<span class="se">\\</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/jeeves/9.png"
 	width="961"
 	height="122"
 	
@@ -433,7 +445,10 @@
 		data-flex-basis="1890px"
 	
 ></p>
-<p>Port 50000 gives the 404 Not Found error listed with nmap.</p>
+<hr>
+<p>Port 50000 gives the 404 Not Found error listed with nmap. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=25s"  target="_blank" rel="noopener"
+    >Video timestamp 0:25</a></p>
 <p><img src="/p/jeeves/4.png"
 	width="1145"
 	height="418"
@@ -446,7 +461,10 @@
 		data-flex-basis="657px"
 	
 ></p>
-<p>Port 80 also gives an error, this time as an image.</p>
+<hr>
+<p>Port 80 also gives an error, this time as an image. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=32s"  target="_blank" rel="noopener"
+    >Video timestamp 0:32</a></p>
 <p><img src="/p/jeeves/5.png"
 	width="1343"
 	height="431"
@@ -495,13 +513,16 @@
 		data-flex-basis="611px"
 	
 ></p>
-<p>We run <code>Fuff</code> and find a <code>/askjeeves</code> directory on port 50000 that&rsquo;s running Jenkins.</p>
+<hr>
+<p>We run <code>ffuf</code> and find a <code>/askjeeves</code> directory on port 50000 that&rsquo;s running Jenkins. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=100s"  target="_blank" rel="noopener"
+    >Video timestamp 1:40</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ffuf</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">Web</span><span class="o">-</span><span class="n">Content</span><span class="o">/</span><span class="n">directory</span><span class="o">-</span><span class="nb">list</span><span class="o">-</span><span class="mf">2.3</span><span class="o">-</span><span class="n">small</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">u</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">10.10.10.63</span><span class="p">:</span><span class="mi">50000</span><span class="o">/</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">recursion</span> <span class="o">-</span><span class="n">recursion</span><span class="o">-</span><span class="n">depth</span> <span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ffuf</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">Web</span><span class="o">-</span><span class="n">Content</span><span class="o">/</span><span class="n">directory</span><span class="o">-</span><span class="nb">list</span><span class="o">-</span><span class="mf">2.3</span><span class="o">-</span><span class="n">small</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">u</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">10.10.10.63</span><span class="p">:</span><span class="mi">50000</span><span class="o">/</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">recursion</span> <span class="o">-</span><span class="n">recursion</span><span class="o">-</span><span class="n">depth</span> <span class="mi">1</span> <span class="o">-</span><span class="n">o</span> <span class="n">ffuf</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="/p/jeeves/10.png"
@@ -532,7 +553,9 @@
     <a href="#foothold" class="header-anchor">#</a>
     Foothold
 </h2><p>We find a RCE exploit for Jenkins at <a class="link" href="https://cloud.hacktricks.xyz/pentesting-ci-cd/jenkins-security/jenkins-rce-creating-modifying-project"  target="_blank" rel="noopener"
-    >Jenkinds RCE Creating Modifying Project</a></p>
+    >Jenkins RCE Creating Modifying Project</a> <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=139s"  target="_blank" rel="noopener"
+    >Video timestamp 2:19</a></p>
 <ol>
 <li>Create a <code>New Item</code></li>
 </ol>
@@ -647,7 +670,9 @@
 		data-flex-basis="665px"
 	
 ></p>
-<p>We get the user flag on <code>c:\users\kohsuke\desktop</code>.</p>
+<p>We get the user flag on <code>c:\users\kohsuke\desktop</code>. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=259s"  target="_blank" rel="noopener"
+    >Video timestamp 4:19</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -696,10 +721,13 @@
 		data-flex-basis="650px"
 	
 ></p>
+<hr>
 <h2 id="privilege-escalation">
     <a href="#privilege-escalation" class="header-anchor">#</a>
     Privilege Escalation
-</h2><p>We look around and find a <code>KeePass</code>file in the <code>c:\users\kohsuke\documents</code>directory.</p>
+</h2><p>We look around and find a <code>KeePass</code>file in the <code>c:\users\kohsuke\documents</code>directory. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=268s"  target="_blank" rel="noopener"
+    >Video timestamp 4:28</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -728,7 +756,10 @@
 		data-flex-basis="540px"
 	
 ></p>
-<p>We move the file over to our attack box with base64  in powershell.</p>
+<hr>
+<p>We move the file over to our attack box with base64 in powershell. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=280s"  target="_blank" rel="noopener"
+    >Video timestamp 4:40</a></p>
 <p><strong>On Windows:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -804,7 +835,10 @@
 		data-flex-basis="2220px"
 	
 ></p>
-<p>We use <code>kpcli</code> to get the passwords.</p>
+<hr>
+<p>We use <code>kpcli</code> to get the passwords. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=337s"  target="_blank" rel="noopener"
+    >Video timestamp 5:37</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -898,7 +932,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open KEH.kdbx
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open CEH.kdbx
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>After entering the <code>moonshine1</code> password we find 7 password entries.</p>
@@ -952,7 +986,10 @@
 		data-flex-basis="862px"
 	
 ></p>
-<p>We use <code>crackmapexec</code> to test the hash on the smb server. We find out the hash works on administrator.</p>
+<hr>
+<p>We use <code>crackmapexec</code> to test the hash on the smb server. We find out the hash works on administrator. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=437s"  target="_blank" rel="noopener"
+    >Video timestamp 7:17</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -973,7 +1010,10 @@
 		data-flex-basis="1374px"
 	
 ></p>
-<p>We use <code>impacket-psexec</code> to get on the server as Administrator.</p>
+<hr>
+<p>We use <code>impacket-psexec</code> to get on the server as Administrator. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=452s"  target="_blank" rel="noopener"
+    >Video timestamp 7:32</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -994,7 +1034,10 @@
 		data-flex-basis="705px"
 	
 ></p>
-<p>Instead of a root flag, we find <code>hm.txt</code> .</p>
+<hr>
+<p>Instead of a root flag, we find <code>hm.txt</code>. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=471s"  target="_blank" rel="noopener"
+    >Video timestamp 7:51</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1065,7 +1108,10 @@
 		data-flex-basis="747px"
 	
 ></p>
-<p>We read the <code>root.txt</code>stream with <code>CMD</code> or <code>PowerShell</code>.</p>
+<hr>
+<p>We read the <code>root.txt</code>stream with <code>CMD</code> or <code>PowerShell</code>. <br>
+<a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=487s"  target="_blank" rel="noopener"
+    >Video timestamp 8:21</a></p>
 <p><strong>CMD:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

@@ -2,60 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pho3nix-jacki3.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/htb/</loc>
+    <loc>http://localhost:1313/categories/htb/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/jeeves/</loc>
+    <loc>http://localhost:1313/p/jeeves/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/medium/</loc>
+    <loc>http://localhost:1313/tags/medium/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</loc>
+    <loc>http://localhost:1313/tags/tjnull-oscp-prep/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/windows/</loc>
+    <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2024-05-14T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/easy/</loc>
+    <loc>http://localhost:1313/tags/easy/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/lab-exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
+    <loc>http://localhost:1313/p/lab-exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/law/</loc>
+    <loc>http://localhost:1313/p/law/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/offsec/</loc>
+    <loc>http://localhost:1313/categories/offsec/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/portswigger/</loc>
+    <loc>http://localhost:1313/categories/portswigger/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/xxe/</loc>
+    <loc>http://localhost:1313/tags/xxe/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/page/</loc>
+    <loc>http://localhost:1313/page/</loc>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>

