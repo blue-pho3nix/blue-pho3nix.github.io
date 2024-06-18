@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>CTF Walkthroughs on Blue Pho3nix</title>
+        <link>http://localhost:1313/categories/ctfs/</link>
+        <description>Recent content in CTF Walkthroughs on Blue Pho3nix</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Tue, 18 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/categories/ctfs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SQUARE CTF</title>
+        <link>http://localhost:1313/p/square-ctf/</link>
+        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/p/square-ctf/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/CTFs/ctf-edit.png" alt="Featured image of post SQUARE CTF" /&gt;#Challenge DescriptionOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?
+SquareCTF Going In Blind is the second of two MySQL injection challenges. The first challenge was a MySQL injection to bypass log in, where we logged in using username=ahanlon&#39;-- - to get the flag.</description>
+        </item>
+        
+    </channel>
+</rss>

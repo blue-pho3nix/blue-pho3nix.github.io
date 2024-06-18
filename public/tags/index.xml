@@ -2,56 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on Blue Pho3nix</title>
-        <link>https://pho3nix-jacki3.github.io/tags/</link>
+        <link>http://localhost:1313/tags/</link>
         <description>Recent content in Tags on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 14 May 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Medium</title>
-        <link>https://pho3nix-jacki3.github.io/tags/medium/</link>
-        <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
+        <lastBuildDate>Tue, 18 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Blind SQLi</title>
+        <link>http://localhost:1313/tags/blind-sqli/</link>
+        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/medium/</guid>
+        <guid>http://localhost:1313/tags/blind-sqli/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Filter Bypass</title>
+        <link>http://localhost:1313/tags/filter-bypass/</link>
+        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/tags/filter-bypass/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Medium</title>
+        <link>http://localhost:1313/tags/medium/</link>
+        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/tags/medium/</guid>
         <description></description>
         </item>
         <item>
         <title>TJNULL OSCP Prep</title>
-        <link>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</link>
+        <link>http://localhost:1313/tags/tjnull-oscp-prep/</link>
         <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</guid>
+        <guid>http://localhost:1313/tags/tjnull-oscp-prep/</guid>
         <description></description>
         </item>
         <item>
         <title>Windows</title>
-        <link>https://pho3nix-jacki3.github.io/tags/windows/</link>
+        <link>http://localhost:1313/tags/windows/</link>
         <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/windows/</guid>
+        <guid>http://localhost:1313/tags/windows/</guid>
         <description></description>
         </item>
         <item>
         <title>Easy</title>
-        <link>https://pho3nix-jacki3.github.io/tags/easy/</link>
+        <link>http://localhost:1313/tags/easy/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/easy/</guid>
+        <guid>http://localhost:1313/tags/easy/</guid>
         <description></description>
         </item>
         <item>
         <title>Linux</title>
-        <link>https://pho3nix-jacki3.github.io/tags/linux/</link>
+        <link>http://localhost:1313/tags/linux/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/linux/</guid>
+        <guid>http://localhost:1313/tags/linux/</guid>
         <description></description>
         </item>
         <item>
         <title>XXE</title>
-        <link>https://pho3nix-jacki3.github.io/tags/xxe/</link>
+        <link>http://localhost:1313/tags/xxe/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/tags/xxe/</guid>
+        <guid>http://localhost:1313/tags/xxe/</guid>
         <description></description>
         </item>
         

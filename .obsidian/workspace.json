@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/htb-jeeves/index.md",
+                "file": "content/post/square-going-in-blind/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/htb-jeeves/index.md",
+                "file": "content/post/square-going-in-blind/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/htb-jeeves/index.md",
+                "file": "content/post/square-going-in-blind/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/post/htb-jeeves/index.md"
+                "file": "content/post/square-going-in-blind/index.md"
               }
             }
           }
@@ -148,31 +148,36 @@
   },
   "active": "d8c549b0b8acc62e",
   "lastOpenFiles": [
-    "content/post/htb-jeeves/36.png",
-    "content/post/htb-jeeves/32.png",
+    "public/p/s-ctf/index.html",
+    "public/p/s-ctf/img/uisDbDNSDU89rfnafk39a0sjf.jpg",
+    "public/p/s-ctf/img/tyubsfcAKJDSDHlskfna09.jpg",
+    "public/p/s-ctf/img/uisDbDNSDU89rfnafk39a0sjf.webp",
+    "public/p/s-ctf/img/SJDKUFJA43WEKFJNanJKDB.jpg",
+    "public/p/s-ctf/img/tyubsfcAKJDSDHlskfna09.webp",
+    "public/p/s-ctf/img/SJDKUFJA43WEKFJNanJKDB.webp",
+    "public/p/s-ctf/img/oiejrj8q9rwhAHdh3r38scg.webm",
+    "public/p/s-ctf/img/knaf89asjakjsnfdadbashdjbAd.jpg",
+    "public/p/s-ctf/img/oiejrj8q9rwhAHdh3r38scg.mp4",
+    "public/p/s-ctf/img/nsafn893afufbsdkbDBjbfaf.webm",
+    "public/p/s-ctf/img/nsafn893afufbsdkbDBjbfaf.mp4",
+    "public/p/s-ctf/img/FUNSFSKJ89sgsdkgsf89.webm",
+    "public/p/s-ctf/img/knaf89asjakjsnfdadbashdjbAd.webp",
+    "public/p/s-ctf/img/FUNSFSKJ89sgsdkgsf89.mp4",
+    "public/p/s-ctf/img/89qhtafsfasfuohaUIFHA.jpg",
+    "public/p/s-ctf/img/890whoefnaflknasdnuaisdger.jpg",
+    "public/p/s-ctf/img",
+    "public/p/s-ctf",
+    "public/categories/page/2/index.html",
+    "public/categories/page/2",
+    "content/categories/CTFs/_index.md",
     "content/post/htb-jeeves/index.md",
-    "content/post/htb-jeeves/35.png",
-    "content/post/htb-jeeves/34.png",
-    "content/post/htb-jeeves/33.png",
-    "content/post/htb-jeeves/31.png",
-    "content/post/htb-jeeves/intro.png",
-    "content/post/htb-jeeves/30.png",
-    "content/post/htb-jeeves/29.png",
-    "content/post/htb-jeeves/28.png",
+    "content/categories/square/_index.md",
+    "content/post/square-going-in-blind/index.md",
+    "content/post/lab-exploiting-xxe-using-external-entities-to-retrieve-files - Copy/index.md",
     "1.md",
     "content/page/walkthroughs/index.md",
     "content/categories/htb/_index.md",
-    "resources/_gen/images/categories/tooling",
-    "public/categories/tooling/index.xml",
-    "public/categories/tooling/page/1/index.html",
-    "public/categories/tooling/page/1",
-    "public/categories/tooling/page",
-    "public/categories/tooling/index.html",
-    "public/categories/tooling",
     "content/categories/Tooling/_index.md",
-    "content/categories/Tooling",
-    "public/categories/portswigger-copy/index.xml",
-    "public/categories/portswigger-copy/page/1/index.html",
     "content/categories/portswigger copy/_index.md",
     "content/page/blog-posts/index.md",
     "content/page/walkthroughs copy/index.md",

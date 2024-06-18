@@ -2,59 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Blue Pho3nix</title>
-        <link>https://pho3nix-jacki3.github.io/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 14 May 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 18 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SQUARE CTF</title>
+        <link>http://localhost:1313/p/square-ctf/</link>
+        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/p/square-ctf/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/CTFs/ctf-edit.png" alt="Featured image of post SQUARE CTF" /&gt;#Challenge DescriptionOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?
+SquareCTF Going In Blind is the second of two MySQL injection challenges. The first challenge was a MySQL injection to bypass log in, where we logged in using username=ahanlon&#39;-- - to get the flag.</description>
+        </item>
+        <item>
         <title>Jeeves</title>
-        <link>https://pho3nix-jacki3.github.io/p/jeeves/</link>
+        <link>http://localhost:1313/p/jeeves/</link>
         <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;#DescriptionJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
+        <guid>http://localhost:1313/p/jeeves/</guid>
+        <description>&lt;img src="http://localhost:1313/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;#DescriptionJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
 #Skills LearnedJenkins Modifying Project exploit KeePass hacking #Solution#Finding the vulnerabilitynmap shows open ports 80, 135,445, and 50000.</description>
         </item>
         <item>
         <title>Lab: Exploiting XXE using external entities to retrieve files</title>
-        <link>https://pho3nix-jacki3.github.io/p/lab-exploiting-xxe-using-external-entities-to-retrieve-files/</link>
+        <link>http://localhost:1313/p/lab-exploiting-xxe-using-external-entities-to-retrieve-files/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/lab-exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Exploiting XXE using external entities to retrieve files" /&gt;#DescriptionThis lab has a &amp;ldquo;Check stock&amp;rdquo; feature that parses XML input and returns any unexpected values in the response. To solve the lab, inject an XML external entity to retrieve the contents of the /etc/passwd file.
+        <guid>http://localhost:1313/p/lab-exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Exploiting XXE using external entities to retrieve files" /&gt;#DescriptionThis lab has a &amp;ldquo;Check stock&amp;rdquo; feature that parses XML input and returns any unexpected values in the response. To solve the lab, inject an XML external entity to retrieve the contents of the /etc/passwd file.
 #Skill LearnedExploiting XXE to retrieve files, where an external entity is defined containing the contents of a file, and returned in the application&amp;rsquo;s response. #Solution#Finding the vulnerabilityBased on the lab description, our objective is to inject an XML external entity in order to retrieve the contents of the /etc/passwd file.</description>
         </item>
         <item>
         <title>Law</title>
-        <link>https://pho3nix-jacki3.github.io/p/law/</link>
+        <link>http://localhost:1313/p/law/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/law/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;#DescriptionhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.
+        <guid>http://localhost:1313/p/law/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;#DescriptionhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.
 #Skills LearnedCVE exploitation GLPI htmlawed (CVE-2022-35914) Privilege escalation via cron job #Solution#Finding the vulnerabilityautorecon shows ports 22 and 80 are open.</description>
         </item>
         <item>
         <title>About</title>
-        <link>https://pho3nix-jacki3.github.io/about/</link>
+        <link>http://localhost:1313/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/about/</guid>
+        <guid>http://localhost:1313/about/</guid>
         <description>My name is Jackie, and I aspire to become a penetration tester. This blog contains my walkthroughs. Have fun exploring it! I hope it helps you win some CTFs and learn cool stuff.</description>
         </item>
         <item>
         <title>Categories</title>
-        <link>https://pho3nix-jacki3.github.io/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>https://pho3nix-jacki3.github.io/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         
