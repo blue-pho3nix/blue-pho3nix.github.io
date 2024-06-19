@@ -1,6 +1,6 @@
 +++
 author = "Blue Pho3nix"
-title = "SQUARE CTF"
+title = "Square CTF"
 categories = ["CTFs"]
 tags = [ "Medium", "MySQL Injection", "Filter Bypass" ]
 image = "categories/CTFs/ctf-edit.png"

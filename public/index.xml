@@ -23,12 +23,12 @@
         <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;#DescriptionThis lab uses a serialization-based session mechanism and loads the Apache Commons Collections library. Although you don&amp;rsquo;t have source code access, you can still exploit this lab using pre-built gadget chains. To solve the lab, use a third-party tool to generate a malicious serialized object containing a remote code execution payload. Then, pass this object into the website to delete the morale.txt file from Carlos&amp;rsquo;s home directory.</description>
         </item>
         <item>
-        <title>SQUARE CTF</title>
+        <title>Square CTF</title>
         <link>http://localhost:1313/p/square-ctf/</link>
         <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
         <guid>http://localhost:1313/p/square-ctf/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/CTFs/ctf-edit.png" alt="Featured image of post SQUARE CTF" /&gt;#DescriptionOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?
+        <description>&lt;img src="http://localhost:1313/categories/CTFs/ctf-edit.png" alt="Featured image of post Square CTF" /&gt;#DescriptionOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?
 SquareCTF Going In Blind is the second of two MySQL injection challenges. The first challenge was a MySQL injection to bypass log in, where we logged in using username=ahanlon&#39;-- - to get the flag.</description>
         </item>
         <item>
