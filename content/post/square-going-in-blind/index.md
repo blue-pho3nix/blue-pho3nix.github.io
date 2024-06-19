@@ -172,4 +172,4 @@ To dump the flag, use this payload: `UNION SELECT [column name] from [table name
 '+UNION+SELECT+flag+from+flag--+-
 ```
 
-**Side Note:** I've been going through the [PortSwigger Web Security Academy Labs](https://portswigger.net/web-security/all-labs) where learned how to complete challenges like this one. If you're interested check out the link above.
+**Side Note:** I've been going through the [PortSwigger Web Security Academy Labs](https://portswigger.net/web-security/all-labs) where I've learned how to complete challenges like this one. If you're interested check out the link above.
