@@ -2,7 +2,7 @@
 author = "Blue Pho3nix"
 title = "SQUARE CTF"
 categories = ["CTFs"]
-tags = [ "Medium", "Blind SQLi", "Filter Bypass" ]
+tags = [ "Medium", "MySQL Injection", "Filter Bypass" ]
 image = "categories/CTFs/ctf-edit.png"
 date = 2024-06-18T07:07:07+01:00
 +++
@@ -19,7 +19,7 @@ date = 2024-06-18T07:07:07+01:00
 
 SquareCTF Going In Blind is the second of two MySQL injection challenges. The [first challenge](https://squarectf.com/2022/alexhanlonhastheflag.html) was a MySQL injection to bypass log in, where we logged in using `username=ahanlon'-- -` to get the flag.
 
-For the SquareCTF Going In Blind challenge, blind SQL injection using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.
+For the Square CTF Going In Blind challenge, blind SQL injection using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.
 
 [Own this lab yourself](https://squarectf.com/2022/goinginblind.html)
 
