@@ -47,7 +47,7 @@ vim exploit.php
 
 The response in Burp Suite indicates that the server is Apache. Furthermore, the error message on the web app is quite descriptive, stating: "Sorry, php files are not allowed. Sorry, there was an error uploading your file."
 
-<video controls>
+<video width=100% controls autoplay>
 <source src="img/Osdn8wo3rnfADuugksad.webm" type="video/webm" />
 <source src="img/Osdn8wo3rnfADuugksad.mp4" type="video/mp4" />
 </video>
@@ -60,7 +60,7 @@ The response in Burp Suite indicates that the server is Apache. Furthermore, the
 
 Since the server is Apache, we uploaded a `.htaccess` file to create a whitelisted extension, `.test1234`. Then, we renamed our `exploit.php` file to `exploit.test1234` and uploaded the file to read `/home/carlos/secret`.
 
-<video controls>
+<video width=100% controls autoplay>
 <source src="img/38q9hfefh9hAidhadj.webm" type="video/webm" />
 <source src="img/38q9hfefh9hAidhadj.mp4" type="video/mp4" />
 </video>
