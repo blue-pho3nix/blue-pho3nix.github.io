@@ -15,6 +15,14 @@
         <description>&lt;img src="http://localhost:1313/categories/ctfs/ctf-edit.png" alt="Featured image of post CTF Walkthroughs" /&gt;</description>
         </item>
         <item>
+        <title>PortSwigger Web Security Academy Walkthroughs</title>
+        <link>http://localhost:1313/categories/portswigger/</link>
+        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/categories/portswigger/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post PortSwigger Web Security Academy Walkthroughs" /&gt;</description>
+        </item>
+        <item>
         <title>Hack The Box Walkthroughs</title>
         <link>http://localhost:1313/categories/htb/</link>
         <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
@@ -29,14 +37,6 @@
         
         <guid>http://localhost:1313/categories/offsec/</guid>
         <description>&lt;img src="http://localhost:1313/categories/offsec/offsec-edit-large.png" alt="Featured image of post OffSec Proving Grounds Walkthroughs" /&gt;</description>
-        </item>
-        <item>
-        <title>PortSwigger Web Security Academy Walkthroughs</title>
-        <link>http://localhost:1313/categories/portswigger/</link>
-        <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
-        
-        <guid>http://localhost:1313/categories/portswigger/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post PortSwigger Web Security Academy Walkthroughs" /&gt;</description>
         </item>
         
     </channel>

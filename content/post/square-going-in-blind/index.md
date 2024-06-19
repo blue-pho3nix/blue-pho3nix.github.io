@@ -11,7 +11,7 @@ date = 2024-06-18T07:07:07+01:00
 
 ![](img/SJDKUFJA43WEKFJNanJKDB.jpg)
 
-## Challenge Description
+## Description
 
 ![](img/tyubsfcAKJDSDHlskfna09.jpg)
 
@@ -147,7 +147,6 @@ We attempted to retrieve all the database names, but only the first one displaye
 
 We list the tables and columns in the database `appdb` database.
 
-
 ![](img/78hedsfhiuafhsfskjfhAHDaswE.jpg)
 
 **Working URL encoded payload**
@@ -157,10 +156,10 @@ We list the tables and columns in the database `appdb` database.
 ```
 
 **Table and column names**
+
 - TABLE_NAME:flag with COLUMN_NAME:flag
 - TABLE_NAME:user with COLUMN_NAME:username
 - TABLE_NAME:user with COLUMN_NAME:password
-
 
 To dump the flag, use this payload: `UNION SELECT [column name] from [table name]-- -`, replacing the column name and table name with the flag.
 

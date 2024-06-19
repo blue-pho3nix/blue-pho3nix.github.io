@@ -17,7 +17,16 @@
     <loc>http://localhost:1313/tags/filter-bypass/</loc>
     <lastmod>2024-06-18T07:07:07+01:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/java-deserialization/</loc>
+    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</loc>
+    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/medium/</loc>
+    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/portswigger/</loc>
     <lastmod>2024-06-18T07:07:07+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
@@ -54,9 +63,6 @@
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/offsec/</loc>
-    <lastmod>2024-04-22T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/portswigger/</loc>
     <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/xxe/</loc>
