@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/square-going-in-blind/index.md",
+                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/square-going-in-blind/index.md",
+                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/square-going-in-blind/index.md",
+                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/post/square-going-in-blind/index.md"
+                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "de6bc81a4d493a6a",
   "lastOpenFiles": [
+    "content/post/square-going-in-blind/index.md",
     "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
     "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/index.html",
     "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/lkfjsafDFHsaifbasiufbasd.webm",
@@ -170,7 +171,6 @@
     "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons",
     "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/lkfjsafDFHsaifbasiufbasd.mp4",
     "content/post/lab-exploiting-xxe-using-external-entities-to-retrieve-files/index.md",
-    "content/post/square-going-in-blind/index.md",
     "content/post/ctf-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
     "content/post/lab-/index.md",
     "content/categories/CTFs/_index.md",
