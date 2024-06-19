@@ -37,14 +37,14 @@ We attempted to enter `ahanlon'-- -` into the username input field, but we encou
 
 ![](img/890whoefnaflknasdnuaisdger.jpg)
 
-<video controls>
+<video width=100% controls autoplay>
 <source src="img/nsafn893afufbsdkbDBjbfaf.webm" type="video/webm" />
 <source src="img/nsafn893afufbsdkbDBjbfaf.mp4" type="video/mp4" />
 </video>
 
 We changed the request method from `POST` to `GET` to bypass the checks and log in with `ahanlon'-- -`. Instead of obtaining the flag, we receive a message indicating that the flag needs to be searched for.
 
-<video controls>
+<video width=100% controls autoplay>
 <source src="img/FUNSFSKJ89sgsdkgsf89.webm" type="video/webm" />
 <source src="img/FUNSFSKJ89sgsdkgsf89.mp4" type="video/mp4" />
 </video>
@@ -61,7 +61,7 @@ We perform a UNION attack to retrieve column numbers and check if we can obtain 
 
 The test indicates one column and potential database information reflected on the page.
 
-<video controls>
+<video width=100% controls autoplay>
 <source src="img/oiejrj8q9rwhAHdh3r38scg.webm" type="video/webm" />
 <source src="img/oiejrj8q9rwhAHdh3r38scg.mp4" type="video/mp4" />
 </video>
@@ -131,6 +131,7 @@ The test indicates one column and potential database information reflected on th
 We edited the payload to list all the databases. This payload was obtained from the "[SQL injection fundamentals](https://academy.hackthebox.com/module/33/section/216)" course on Hack the Box Academy.
 
 We attempted to retrieve all the database names, but only the first one displayed. We discovered a way to concatenate in SQL injection by using `group_concat()`, thanks to an article from [INFOSEC Institute's blog](https://resources.infosecinstitute.com/topic/dumping-a-database-using-sql-injection/). This method worked, allowing us to retrieve all the databases reflected on the page in a single pass.
+
 ![](img/389rghakfbjasjfhafoa8eDUH.jpg)
 
 **Working URL encoded payload**
