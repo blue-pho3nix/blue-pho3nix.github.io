@@ -6,21 +6,21 @@
         <description>Recent content in Medium on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 18 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/medium/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 19 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/medium/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass</title>
+        <link>http://localhost:1313/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</link>
+        <pubDate>Wed, 19 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass" /&gt;#DescriptionThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter</description>
+        </item>
+        <item>
         <title>Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons</title>
         <link>http://localhost:1313/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</link>
         <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
         <guid>http://localhost:1313/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</guid>
         <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;#DescriptionThis lab uses a serialization-based session mechanism and loads the Apache Commons Collections library. Although you don&amp;rsquo;t have source code access, you can still exploit this lab using pre-built gadget chains. To solve the lab, use a third-party tool to generate a malicious serialized object containing a remote code execution payload. Then, pass this object into the website to delete the morale.txt file from Carlos&amp;rsquo;s home directory.</description>
-        </item>
-        <item>
-        <title>Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass</title>
-        <link>http://localhost:1313/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</link>
-        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
-        
-        <guid>http://localhost:1313/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass" /&gt;#DescriptionThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter</description>
         </item>
         <item>
         <title>SQUARE CTF</title>

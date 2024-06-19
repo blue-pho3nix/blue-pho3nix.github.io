@@ -4,7 +4,7 @@ title = "Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Bl
 categories = ["PortSwigger"]
 tags = [ "Medium","File Upload", ]
 image = "categories/portswigger/portswigger-edit.png"
-date = 2024-06-18T07:07:07+01:00
+date = 2024-06-19T07:07:07+01:00
 +++
 
 </br>
@@ -19,9 +19,10 @@ date = 2024-06-18T07:07:07+01:00
 
 ## Skills Learned:
 
-- File upload exploit
-- Overriding server configuration
-- File name bypass
+- Identifying file upload vulnerabilities
+- Leveraging server-side configuration for exploitation
+- Web shell exploitation
+- Information gathering
 
 # Solution
 

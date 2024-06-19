@@ -6,21 +6,21 @@
         <description>Recent content in Categories on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 18 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 19 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PortSwigger Web Security Academy Walkthroughs</title>
+        <link>http://localhost:1313/categories/portswigger/</link>
+        <pubDate>Wed, 19 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/categories/portswigger/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post PortSwigger Web Security Academy Walkthroughs" /&gt;</description>
+        </item>
+        <item>
         <title>CTF Walkthroughs</title>
         <link>http://localhost:1313/categories/ctfs/</link>
         <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
         <guid>http://localhost:1313/categories/ctfs/</guid>
         <description>&lt;img src="http://localhost:1313/categories/ctfs/ctf-edit.png" alt="Featured image of post CTF Walkthroughs" /&gt;</description>
-        </item>
-        <item>
-        <title>PortSwigger Web Security Academy Walkthroughs</title>
-        <link>http://localhost:1313/categories/portswigger/</link>
-        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
-        
-        <guid>http://localhost:1313/categories/portswigger/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post PortSwigger Web Security Academy Walkthroughs" /&gt;</description>
         </item>
         <item>
         <title>Hack The Box Walkthroughs</title>
