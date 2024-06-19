@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
+                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
+                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
+                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md"
+                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md"
               }
             }
           }
@@ -146,32 +146,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9479d4a16c089e54",
+  "active": "de6bc81a4d493a6a",
   "lastOpenFiles": [
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/paosjfasfnDUNsiuafb.webp",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/paosjfasfnDUNsiuafb.jpeg",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/oqiwrja938tnthAUDIHnfsiufeb.webp",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/jsfsafhoiheaiuefar.jpeg",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/aoifnasfnaiuegaiufsb.webm",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/9qjaflkfjaiofshaeg.webm",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/9qjaflkfjaiofshaeg.mp4",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/986thwiegaiofhwe9.webp",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/986thwiegaiofhwe9.jpg",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/8ddf90f36a578c3e.jpg",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img/8ddf90f36a578c3e.webp",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/img",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/index.md",
-    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy",
-    "content/post/square-going-in-blind/index.md",
+    "public/post/page/2/index.html",
+    "public/post/page/2",
+    "content/post/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/index.md",
+    "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/image7.png",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/index.html",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/image3.png",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/image6.png",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/image4.png",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/image3.1.png",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/image1.png",
+    "public/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.html",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/smSAklmiwamd9afmads.mp4",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/smSAklmiwamd9afmads.webm",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/Osdn8wo3rnfADuugksad.webm",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/98hadadHADJADHhdad.jpg",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/Osdn8wo3rnfADuugksad.mp4",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/kalsdj93jjadlkajsdwe7.png",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/8ddf90f36a578c3e.jpg",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/aid389ajdadHADUAHD3.jpg",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/38q9hfefh9hAidhadj.webm",
+    "public/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/38q9hfefh9hAidhadj.mp4",
     "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/index.html",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/lkfjsafDFHsaifbasiufbasd.webm",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/lkfjsafDFHsaifbasiufbasd.mp4",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/aoifnasfnaiuegaiufsb.webm",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/aoifnasfnaiuegaiufsb.mp4",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/paosjfasfnDUNsiuafb.jpeg",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/paosjfasfnDUNsiuafb.webp",
-    "public/p/lab-portswigger-web-security-acadeour-exploiting-java-deserialization-with-apache-commons/img/oqiwrja938tnthAUDIHnfsiufeb.jpg",
+    "content/post/square-going-in-blind/index.md",
+    "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/index.md",
+    "content/post/lab-exploiting-java-deserialization-with-apache-commons/index.md",
+    "content/post/lab-web-shell-upload-via-extension-blacklist-bypass/index.md",
     "content/post/lab-exploiting-xxe-using-external-entities-to-retrieve-files/index.md",
     "content/post/ctf-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
     "content/post/lab-/index.md",

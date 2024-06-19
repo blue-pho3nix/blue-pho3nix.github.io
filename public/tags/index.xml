@@ -7,11 +7,11 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <lastBuildDate>Tue, 18 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Blind SQLi</title>
-        <link>http://localhost:1313/tags/blind-sqli/</link>
+        <title>File Upload</title>
+        <link>http://localhost:1313/tags/file-upload/</link>
         <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/tags/blind-sqli/</guid>
+        <guid>http://localhost:1313/tags/file-upload/</guid>
         <description></description>
         </item>
         <item>
@@ -36,6 +36,14 @@
         <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
         
         <guid>http://localhost:1313/tags/medium/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>MySQL Injection</title>
+        <link>http://localhost:1313/tags/mysql-injection/</link>
+        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        
+        <guid>http://localhost:1313/tags/mysql-injection/</guid>
         <description></description>
         </item>
         <item>
