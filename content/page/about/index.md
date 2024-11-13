@@ -9,4 +9,4 @@ menu:
             icon: user
 ---
 
-My name is Jackie, and I aspire to become a penetration tester. This blog contains my walkthroughs. Have fun exploring it! I hope it helps you win some CTFs and learn cool stuff.
+Hello! I'm Jackie, and welcome to my blog. Here, you'll find a collection of detailed walkthroughs designed to help you navigate the exciting world of cybersecurity challenges. I hope they help you win some CTFs and learn cool stuff! :) 
