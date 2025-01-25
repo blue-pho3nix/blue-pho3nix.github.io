@@ -3,83 +3,59 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://pho3nix-jacki3.github.io/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/file-upload/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/medium/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/portswigger/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/post/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/</loc>
-    <lastmod>2024-06-19T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/ctfs/</loc>
-    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/filter-bypass/</loc>
-    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/java-deserialization/</loc>
-    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</loc>
-    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/mysql-injection/</loc>
-    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/square-ctf/</loc>
-    <lastmod>2024-06-18T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/htb/</loc>
-    <lastmod>2024-05-14T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/jeeves/</loc>
-    <lastmod>2024-05-14T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</loc>
-    <lastmod>2024-05-14T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/windows/</loc>
-    <lastmod>2024-05-14T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/easy/</loc>
-    <lastmod>2024-04-22T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
-    <lastmod>2024-04-22T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/law/</loc>
-    <lastmod>2024-04-22T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/linux/</loc>
-    <lastmod>2024-04-22T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/categories/offsec/</loc>
-    <lastmod>2024-04-22T07:07:07+01:00</lastmod>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/xxe/</loc>
-    <lastmod>2024-04-22T07:07:07+01:00</lastmod>
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/about/</loc>
   </url><url>
+    <loc>https://pho3nix-jacki3.github.io/categories/</loc>
+  </url><url>
     <loc>https://pho3nix-jacki3.github.io/archives/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/categories/ctfs/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/easy/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/file-upload/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/filter-bypass/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/categories/htb/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/java-deserialization/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/jeeves/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/law/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/linux/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/medium/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/mysql-injection/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/categories/offsec/</loc>
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/page/</loc>
   </url><url>
+    <loc>https://pho3nix-jacki3.github.io/categories/portswigger/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/post/</loc>
+  </url><url>
     <loc>https://pho3nix-jacki3.github.io/search/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/square-ctf/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/windows/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/xxe/</loc>
   </url>
 </urlset>
