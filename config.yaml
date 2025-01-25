@@ -1,7 +1,8 @@
 baseurl: https://pho3nix-jacki3.github.io
 languageCode: en-us
 theme: hugo-theme-stack
-paginate: 5
+pagination:
+  pagerSize: 10
 title: Blue Pho3nix
 
 # Theme i18n support
@@ -14,14 +15,12 @@ DefaultContentLanguage: en
 hasCJKLanguage: false
 
 languages:
-    en:
-        languageName: English
-        title: Blue Pho3nix
-        weight: 1
-        params:
-            description: Learn cool stuff
-
-
+  en:
+    languageName: English
+    title: Blue Pho3nix
+    weight: 1
+    params:
+      description: Learn cool stuff
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
@@ -38,15 +37,11 @@ params:
     - post
   featuredImageField: image
   rssFullContent: false
-  favicon:    # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+  favicon: # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
   footer:
     since: 2024
     # customText:
-
-  dateFormat:
-    published: Jan 02, 2006
-    lastUpdated: Jan 02, 2006 15:04 MST
 
   sidebar:
     emoji: 🔥
@@ -62,7 +57,7 @@ params:
     readingTime: true
     license:
       enabled: false
-    image: 
+    image:
       enabled: false
 
   comments:
@@ -88,7 +83,7 @@ params:
   #     site:
 
   #     # Available values: summary, summary_large_image
-      # card: summary_large_image
+  # card: summary_large_image
 
   defaultImage:
     opengraph:

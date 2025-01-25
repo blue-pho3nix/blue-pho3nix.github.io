@@ -5,27 +5,26 @@
         <link>https://pho3nix-jacki3.github.io/tags/</link>
         <description>Recent content in Tags on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <lastBuildDate>Wed, 19 Jun 2024 07:07:07 +0100</lastBuildDate><atom:link href="https://pho3nix-jacki3.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Easy</title>
+        <link>https://pho3nix-jacki3.github.io/tags/easy/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://pho3nix-jacki3.github.io/tags/easy/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>File Upload</title>
         <link>https://pho3nix-jacki3.github.io/tags/file-upload/</link>
-        <pubDate>Wed, 19 Jun 2024 07:07:07 +0100</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/tags/file-upload/</guid>
         <description></description>
         </item>
         <item>
-        <title>Medium</title>
-        <link>https://pho3nix-jacki3.github.io/tags/medium/</link>
-        <pubDate>Wed, 19 Jun 2024 07:07:07 +0100</pubDate>
-        
-        <guid>https://pho3nix-jacki3.github.io/tags/medium/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Filter Bypass</title>
         <link>https://pho3nix-jacki3.github.io/tags/filter-bypass/</link>
-        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/tags/filter-bypass/</guid>
         <description></description>
@@ -33,15 +32,31 @@
         <item>
         <title>Java Deserialization</title>
         <link>https://pho3nix-jacki3.github.io/tags/java-deserialization/</link>
-        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/tags/java-deserialization/</guid>
         <description></description>
         </item>
         <item>
+        <title>Linux</title>
+        <link>https://pho3nix-jacki3.github.io/tags/linux/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://pho3nix-jacki3.github.io/tags/linux/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Medium</title>
+        <link>https://pho3nix-jacki3.github.io/tags/medium/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://pho3nix-jacki3.github.io/tags/medium/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>MySQL Injection</title>
         <link>https://pho3nix-jacki3.github.io/tags/mysql-injection/</link>
-        <pubDate>Tue, 18 Jun 2024 07:07:07 +0100</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/tags/mysql-injection/</guid>
         <description></description>
@@ -49,7 +64,7 @@
         <item>
         <title>TJNULL OSCP Prep</title>
         <link>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</link>
-        <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</guid>
         <description></description>
@@ -57,31 +72,15 @@
         <item>
         <title>Windows</title>
         <link>https://pho3nix-jacki3.github.io/tags/windows/</link>
-        <pubDate>Tue, 14 May 2024 07:07:07 +0100</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/tags/windows/</guid>
         <description></description>
         </item>
         <item>
-        <title>Easy</title>
-        <link>https://pho3nix-jacki3.github.io/tags/easy/</link>
-        <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
-        
-        <guid>https://pho3nix-jacki3.github.io/tags/easy/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Linux</title>
-        <link>https://pho3nix-jacki3.github.io/tags/linux/</link>
-        <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
-        
-        <guid>https://pho3nix-jacki3.github.io/tags/linux/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>XXE</title>
         <link>https://pho3nix-jacki3.github.io/tags/xxe/</link>
-        <pubDate>Mon, 22 Apr 2024 07:07:07 +0100</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/tags/xxe/</guid>
         <description></description>
