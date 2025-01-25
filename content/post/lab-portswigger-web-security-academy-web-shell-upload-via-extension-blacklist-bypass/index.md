@@ -4,7 +4,6 @@ title = "Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Bl
 categories = ["PortSwigger"]
 tags = [ "Medium","File Upload", ]
 image = "categories/portswigger/portswigger-edit.png"
-date = 2024-06-19T07:07:07+01:00
 +++
 
 </br>
