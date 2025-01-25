@@ -3,7 +3,6 @@ author = "Blue Pho3nix"
 title = "Law"
 categories = ["offsec"]
 tags = [ "Medium", "Linux", "TJNULL OSCP Prep" ]
-date = 2024-04-22T07:07:07+01:00
 image = "categories/offsec/offsec-edit.png"
 +++
 
