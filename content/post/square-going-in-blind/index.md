@@ -4,7 +4,6 @@ title = "Square CTF"
 categories = ["CTFs"]
 tags = [ "Medium", "MySQL Injection", "Filter Bypass" ]
 image = "categories/CTFs/ctf-edit.png"
-date = 2024-06-18T07:07:07+01:00
 +++
 
 </br>
