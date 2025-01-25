@@ -3,7 +3,6 @@ author = "Blue Pho3nix"
 title = "Jeeves"
 categories = ["htb"]
 tags = [ "Medium", "Windows", "TJNULL OSCP Prep" ]
-date = 2024-05-14T07:07:07+01:00
 image = "jeeves-icon.png"
 +++
 
