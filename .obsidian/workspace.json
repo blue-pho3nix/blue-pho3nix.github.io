@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f2be33dee810ae4d",
+        "id": "9f7e56e278c5644d",
         "type": "tabs",
         "children": [
           {
-            "id": "de6bc81a4d493a6a",
+            "id": "922b761aab9c9980",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/categories/tryhackme/_index.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "_index"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/categories/tryhackme/_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for _index"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/categories/tryhackme/_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from _index"
+              "title": "Outgoing links"
             }
           },
           {
@@ -142,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/categories/tryhackme/_index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of _index"
+              "title": "Outline"
             }
           }
         ]
@@ -168,8 +161,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "de6bc81a4d493a6a",
+  "active": "922b761aab9c9980",
   "lastOpenFiles": [
+    "content/categories/tryhackme/thm-edit-large.png",
+    "content/categories/tryhackme/_index.md",
     "public/scss/style.min.376a0415e9c1c4c7b47631bf4ee2b74f65f9f75c351b8a8ba7e893f137a5e161.css",
     "public/scss/style.min.69c386e5959ae998317562a1bb479b14f9e419dc8cfdb89461bbc7d5b70ad7ee.css",
     "public/scss/style.min.23a73c29cb0ce4396e2dfbe90214c366affe01f6deed79c5a7da26141004cbc4.css",
@@ -180,14 +175,11 @@
     "public/scss/style.min.20f0349c17be4f1bc172c4beb2aa0977abbb59a06d3f613673bdfe1718712a24.css",
     "public/scss/style.min.7340b17a677b15809d834c8321765e59234fccd9f7d73a64dd998bcdb5ba56de.css",
     "public/scss/style.min.4e74655ae950978e6d1999029f4d49d535f435f0ce4aaa8cc4f8b6acbfc25d75.css",
-    "public/scss/style.min.ab718b9adce751b83bbfa36208dea08ca2ac441cde369a1df32428b4ea665f9b.css",
     "public/categories/tryhackme/thm-edit-large.df0aa502c0c17b53d5dbb8788a0a52c1_hu_ea260482498a40e1.png",
     "resources/_gen/images/categories/tryhackme/thm-edit-large.df0aa502c0c17b53d5dbb8788a0a52c1_hu_ea260482498a40e1.png",
     "public/categories/tryhackme/thm-edit-large_hu_fd8ab04f73b32cf5.png",
     "public/categories/tryhackme/thm-edit-large.df0aa502c0c17b53d5dbb8788a0a52c1.png",
     "resources/_gen/images/categories/tryhackme/thm-edit-large_hu_fd8ab04f73b32cf5.png",
-    "content/categories/tryhackme/thm-edit-large.png",
-    "content/categories/tryhackme/_index.md",
     "public/categories/tryhackme/thm-edit-large.af3add22d71ae4c77b827783f5c8147a_hu_f32891289ae9c314.png",
     "resources/_gen/images/categories/tryhackme/thm-edit-large.af3add22d71ae4c77b827783f5c8147a_hu_f32891289ae9c314.png",
     "public/categories/tryhackme/thm-edit-large.af3add22d71ae4c77b827783f5c8147a.png",
