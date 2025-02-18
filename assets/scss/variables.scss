@@ -8,12 +8,12 @@
         --main-top-padding: 50px;
     }
 
-    --body-background: #FEFBFF;
-    --body-text-color: #1B1B1F;
+    --body-background: #dadada;
+    --body-text-color: #080808;
 
-    --accent-color: #001352;
+    --accent-color:  #004AF2;
     --accent-color-text: #FFF;
-    --accent-color-darker: #004AF2;
+    --accent-color-darker: #0034da;
 
     --tag-border-radius: 4px;
 
@@ -24,14 +24,14 @@
 
     &[data-scheme="dark"] {
 
-        --accent-color: hsl(222, 100%, 47%);
-        --accent-color-text: #1B1B1F;
+        --accent-color: #0076bd;
+        --accent-color-text: #0e0118;
 
         --body-text-color: #E4E1E6;
         --body-background: #1B1B1F;  
 
 
-        --accent-color-darker: #B8C4FF;
+        --accent-color-darker: #0099e3;
         --scrollbar-thumb: hsla(240, 5%, 58%, 0.146);
         --scrollbar-track: var(--body-background);
     }
@@ -58,7 +58,7 @@
     --card-background-selected: #FBF8FD;
     --card-text-color-secondary: #1B1B1F;
 
-    --card-text-color-tertiary:  #2C1229;
+    --card-text-color-tertiary:  #4866f6;
     --card-separator-color: hsla(240, 4%, 48%, 0.441);
 
     --card-border-radius: 10px;
@@ -87,7 +87,7 @@
         --card-background-selected: #45464F;
         --card-text-color-secondary:  #c6c5d0;
 
-        --card-text-color-tertiary: #939dd7;
+        --card-text-color-tertiary: #6dd3f5;
         --card-separator-color: #90909a97;
     }
 }
