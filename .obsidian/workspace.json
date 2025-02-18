@@ -13,10 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
+                "file": "content/categories/tryhackme/_index.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "_index"
             }
           }
         ]
@@ -38,8 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +59,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +69,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -85,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
+                "file": "content/categories/tryhackme/_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +102,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for _index"
             }
           },
           {
@@ -102,10 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
+                "file": "content/categories/tryhackme/_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from _index"
             }
           },
           {
@@ -115,8 +128,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md"
-              }
+                "file": "content/categories/tryhackme/_index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of _index"
             }
           }
         ]
@@ -148,31 +170,37 @@
   },
   "active": "de6bc81a4d493a6a",
   "lastOpenFiles": [
+    "content/categories/tryhackme/thm-edit-large.png",
+    "content/categories/tryhackme/_index.md",
+    "content/categories/htb/htb-edit-large.png",
+    "content/categories/tryhackme/htb-edit.png",
+    "content/categories/tryhackme/htb-edit-large.png",
+    "content/categories/tryhackme",
+    "content/categories/offsec/_index.md",
+    "content/categories/offsec/offsec-edit-large.png",
+    "content/categories/offsec/offsec-edit.png",
+    "content/categories/portswigger/portswigger-edit.png",
+    "content/categories/CTFs/ctf-edit.png",
+    "content/post/htb-jeeves/index.md",
+    "content/post/tryhackme-mr-robot/9.png",
+    "content/post/tryhackme-mr-robot/jeeves-icon.png",
+    "content/post/tryhackme-mr-robot/index.md",
+    "content/post/tryhackme-mr-robot",
+    "content/page/walkthroughs/index.md",
+    "archetypes/default.md",
+    "1.md",
+    "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
     "public/tags/medium/page/2/index.html",
     "public/tags/medium/page/2",
     "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/smSAklmiwamd9afmads.webm",
     "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/Osdn8wo3rnfADuugksad.webm",
     "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/smSAklmiwamd9afmads.mp4",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/8ddf90f36a578c3e.jpg",
     "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/Osdn8wo3rnfADuugksad.mp4",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/aid389ajdadHADUAHD3.jpg",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/kalsdj93jjadlkajsdwe7.png",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/98hadadHADJADHhdad.jpg",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/2022-11-28_13-29.jpg",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/029j3rawlkdawfAIOSonq.jpg",
     "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/38q9hfefh9hAidhadj.webm",
     "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/38q9hfefh9hAidhadj.mp4",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/index.html",
-    "public/p/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors",
-    "content/post/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/aid389ajdadHADUAHD3.jpg",
-    "content/post/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/kalsdj93jjadlkajsdwe7.png",
-    "content/post/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/98hadadHADJADHhdad.jpg",
-    "content/post/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/img/8ddf90f36a578c3e.jpg",
     "content/post/lab-portswigger-web-security-academy-blind-sql-injection-with-conditional-errors/index.md",
     "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass - Copy/index.md",
     "content/post/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/index.md",
-    "content/post/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/index.md",
     "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
     "content/post/square-going-in-blind/index.md",
     "content/post/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons - Copy/index.md",
@@ -182,17 +210,10 @@
     "content/post/ctf-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/index.md",
     "content/post/lab-/index.md",
     "content/categories/CTFs/_index.md",
-    "content/post/htb-jeeves/index.md",
     "content/categories/square/_index.md",
     "content/post/lab-exploiting-xxe-using-external-entities-to-retrieve-files - Copy/index.md",
-    "1.md",
-    "content/page/walkthroughs/index.md",
     "content/categories/htb/_index.md",
     "content/categories/Tooling/_index.md",
-    "content/categories/portswigger copy/_index.md",
-    "content/page/blog-posts/index.md",
-    "content/page/walkthroughs copy/index.md",
-    "content/page/about/index.md",
-    "content/page/search/index.md"
+    "content/categories/portswigger copy/_index.md"
   ]
 }

