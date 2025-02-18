@@ -11,14 +11,12 @@
             "id": "de6bc81a4d493a6a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "content/categories/tryhackme/_index.md",
-                "mode": "source",
-                "source": false
+                "file": "content/categories/tryhackme/thm-edit-large.png"
               },
-              "icon": "lucide-file",
-              "title": "_index"
+              "icon": "lucide-image",
+              "title": "thm-edit-large"
             }
           }
         ]
@@ -94,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/categories/tryhackme/_index.md",
+                "file": "content/categories/tryhackme/thm-edit-large.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for _index"
+              "title": "Backlinks for thm-edit-large"
             }
           },
           {
@@ -113,12 +111,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/categories/tryhackme/_index.md",
+                "file": "content/categories/tryhackme/thm-edit-large.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from _index"
+              "title": "Outgoing links from thm-edit-large"
             }
           },
           {
@@ -142,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/categories/tryhackme/_index.md",
+                "file": "content/categories/tryhackme/thm-edit-large.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of _index"
+              "title": "Outline of thm-edit-large"
             }
           }
         ]
@@ -168,10 +166,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "de6bc81a4d493a6a",
+  "active": "9479d4a16c089e54",
   "lastOpenFiles": [
-    "content/categories/tryhackme/thm-edit-large.png",
     "content/categories/tryhackme/_index.md",
+    "content/categories/tryhackme/thm-edit-large.png",
+    "content/categories/tryhackme/thm-edit-large.png",
     "content/categories/htb/htb-edit-large.png",
     "content/categories/tryhackme/htb-edit.png",
     "content/categories/tryhackme/htb-edit-large.png",
@@ -183,7 +182,6 @@
     "content/categories/CTFs/ctf-edit.png",
     "content/post/htb-jeeves/index.md",
     "content/post/tryhackme-mr-robot/9.png",
-    "content/post/tryhackme-mr-robot/jeeves-icon.png",
     "content/post/tryhackme-mr-robot/index.md",
     "content/post/tryhackme-mr-robot",
     "content/page/walkthroughs/index.md",
