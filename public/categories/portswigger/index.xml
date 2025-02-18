@@ -11,7 +11,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
 &lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
 	width=&#34;1201&#34;
 	height=&#34;603&#34;
@@ -50,12 +50,16 @@
         
         <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
         <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting XXE Using External Entities to Retrieve Files" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/8ddf90f36a578c3e.jpg&#34;
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/8ddf90f36a578c3e.jpg&#34;
+	width=&#34;1201&#34;
+	height=&#34;603&#34;
 	
 	loading=&#34;lazy&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;199&#34;
+		data-flex-basis=&#34;478px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;

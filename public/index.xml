@@ -27,12 +27,16 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/content/post/htb-jeeves/intro.png&#34;
-	
-	
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/intro.png&#34;
+	width=&#34;961&#34;
+	height=&#34;494&#34;
 	
 	loading=&#34;lazy&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;194&#34;
+		data-flex-basis=&#34;466px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;
@@ -47,7 +51,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
 &lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
 	width=&#34;1201&#34;
 	height=&#34;603&#34;
@@ -86,12 +90,16 @@
         
         <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
         <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting XXE Using External Entities to Retrieve Files" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/8ddf90f36a578c3e.jpg&#34;
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/8ddf90f36a578c3e.jpg&#34;
+	width=&#34;1201&#34;
+	height=&#34;603&#34;
 	
 	loading=&#34;lazy&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;199&#34;
+		data-flex-basis=&#34;478px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;
@@ -165,44 +173,6 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-extension-blacklist-bypass&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;This lab&lt;/a&gt; contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. &lt;br&gt; &lt;br&gt; To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. &lt;br&gt; &lt;br&gt; You can log in to your own account using the following credentials: &lt;code&gt;wiener:peter&lt;/code&gt;&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>Law</title>
-        <link>https://pho3nix-jacki3.github.io/p/law/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://pho3nix-jacki3.github.io/p/law/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/offsec/offsec-edit.png" alt="Featured image of post Law" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/content/post/offsec-law/1.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;description&#34;&gt;
-    &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    Description
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;htmLawed 1.2.5 on port 80 of this lab is vulnerable to Remote Code Execution (RCE). We can gain access to the Linux server as the user &amp;lsquo;www-data&amp;rsquo;. We have write access to a cleanup script, which is executed by root. We can use this to escalate our privileges.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;skills-learned&#34;&gt;
-    &lt;a href=&#34;#skills-learned&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    Skills Learned
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;CVE exploitation &lt;a class=&#34;link&#34; href=&#34;https://mayfly277.github.io/posts/GLPI-htmlawed-CVE-2022-35914/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GLPI htmlawed (CVE-2022-35914)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Privilege escalation via cron job&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;solution&#34;&gt;
-    &lt;a href=&#34;#solution&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    Solution
-&lt;/h1&gt;&lt;h2 id=&#34;finding-the-vulnerability&#34;&gt;
-    &lt;a href=&#34;#finding-the-vulnerability&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    Finding the vulnerability
-&lt;/h2&gt;&lt;p&gt;&lt;code&gt;autorecon&lt;/code&gt; shows ports 22 and 80 are open.
-&lt;br&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=LkZetyoH2xc&amp;amp;t=10s&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Video timestamp 0:10&lt;/a&gt;&lt;/p&gt;</description>
         </item>
         <item>
         <title>Search</title>

@@ -24,14 +24,14 @@
 
     &[data-scheme="dark"] {
 
-        --accent-color: #0076bd;
+        --accent-color: #00c48f;
         --accent-color-text: #0e0118;
 
         --body-text-color: #E4E1E6;
         --body-background: #1B1B1F;  
 
 
-        --accent-color-darker: #0099e3;
+        --accent-color-darker: #00e3bd;
         --scrollbar-thumb: hsla(240, 5%, 58%, 0.146);
         --scrollbar-track: var(--body-background);
     }
@@ -58,7 +58,7 @@
     --card-background-selected: #FBF8FD;
     --card-text-color-secondary: #1B1B1F;
 
-    --card-text-color-tertiary:  #4866f6;
+    --card-text-color-tertiary:  #1e48f2;
     --card-separator-color: hsla(240, 4%, 48%, 0.441);
 
     --card-border-radius: 10px;
@@ -119,8 +119,8 @@
     --link-background-opacity: 0.5;
     --link-background-opacity-hover: 0.7;
 
-    --code-background-color: #e6e5f0 !important;
-    --code-text-color: #A40BAF !important;
+    --code-background-color: #dbdbdb !important;
+    --code-text-color: #0026cf !important;
     
     --pre-background-color: var(--card-background) !important;
     --pre-text-color: var(--code-text-color) !important;
@@ -131,16 +131,23 @@
     --kbd-border-color: #90909A;
 
             // chroma
-            --k-colors: #37003B;
-            --n-colors: #A40BAF;
-            --b-colors: #FFD6F9;
-            --p-colors: #934B00;
-            --s-colors: #006B58; 
-            --v-colors: #7CFE68;
-            --o-colors: #FA9136;
-            --deleted-color: #BA1A1A;
-            --comment-color: rgba(69, 70, 79, 0.779);
-            --numbers-color: rgba(69, 70, 79, 0.456);
+        // chroma
+        --k-colors: #0026cf;
+        --n-colors: #0026cf;
+        --b-colors: #0026cf;
+        --p-colors: #0026cf;
+        --s-colors: #0026cf;
+        --v-colors: #0026cf;
+        --o-colors: #0026cf;
+        --deleted-color: #0026cf;
+        --comment-color: #0026cf;
+        --numbers-color: #0026cf;
+    &[data-scheme="light"] .chroma .err {
+        color: #0026cf !important;
+    }
+    &[data-scheme="dark"] .chroma .err {
+        color: #93eed8 !important;
+    }
 
     &[data-scheme="dark"] {
         --table-border-color: rgba(184, 196, 255, 0.32);
@@ -148,8 +155,8 @@
 
         --blockquote-background-color: var(--card-background);
 
-        --code-background-color: rgba(33, 38, 58, 0.722) !important; 
-        --code-text-color:  #E154E7 !important;
+        --code-background-color: #00020c     !important; 
+        --code-text-color:  #93eed8 !important;
         // --code-background-color: #0C0E15!important;
         // --code-text-color: #DDE1FF !important;
 
@@ -157,16 +164,16 @@
         --pre-text-color: var(--code-text-color) !important;
 
         // chroma
-        --k-colors: #FF8C58;
-        --n-colors: #E154E7;
-        --b-colors: #FFD6F9;
-        --p-colors: #EBE86E;
-        --s-colors: #6ae5a2;
-        --v-colors: #CECB55;
-        --o-colors: #FFB781;
-        --deleted-color: #f56f78;
-        --comment-color: rgb(198, 197, 208);
-        --numbers-color: rgba(147, 146, 154, 0.825);
+        --k-colors: #93eed8;
+        --n-colors: #93eed8;
+        --b-colors: #93eed8;
+        --p-colors: #93eed8;
+        --s-colors: #93eed8;
+        --v-colors: #93eed8;
+        --o-colors: #93eed8;
+        --deleted-color: #93eed8;
+        --comment-color: #93eed8;
+        --numbers-color: #93eed8;
 
 
     }
