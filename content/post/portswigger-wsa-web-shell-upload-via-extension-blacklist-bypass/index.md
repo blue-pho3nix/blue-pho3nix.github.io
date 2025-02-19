@@ -1,8 +1,8 @@
 +++
 author = "Blue Pho3nix"
-title = "Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass"
+title = "Web Shell Upload Via Extension Blacklist Bypass"
 categories = ["PortSwigger"]
-tags = [ "Medium","File Upload", ]
+tags = [ "Medium","File Upload" ]
 image = "categories/portswigger/portswigger-edit.png"
 +++
 

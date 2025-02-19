@@ -14,6 +14,10 @@
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/tags/easy/</loc>
   </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
+  </url><url>
     <loc>https://pho3nix-jacki3.github.io/tags/file-upload/</loc>
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/tags/filter-bypass/</loc>
@@ -24,17 +28,13 @@
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/p/jeeves/</loc>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</loc>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
-  </url><url>
-    <loc>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</loc>
-  </url><url>
     <loc>https://pho3nix-jacki3.github.io/tags/medium/</loc>
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/tags/mysql-injection/</loc>
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/categories/offsec/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/tags/oscp-prep/</loc>
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/page/</loc>
   </url><url>
@@ -48,9 +48,9 @@
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/tags/</loc>
   </url><url>
-    <loc>https://pho3nix-jacki3.github.io/tags/tjnull-oscp-prep/</loc>
-  </url><url>
     <loc>https://pho3nix-jacki3.github.io/categories/tryhackme/</loc>
+  </url><url>
+    <loc>https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/</loc>
   </url><url>
     <loc>https://pho3nix-jacki3.github.io/tags/windows/</loc>
   </url><url>

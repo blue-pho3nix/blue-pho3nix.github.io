@@ -22,37 +22,13 @@
         <description></description>
         </item>
         <item>
-        <title>Jeeves</title>
-        <link>https://pho3nix-jacki3.github.io/p/jeeves/</link>
+        <title>Exploiting Java Deserialization with Apache Commons</title>
+        <link>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/intro.png&#34;
-	width=&#34;961&#34;
-	height=&#34;494&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;194&#34;
-		data-flex-basis=&#34;466px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;description&#34;&gt;
-    &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    Description
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;Jeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons</title>
-        <link>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
 	width=&#34;1201&#34;
 	height=&#34;603&#34;
 	
@@ -67,7 +43,7 @@
 &lt;h2 id=&#34;description&#34;&gt;
     &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Description
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-java-deserialization-with-apache-commons/img/oqiwrja938tnthAUDIHnfsiufeb.jpg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/img/oqiwrja938tnthAUDIHnfsiufeb.jpg&#34;
 	width=&#34;1782&#34;
 	height=&#34;856&#34;
 	
@@ -84,13 +60,13 @@
     &gt;This lab&lt;/a&gt; uses a serialization-based session mechanism and loads the Apache Commons Collections library. Although you don&amp;rsquo;t have source code access, you can still exploit this lab using pre-built gadget chains. &lt;br&gt; &lt;br&gt; To solve the lab, use a third-party tool to generate a malicious serialized object containing a remote code execution payload. Then, pass this object into the website to delete the morale.txt file from Carlos&amp;rsquo;s home directory.&lt;br&gt; &lt;br&gt; You can log in to your own account using the following credentials: &lt;code&gt;wiener:peter&lt;/code&gt;&lt;/p&gt;</description>
         </item>
         <item>
-        <title>Lab: Portswigger Web Security Academy Exploiting XXE Using External Entities to Retrieve Files</title>
-        <link>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</link>
+        <title>Exploiting XXE Using External Entities to Retrieve Files</title>
+        <link>https://pho3nix-jacki3.github.io/p/exploiting-xxe-using-external-entities-to-retrieve-files/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Exploiting XXE Using External Entities to Retrieve Files" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/8ddf90f36a578c3e.jpg&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/exploiting-xxe-using-external-entities-to-retrieve-files/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Exploiting XXE Using External Entities to Retrieve Files" /&gt;&lt;/br&gt;
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-xxe-using-external-entities-to-retrieve-files/img/8ddf90f36a578c3e.jpg&#34;
 	width=&#34;1201&#34;
 	height=&#34;603&#34;
 	
@@ -105,7 +81,7 @@
 &lt;h2 id=&#34;description&#34;&gt;
     &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Description
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-exploiting-xxe-using-external-entities-to-retrieve-files/image1.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-xxe-using-external-entities-to-retrieve-files/img/image1.png&#34;
 	width=&#34;986&#34;
 	height=&#34;471&#34;
 	
@@ -137,42 +113,28 @@
 &lt;/h2&gt;&lt;p&gt;Based on the lab description, our objective is to inject an XML external entity in order to retrieve the contents of the &lt;code&gt;/etc/passwd&lt;/code&gt; file.&lt;/p&gt;</description>
         </item>
         <item>
-        <title>Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass</title>
-        <link>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</link>
+        <title>Jeeves</title>
+        <link>https://pho3nix-jacki3.github.io/p/jeeves/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Lab: Portswigger Web Security Academy Web Shell Upload Via Extension Blacklist Bypass" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/8ddf90f36a578c3e.jpg&#34;
-	width=&#34;1201&#34;
-	height=&#34;603&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/img/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/intro.png&#34;
+	width=&#34;961&#34;
+	height=&#34;494&#34;
 	
 	loading=&#34;lazy&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;199&#34;
-		data-flex-basis=&#34;478px&#34;
+		data-flex-grow=&#34;194&#34;
+		data-flex-basis=&#34;466px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;
     &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Description
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/lab-portswigger-web-security-academy-web-shell-upload-via-extension-blacklist-bypass/img/aid389ajdadHADUAHD3.jpg&#34;
-	width=&#34;1750&#34;
-	height=&#34;958&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;182&#34;
-		data-flex-basis=&#34;438px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-extension-blacklist-bypass&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;This lab&lt;/a&gt; contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. &lt;br&gt; &lt;br&gt; To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. &lt;br&gt; &lt;br&gt; You can log in to your own account using the following credentials: &lt;code&gt;wiener:peter&lt;/code&gt;&lt;/p&gt;</description>
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Jeeves is a fun box that starts with error messages. We directory fuzz with ffuf and find Jenkins running. We gain a foothold with a modifying project exploit that gets us a reverse shell as the user. We see the administrator&amp;rsquo;s hash in the user&amp;rsquo;s KeePass, which gives us a shell with psexec. We get the root flag after discovering the hidden file on the server.&lt;/p&gt;</description>
         </item>
         <item>
         <title>Search</title>
@@ -221,6 +183,44 @@
 &lt;/blockquote&gt;
 &lt;p&gt;SquareCTF Going In Blind is the second of two MySQL injection challenges. The &lt;a class=&#34;link&#34; href=&#34;https://squarectf.com/2022/alexhanlonhastheflag.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;first challenge&lt;/a&gt; was a MySQL injection to bypass log in, where we logged in using &lt;code&gt;username=ahanlon&#39;-- -&lt;/code&gt; to get the flag.&lt;/p&gt;</description>
+        </item>
+        <item>
+        <title>Web Shell Upload Via Extension Blacklist Bypass</title>
+        <link>https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Web Shell Upload Via Extension Blacklist Bypass" /&gt;&lt;/br&gt;
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/img/8ddf90f36a578c3e.jpg&#34;
+	width=&#34;1201&#34;
+	height=&#34;603&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;199&#34;
+		data-flex-basis=&#34;478px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;
+    &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Description
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/img/aid389ajdadHADUAHD3.jpg&#34;
+	width=&#34;1750&#34;
+	height=&#34;958&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;182&#34;
+		data-flex-basis=&#34;438px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-extension-blacklist-bypass&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;This lab&lt;/a&gt; contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. &lt;br&gt; &lt;br&gt; To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. &lt;br&gt; &lt;br&gt; You can log in to your own account using the following credentials: &lt;code&gt;wiener:peter&lt;/code&gt;&lt;/p&gt;</description>
         </item>
         
     </channel>
