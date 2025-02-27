@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>TryHackMe Walkthroughs on Blue Pho3nix</title>
+        <link>https://pho3nix-jacki3.github.io/categories/thm/</link>
+        <description>Recent content in TryHackMe Walkthroughs on Blue Pho3nix</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/categories/thm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Mr. Robot CTF</title>
+        <link>https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/mr-robot.png" alt="Featured image of post Mr. Robot CTF" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/intro.png&#34;
+	width=&#34;1152&#34;
+	height=&#34;651&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;176&#34;
+		data-flex-basis=&#34;424px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;solution&#34;&gt;
+    &lt;a href=&#34;#solution&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Solution
+&lt;/h1&gt;&lt;h2 id=&#34;finding-the-vulnerability&#34;&gt;
+    &lt;a href=&#34;#finding-the-vulnerability&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Finding the vulnerability
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;nmap&lt;/code&gt; shows open ports 80 and 443.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir nmap &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/1.png&#34;
+	width=&#34;1065&#34;
+	height=&#34;572&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;186&#34;
+		data-flex-basis=&#34;446px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;We run &lt;code&gt;-A&lt;/code&gt; on the open ports.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;grep &lt;span class=&#34;s1&#34;&gt;&amp;#39;^[0-9]&amp;#39;&lt;/span&gt; nmap/10.10.231.235-ports &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr &lt;span class=&#34;s1&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sed s/,$//&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmap -A  -p &lt;span class=&#34;nv&#34;&gt;$ports&lt;/span&gt; -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/2.png&#34;
+	width=&#34;1204&#34;
+	height=&#34;828&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;145&#34;
+		data-flex-basis=&#34;348px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;We find the first key on &lt;code&gt;/robots.txt&lt;/code&gt;.
+&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/3.png&#34;
+	width=&#34;890&#34;
+	height=&#34;217&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;410&#34;
+		data-flex-basis=&#34;984px&#34;
+	
+&gt;
+&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/4.png&#34;
+	width=&#34;1002&#34;
+	height=&#34;268&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;373&#34;
+		data-flex-basis=&#34;897px&#34;
+	
+&gt;&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -14,19 +14,9 @@ image = "categories/CTFs/ctf-edit.png"
 
 ![](img/tyubsfcAKJDSDHlskfna09.jpg)
 
-> Ok, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn't be hardcoded in the web application anymore. How could anyone get to it now?
-
-SquareCTF Going In Blind is the second of two MySQL injection challenges. The [first challenge](https://squarectf.com/2022/alexhanlonhastheflag.html) was a MySQL injection to bypass log in, where we logged in using `username=ahanlon'-- -` to get the flag.
-
-For the Square CTF Going In Blind challenge, using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.
+> Ok, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn't be hardcoded in the web application anymore. How could anyone get to it now?<br><br>SquareCTF Going In Blind is the second of two MySQL injection challenges. The [first challenge](https://squarectf.com/2022/alexhanlonhastheflag.html) was a MySQL injection to bypass log in, where we logged in using `username=ahanlon'-- -` to get the flag.<br><br>For the Square CTF Going In Blind challenge, using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.
 
 [Own this lab yourself](https://squarectf.com/2022/goinginblind.html)
-
-## Skills Learned
-
-- MySQL injection
-- UNION Attack
-- Filter Bypass
 
 # Solution
 

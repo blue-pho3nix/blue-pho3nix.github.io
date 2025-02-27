@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" #\rDescription\rThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" #\rDescription\rThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter.\n">
 <title>Web Shell Upload Via Extension Blacklist Bypass</title>
 
 <link rel='canonical' href='https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/'> 
 <link rel="stylesheet" href="/scss/style.min.7e25752da02be3d43ff6eb2384c8a9c2c26ecf308b9cb3b7bd8c7ae7562e6e6e.css" />
 <meta property='og:title' content="Web Shell Upload Via Extension Blacklist Bypass">
-<meta property='og:description' content=" #\rDescription\rThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter\n">
+<meta property='og:description' content=" #\rDescription\rThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter.\n">
 <meta property='og:url' content='https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/'>
 <meta property='og:site_name' content='Blue Pho3nix'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='File Upload' /><meta property='og:image' content='https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png' />
 <meta name="twitter:title" content="Web Shell Upload Via Extension Blacklist Bypass">
-<meta name="twitter:description" content=" #\rDescription\rThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter\n"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content=" #\rDescription\rThis lab contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. You can log in to your own account using the following credentials: wiener:peter.\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png' />
     </head>
     <body class="
@@ -207,7 +207,6 @@
             <nav id="TableOfContents">
   <ul>
     <li><a href="#description">Description</a></li>
-    <li><a href="#skills-learned">Skills Learned:</a></li>
   </ul>
 
   <ul>
@@ -321,17 +320,8 @@
 ></p>
 <blockquote>
 <p><a class="link" href="https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-extension-blacklist-bypass"  target="_blank" rel="noopener"
-    >This lab</a> contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. <br> <br> To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. <br> <br> You can log in to your own account using the following credentials: <code>wiener:peter</code></p>
+    >This lab</a> contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. <br> <br> To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. <br> <br> You can log in to your own account using the following credentials: <code>wiener:peter</code>.</p>
 </blockquote>
-<h2 id="skills-learned">
-    <a href="#skills-learned" class="header-anchor">#</a>
-    Skills Learned:
-</h2><ul>
-<li>Identifying file upload vulnerabilities</li>
-<li>Leveraging server-side configuration for exploitation</li>
-<li>Web shell exploitation</li>
-<li>Information gathering</li>
-</ul>
 <h1 id="solution">
     <a href="#solution" class="header-anchor">#</a>
     Solution

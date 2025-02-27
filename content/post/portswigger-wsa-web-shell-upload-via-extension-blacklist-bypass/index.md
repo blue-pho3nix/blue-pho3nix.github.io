@@ -14,14 +14,7 @@ image = "categories/portswigger/portswigger-edit.png"
 
 ![](img/aid389ajdadHADUAHD3.jpg)
 
-> [This lab](https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-extension-blacklist-bypass) contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. <br> <br> To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. <br> <br> You can log in to your own account using the following credentials: `wiener:peter`
-
-## Skills Learned:
-
-- Identifying file upload vulnerabilities
-- Leveraging server-side configuration for exploitation
-- Web shell exploitation
-- Information gathering
+> [This lab](https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-extension-blacklist-bypass) contains a vulnerable image upload function. Certain file extensions are blacklisted, but this defense can be bypassed due to a fundamental flaw in the configuration of this blacklist. <br> <br> To solve the lab, upload a basic PHP web shell, then use it to exfiltrate the contents of the file /home/carlos/secret. Submit this secret using the button provided in the lab banner. <br> <br> You can log in to your own account using the following credentials: `wiener:peter`.
 
 # Solution
 

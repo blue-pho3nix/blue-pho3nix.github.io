@@ -40,10 +40,8 @@
 	
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Ok, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;SquareCTF Going In Blind is the second of two MySQL injection challenges. The &lt;a class=&#34;link&#34; href=&#34;https://squarectf.com/2022/alexhanlonhastheflag.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;first challenge&lt;/a&gt; was a MySQL injection to bypass log in, where we logged in using &lt;code&gt;username=ahanlon&#39;-- -&lt;/code&gt; to get the flag.&lt;/p&gt;</description>
+&lt;p&gt;Ok, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&amp;rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?&lt;br&gt;&lt;br&gt;SquareCTF Going In Blind is the second of two MySQL injection challenges. The &lt;a class=&#34;link&#34; href=&#34;https://squarectf.com/2022/alexhanlonhastheflag.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;first challenge&lt;/a&gt; was a MySQL injection to bypass log in, where we logged in using &lt;code&gt;username=ahanlon&#39;-- -&lt;/code&gt; to get the flag.&lt;br&gt;&lt;br&gt;For the Square CTF Going In Blind challenge, using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.&lt;/p&gt;</description>
         </item>
         
     </channel>
