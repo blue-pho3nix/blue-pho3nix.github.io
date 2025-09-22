@@ -14,6 +14,10 @@ image = "img/hack-smarter.png"
 
 `nmap` shows SMB and WinRM are open. It also gives us the domain and FQDN.
 
+```
+mkdir nmap && sudo nmap -Pn -p- -vv 10.0.21.103 -oN nmap/10.0.21.103-tcp-ports --min-rate 10000 && ports=$(grep '^[0-9]' nmap/10.0.21.103-tcp-ports  | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) && sudo nmap -sCV -Pn -p $ports -vv 10.0.21.103 -oA nmap/10.0.21.103-tcp-scripts-versions --min-rate 10000
+```
+
 ```shell
 PORT      STATE SERVICE       REASON          VERSION
 53/tcp    open  domain        syn-ack ttl 126 Simple DNS Plus
