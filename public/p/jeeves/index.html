@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000. Video timestamp 0:10\n1 nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports We run -sCV on the open ports.\n1 ls 1 ports=$(cat ports | grep &#39;^[0-9]&#39; | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 echo $ports 1 nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts We try to login to SMB, but it requires a password. Video timestamp 0:15\n1 smbclient -N -L \\\\\\\\10.10.10.63\\\\ ">
 <title>Jeeves</title>
 
-<link rel='canonical' href='http://localhost:1313/p/jeeves/'> 
+<link rel='canonical' href='https://pho3nix-jacki3.github.io/p/jeeves/'> 
 <link rel="stylesheet" href="/scss/style.min.7e25752da02be3d43ff6eb2384c8a9c2c26ecf308b9cb3b7bd8c7ae7562e6e6e.css" />
 <meta property='og:title' content="Jeeves">
 <meta property='og:description' content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000. Video timestamp 0:10\n1 nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports We run -sCV on the open ports.\n1 ls 1 ports=$(cat ports | grep &#39;^[0-9]&#39; | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 echo $ports 1 nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts We try to login to SMB, but it requires a password. Video timestamp 0:15\n1 smbclient -N -L \\\\\\\\10.10.10.63\\\\ ">
-<meta property='og:url' content='http://localhost:1313/p/jeeves/'>
+<meta property='og:url' content='https://pho3nix-jacki3.github.io/p/jeeves/'>
 <meta property='og:site_name' content='Blue Pho3nix'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='OSCP Prep' /><meta property='og:image' content='http://localhost:1313/p/jeeves/img/jeeves-icon.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='OSCP Prep' /><meta property='og:image' content='https://pho3nix-jacki3.github.io/p/jeeves/img/jeeves-icon.png' />
 <meta name="twitter:title" content="Jeeves">
 <meta name="twitter:description" content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000. Video timestamp 0:10\n1 nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports We run -sCV on the open ports.\n1 ls 1 ports=$(cat ports | grep &#39;^[0-9]&#39; | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 echo $ports 1 nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts We try to login to SMB, but it requires a password. Video timestamp 0:15\n1 smbclient -N -L \\\\\\\\10.10.10.63\\\\ "><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/p/jeeves/img/jeeves-icon.png' />
+    <meta name="twitter:image" content='https://pho3nix-jacki3.github.io/p/jeeves/img/jeeves-icon.png' />
     </head>
     <body class="
     article-page

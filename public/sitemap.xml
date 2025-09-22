@@ -2,64 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://pho3nix-jacki3.github.io/</loc>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://pho3nix-jacki3.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://pho3nix-jacki3.github.io/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/ctfs/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/ctfs/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/easy/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/easy/</loc>
   </url><url>
-    <loc>http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/</loc>
+    <loc>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</loc>
   </url><url>
-    <loc>http://localhost:1313/p/exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
+    <loc>https://pho3nix-jacki3.github.io/p/exploiting-xxe-using-external-entities-to-retrieve-files/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/file-upload/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/file-upload/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/filter-bypass/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/filter-bypass/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/hack-smarter/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/hack-smarter/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/htb/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/htb/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/java-deserialization/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/java-deserialization/</loc>
   </url><url>
-    <loc>http://localhost:1313/p/jeeves/</loc>
+    <loc>https://pho3nix-jacki3.github.io/p/jeeves/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/linux/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/medium/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/medium/</loc>
   </url><url>
-    <loc>http://localhost:1313/p/mr.-robot-ctf/</loc>
+    <loc>https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/mysql-injection/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/mysql-injection/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/oscp-prep/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/oscp-prep/</loc>
   </url><url>
-    <loc>http://localhost:1313/page/</loc>
+    <loc>https://pho3nix-jacki3.github.io/page/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/portswigger/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/portswigger/</loc>
   </url><url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>https://pho3nix-jacki3.github.io/post/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://pho3nix-jacki3.github.io/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/p/sharethepainad/</loc>
+    <loc>https://pho3nix-jacki3.github.io/p/sharethepainad/</loc>
   </url><url>
-    <loc>http://localhost:1313/p/square-ctf/</loc>
+    <loc>https://pho3nix-jacki3.github.io/p/square-ctf/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/thm/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/thm/</loc>
   </url><url>
-    <loc>http://localhost:1313/p/web-shell-upload-via-extension-blacklist-bypass/</loc>
+    <loc>https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/windows/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/xxe/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/xxe/</loc>
   </url>
 </urlset>

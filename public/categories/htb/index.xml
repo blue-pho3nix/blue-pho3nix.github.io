@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hack The Box on Blue Pho3nix</title>
-        <link>http://localhost:1313/categories/htb/</link>
+        <link>https://pho3nix-jacki3.github.io/categories/htb/</link>
         <description>Recent content in Hack The Box on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language><atom:link href="http://localhost:1313/categories/htb/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/categories/htb/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Jeeves</title>
-        <link>http://localhost:1313/p/jeeves/</link>
+        <link>https://pho3nix-jacki3.github.io/p/jeeves/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/jeeves/</guid>
-        <description>&lt;img src="http://localhost:1313/p/jeeves/img/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/intro.png&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/img/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/intro.png&#34;
 	width=&#34;961&#34;
 	height=&#34;494&#34;
 	
@@ -40,7 +40,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;nmap&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Pn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rate&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T4&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;10.10.10.63&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;oN&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ports&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/1.png&#34;
 	width=&#34;967&#34;
 	height=&#34;598&#34;
 	
@@ -77,7 +77,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ports&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/2.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/2.png&#34;
 	width=&#34;953&#34;
 	height=&#34;530&#34;
 	
@@ -97,7 +97,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;nmap&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ports&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;10.10.10.63&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sCV&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;oN&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basescripts&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/3.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/3.png&#34;
 	width=&#34;1043&#34;
 	height=&#34;839&#34;
 	
@@ -121,7 +121,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;smbclient -N -L &lt;span class=&#34;se&#34;&gt;\\\\&lt;/span&gt;10.10.10.63&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/9.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/9.png&#34;
 	width=&#34;961&#34;
 	height=&#34;122&#34;
 	

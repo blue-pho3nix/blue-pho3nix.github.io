@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Java Deserialization on Blue Pho3nix</title>
-        <link>http://localhost:1313/tags/java-deserialization/</link>
+        <link>https://pho3nix-jacki3.github.io/tags/java-deserialization/</link>
         <description>Recent content in Java Deserialization on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language><atom:link href="http://localhost:1313/tags/java-deserialization/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/tags/java-deserialization/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Exploiting Java Deserialization with Apache Commons</title>
-        <link>http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/</link>
+        <link>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
 	width=&#34;1201&#34;
 	height=&#34;603&#34;
 	
@@ -27,7 +27,7 @@
 &lt;h2 id=&#34;description&#34;&gt;
     &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Description
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/img/oqiwrja938tnthAUDIHnfsiufeb.jpg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/img/oqiwrja938tnthAUDIHnfsiufeb.jpg&#34;
 	width=&#34;1782&#34;
 	height=&#34;856&#34;
 	

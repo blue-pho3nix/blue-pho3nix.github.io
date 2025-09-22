@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Medium on Blue Pho3nix</title>
-        <link>http://localhost:1313/tags/medium/</link>
+        <link>https://pho3nix-jacki3.github.io/tags/medium/</link>
         <description>Recent content in Medium on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language><atom:link href="http://localhost:1313/tags/medium/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Exploiting Java Deserialization with Apache Commons</title>
-        <link>http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/</link>
+        <link>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Exploiting Java Deserialization with Apache Commons" /&gt;&lt;/br&gt;
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/img/8ddf90f36a578c3e.jpg&#34;
 	width=&#34;1201&#34;
 	height=&#34;603&#34;
 	
@@ -27,7 +27,7 @@
 &lt;h2 id=&#34;description&#34;&gt;
     &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Description
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/exploiting-java-deserialization-with-apache-commons/img/oqiwrja938tnthAUDIHnfsiufeb.jpg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/exploiting-java-deserialization-with-apache-commons/img/oqiwrja938tnthAUDIHnfsiufeb.jpg&#34;
 	width=&#34;1782&#34;
 	height=&#34;856&#34;
 	
@@ -45,11 +45,11 @@
         </item>
         <item>
         <title>Jeeves</title>
-        <link>http://localhost:1313/p/jeeves/</link>
+        <link>https://pho3nix-jacki3.github.io/p/jeeves/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/jeeves/</guid>
-        <description>&lt;img src="http://localhost:1313/p/jeeves/img/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/intro.png&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/jeeves/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/jeeves/img/jeeves-icon.png" alt="Featured image of post Jeeves" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/intro.png&#34;
 	width=&#34;961&#34;
 	height=&#34;494&#34;
 	
@@ -78,7 +78,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;nmap&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Pn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rate&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T4&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;10.10.10.63&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;oN&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ports&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/1.png&#34;
 	width=&#34;967&#34;
 	height=&#34;598&#34;
 	
@@ -115,7 +115,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ports&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/2.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/2.png&#34;
 	width=&#34;953&#34;
 	height=&#34;530&#34;
 	
@@ -135,7 +135,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;nmap&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ports&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;10.10.10.63&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sCV&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;oN&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basescripts&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/3.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/3.png&#34;
 	width=&#34;1043&#34;
 	height=&#34;839&#34;
 	
@@ -159,7 +159,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;smbclient -N -L &lt;span class=&#34;se&#34;&gt;\\\\&lt;/span&gt;10.10.10.63&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/jeeves/img/9.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/jeeves/img/9.png&#34;
 	width=&#34;961&#34;
 	height=&#34;122&#34;
 	
@@ -174,11 +174,11 @@
         </item>
         <item>
         <title>Mr. Robot CTF</title>
-        <link>http://localhost:1313/p/mr.-robot-ctf/</link>
+        <link>https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/mr.-robot-ctf/</guid>
-        <description>&lt;img src="http://localhost:1313/p/mr.-robot-ctf/img/mr-robot.png" alt="Featured image of post Mr. Robot CTF" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/intro.png&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/mr-robot.png" alt="Featured image of post Mr. Robot CTF" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/intro.png&#34;
 	width=&#34;1152&#34;
 	height=&#34;651&#34;
 	
@@ -205,7 +205,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir nmap &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/1.png&#34;
 	width=&#34;1065&#34;
 	height=&#34;572&#34;
 	
@@ -234,7 +234,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmap -A  -p &lt;span class=&#34;nv&#34;&gt;$ports&lt;/span&gt; -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/2.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/2.png&#34;
 	width=&#34;1204&#34;
 	height=&#34;828&#34;
 	
@@ -247,7 +247,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;We find the first key on &lt;code&gt;/robots.txt&lt;/code&gt;.
-&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/3.png&#34;
+&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/3.png&#34;
 	width=&#34;890&#34;
 	height=&#34;217&#34;
 	
@@ -259,7 +259,7 @@
 		data-flex-basis=&#34;984px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/4.png&#34;
+&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/4.png&#34;
 	width=&#34;1002&#34;
 	height=&#34;268&#34;
 	
@@ -274,11 +274,11 @@
         </item>
         <item>
         <title>ShareThePainAD</title>
-        <link>http://localhost:1313/p/sharethepainad/</link>
+        <link>https://pho3nix-jacki3.github.io/p/sharethepainad/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/sharethepainad/</guid>
-        <description>&lt;img src="http://localhost:1313/p/sharethepainad/img/hack-smarter.png" alt="Featured image of post ShareThePainAD" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/sharethepainad/img/intro.png&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/sharethepainad/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/sharethepainad/img/hack-smarter.png" alt="Featured image of post ShareThePainAD" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/sharethepainad/img/intro.png&#34;
 	width=&#34;957&#34;
 	height=&#34;534&#34;
 	
@@ -463,12 +463,12 @@
         </item>
         <item>
         <title>Square CTF</title>
-        <link>http://localhost:1313/p/square-ctf/</link>
+        <link>https://pho3nix-jacki3.github.io/p/square-ctf/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/square-ctf/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/CTFs/ctf-edit.png" alt="Featured image of post Square CTF" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/square-ctf/img/SJDKUFJA43WEKFJNanJKDB.jpg&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/square-ctf/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/CTFs/ctf-edit.png" alt="Featured image of post Square CTF" /&gt;&lt;/br&gt;
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/square-ctf/img/SJDKUFJA43WEKFJNanJKDB.jpg&#34;
 	width=&#34;1488&#34;
 	height=&#34;834&#34;
 	
@@ -483,7 +483,7 @@
 &lt;h2 id=&#34;description&#34;&gt;
     &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Description
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/square-ctf/img/tyubsfcAKJDSDHlskfna09.jpg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/square-ctf/img/tyubsfcAKJDSDHlskfna09.jpg&#34;
 	width=&#34;1523&#34;
 	height=&#34;791&#34;
 	
@@ -501,12 +501,12 @@
         </item>
         <item>
         <title>Web Shell Upload Via Extension Blacklist Bypass</title>
-        <link>http://localhost:1313/p/web-shell-upload-via-extension-blacklist-bypass/</link>
+        <link>https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/web-shell-upload-via-extension-blacklist-bypass/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/portswigger/portswigger-edit.png" alt="Featured image of post Web Shell Upload Via Extension Blacklist Bypass" /&gt;&lt;/br&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/web-shell-upload-via-extension-blacklist-bypass/img/8ddf90f36a578c3e.jpg&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/categories/portswigger/portswigger-edit.png" alt="Featured image of post Web Shell Upload Via Extension Blacklist Bypass" /&gt;&lt;/br&gt;
+&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/img/8ddf90f36a578c3e.jpg&#34;
 	width=&#34;1201&#34;
 	height=&#34;603&#34;
 	
@@ -521,7 +521,7 @@
 &lt;h2 id=&#34;description&#34;&gt;
     &lt;a href=&#34;#description&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Description
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/web-shell-upload-via-extension-blacklist-bypass/img/aid389ajdadHADUAHD3.jpg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/web-shell-upload-via-extension-blacklist-bypass/img/aid389ajdadHADUAHD3.jpg&#34;
 	width=&#34;1750&#34;
 	height=&#34;958&#34;
 	

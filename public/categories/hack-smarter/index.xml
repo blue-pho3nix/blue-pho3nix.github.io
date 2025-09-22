@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hack Smarter on Blue Pho3nix</title>
-        <link>http://localhost:1313/categories/hack-smarter/</link>
+        <link>https://pho3nix-jacki3.github.io/categories/hack-smarter/</link>
         <description>Recent content in Hack Smarter on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language><atom:link href="http://localhost:1313/categories/hack-smarter/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/categories/hack-smarter/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>ShareThePainAD</title>
-        <link>http://localhost:1313/p/sharethepainad/</link>
+        <link>https://pho3nix-jacki3.github.io/p/sharethepainad/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/sharethepainad/</guid>
-        <description>&lt;img src="http://localhost:1313/p/sharethepainad/img/hack-smarter.png" alt="Featured image of post ShareThePainAD" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/sharethepainad/img/intro.png&#34;
+        <guid>https://pho3nix-jacki3.github.io/p/sharethepainad/</guid>
+        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/sharethepainad/img/hack-smarter.png" alt="Featured image of post ShareThePainAD" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/sharethepainad/img/intro.png&#34;
 	width=&#34;957&#34;
 	height=&#34;534&#34;
 	
