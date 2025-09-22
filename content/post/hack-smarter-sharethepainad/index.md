@@ -229,7 +229,7 @@ netstat -ano | findstr /i LISTENING
 ![](img/014.png)
 
 
-Wee see alice.wonderland is the current user on MSSQL 2019
+We see alice.wonderland is the current user on MSSQL 2019.
 
 ```
 sqlcmd -S tcp:127.0.0.1,1433 -E -Q "SELECT SUSER_SNAME() AS CurrentUser, @@VERSION AS Version;"
