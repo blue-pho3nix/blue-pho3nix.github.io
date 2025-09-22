@@ -15,7 +15,7 @@ image = "img/hack-smarter.png"
 `nmap` shows SMB and WinRM are open. It also gives us the domain and FQDN.
 
 ```
-mkdir nmap && sudo nmap -Pn -p- -vv 10.0.21.103 -oN nmap/10.0.21.103-tcp-ports --min-rate 10000 && ports=$(grep '^[0-9]' nmap/10.0.21.103-tcp-ports  | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) && sudo nmap -sCV -Pn -p $ports -vv 10.0.21.103 -oA nmap/10.0.21.103-tcp-scripts-versions --min-rate 10000
+mkdir nmap && sudo nmap -Pn -p- -vv <your-box-ip> -oN nmap/tcp-ports --min-rate 10000 && ports=$(grep '^[0-9]' nmap/tcp-ports  | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) && sudo nmap -sCV -Pn -p $ports -vv <your-box-ip> -oA nmap/tcp-scripts-versions --min-rate 10000
 ```
 
 ```shell
