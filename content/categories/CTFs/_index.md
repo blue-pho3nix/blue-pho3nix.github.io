@@ -1,7 +1,7 @@
 ---
-title: CTF Walkthroughs
-slug: ctf
-image: ctf-edit.png
+title: "CTFs"
+slug: "ctf"
+image: "ctf-edit.png"
 style:
   color: "#fff"
   background-color: "#fff"

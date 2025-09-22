@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on Blue Pho3nix</title>
-        <link>https://pho3nix-jacki3.github.io/page/</link>
+        <link>http://localhost:1313/page/</link>
         <description>Recent content in Pages on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en</language><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>About</title>
-        <link>https://pho3nix-jacki3.github.io/about/</link>
+        <link>http://localhost:1313/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/about/</guid>
+        <guid>http://localhost:1313/about/</guid>
         <description>&lt;p&gt;Hello! I&amp;rsquo;m Jackie, and welcome to my blog. Here, you&amp;rsquo;ll find a collection of detailed walkthroughs designed to help you navigate the exciting world of cybersecurity challenges. I hope they help you win some CTFs and learn cool stuff! :)&lt;/p&gt;</description>
         </item>
         <item>
         <title>Categories</title>
-        <link>https://pho3nix-jacki3.github.io/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>https://pho3nix-jacki3.github.io/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Linux on Blue Pho3nix</title>
-        <link>https://pho3nix-jacki3.github.io/tags/linux/</link>
+        <link>http://localhost:1313/tags/linux/</link>
         <description>Recent content in Linux on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en</language><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Mr. Robot CTF</title>
-        <link>https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/</link>
+        <link>http://localhost:1313/p/mr.-robot-ctf/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/</guid>
-        <description>&lt;img src="https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/mr-robot.png" alt="Featured image of post Mr. Robot CTF" /&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/intro.png&#34;
+        <guid>http://localhost:1313/p/mr.-robot-ctf/</guid>
+        <description>&lt;img src="http://localhost:1313/p/mr.-robot-ctf/img/mr-robot.png" alt="Featured image of post Mr. Robot CTF" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/intro.png&#34;
 	width=&#34;1152&#34;
 	height=&#34;651&#34;
 	
@@ -38,7 +38,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir nmap &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/1.png&#34;
 	width=&#34;1065&#34;
 	height=&#34;572&#34;
 	
@@ -67,7 +67,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmap -A  -p &lt;span class=&#34;nv&#34;&gt;$ports&lt;/span&gt; -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/2.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/2.png&#34;
 	width=&#34;1204&#34;
 	height=&#34;828&#34;
 	
@@ -80,7 +80,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;We find the first key on &lt;code&gt;/robots.txt&lt;/code&gt;.
-&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/3.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/3.png&#34;
 	width=&#34;890&#34;
 	height=&#34;217&#34;
 	
@@ -92,7 +92,7 @@
 		data-flex-basis=&#34;984px&#34;
 	
 &gt;
-&lt;img src=&#34;https://pho3nix-jacki3.github.io/p/mr.-robot-ctf/img/4.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/mr.-robot-ctf/img/4.png&#34;
 	width=&#34;1002&#34;
 	height=&#34;268&#34;
 	

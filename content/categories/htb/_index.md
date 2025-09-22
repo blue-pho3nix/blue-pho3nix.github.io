@@ -1,5 +1,5 @@
 ---
-title: "Hack The Box Walkthroughs"
+title: "Hack The Box"
 slug: "htb"
 image: "htb-edit-large.png"
 style:

