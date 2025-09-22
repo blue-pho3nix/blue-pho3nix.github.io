@@ -108,7 +108,7 @@ echo '<your-box-ip> hack.smarter DC01.hack.smarter' | sudo tee -a /etc/hosts
 ![](img/1.png)
 
 
-We have anonymous read and write access to the SMB share named 'Share'.
+We have anonymous read and write access on the SMB share named 'Share'.
 
 ```
 nxc smb <your-box-ip> -u 'anonymous' -p '' -M spider_plus -o DOWNLOAD_FLAG=True
@@ -161,6 +161,9 @@ lls
 ```
 ```
 put Raises_Q4.lnk
+```
+```
+ls
 ```
 
 ![](img/6.png)
