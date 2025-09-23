@@ -11,7 +11,7 @@
     --body-background: #ffff;
     --body-text-color: #080808;
 
-    --accent-color: #018663;
+    --accent-color: #010386;
     --accent-color-text: #202020;
     --accent-color-darker: #1ffad5;
 
@@ -24,14 +24,14 @@
 
     &[data-scheme="dark"] {
 
-        --accent-color: #03fdbf;
-        --accent-color-text: #0e0118;
+        --accent-color: #85c4ff;
+        --accent-color-text: #010d27;
 
         --body-text-color: #E4E1E6;
-        --body-background: #1B1B1F;  
+        --body-background: #1a2229;  
 
 
-        --accent-color-darker: #a6fde7ee;
+        --accent-color-darker: #97ccfa;
         --scrollbar-thumb: hsla(240, 5%, 58%, 0.146);
         --scrollbar-track: var(--body-background);
     }
@@ -52,13 +52,13 @@
 *   Card style
 */
 :root {
-     --card-background:  #0c0e15e1; 
+    --card-background:  #0c0e15e1; 
     --card-text-color-main: #C8C6CA;
 
     --card-background-selected: #FBF8FD;
     --card-text-color-secondary: #1B1B1F;
 
-    --card-text-color-tertiary:  #93eed8;
+    --card-text-color-tertiary:  #97ccfa;
     --card-separator-color: #90909a97;
 
     --card-border-radius: 10px;
@@ -80,7 +80,7 @@
     }
 
     &[data-scheme="dark"] {
-        --card-background:  #0c0e15b8; 
+        --card-background:  #0c0e15d7; 
         --card-text-color-main: #C8C6CA;
 
 
@@ -158,7 +158,7 @@
         --blockquote-background-color: var(--card-background);
 
         --code-background-color: #00020c     !important; 
-        --code-text-color:  #93eed8 !important;
+        --code-text-color:  #85c4ff !important;
         // --code-background-color: #0C0E15!important;
         // --code-text-color: #DDE1FF !important;
 
@@ -166,16 +166,16 @@
         --pre-text-color: var(--code-text-color) !important;
 
         // chroma
-        --k-colors: #99ebd7;
-        --n-colors: #99ebd7;
-        --b-colors: #99ebd7;
-        --p-colors: #99ebd7;
-        --s-colors: #99ebd7;
-        --v-colors: #99ebd7;
-        --o-colors: #99ebd7;
-        --deleted-color: #99ebd7;
-        --comment-color: #99ebd7;
-        --numbers-color: #99ebd7;
+        --k-colors: #97ccfa;
+        --n-colors: #97ccfa;
+        --b-colors: #97ccfa;
+        --p-colors: #97ccfa;
+        --s-colors: #97ccfa;
+        --v-colors: #97ccfa;
+        --o-colors: #97ccfa;
+        --deleted-color: #97ccfa;
+        --comment-color: #97ccfa;
+        --numbers-color: #97ccfa;
 
 
     }

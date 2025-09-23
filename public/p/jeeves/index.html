@@ -5,7 +5,7 @@
 <title>Jeeves</title>
 
 <link rel='canonical' href='https://pho3nix-jacki3.github.io/p/jeeves/'> 
-<link rel="stylesheet" href="/scss/style.min.73d67f94be34270fd4ee1130468e40f2370e22b1e55fbec1996f48d8851d96b3.css" />
+<link rel="stylesheet" href="/scss/style.min.701b52c28cdc5f2e1b22db30c455b4720bd4fe8bba5c32b12cb98f1d64a431b6.css" />
 <meta property='og:title' content="Jeeves">
 <meta property='og:description' content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000. Video timestamp 0:10\n1 nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports We run -sCV on the open ports.\n1 ls 1 ports=$(cat ports | grep &#39;^[0-9]&#39; | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 echo $ports 1 nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts We try to login to SMB, but it requires a password. Video timestamp 0:15\n1 smbclient -N -L \\\\\\\\10.10.10.63\\\\ ">
 <meta property='og:url' content='https://pho3nix-jacki3.github.io/p/jeeves/'>
