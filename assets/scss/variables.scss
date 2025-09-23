@@ -24,14 +24,14 @@
 
     &[data-scheme="dark"] {
 
-        --accent-color: #00c48f;
+        --accent-color: #03fdbf;
         --accent-color-text: #0e0118;
 
         --body-text-color: #E4E1E6;
         --body-background: #1B1B1F;  
 
 
-        --accent-color-darker: #00e3bd;
+        --accent-color-darker: #a6fde7ee;
         --scrollbar-thumb: hsla(240, 5%, 58%, 0.146);
         --scrollbar-track: var(--body-background);
     }
@@ -87,7 +87,7 @@
         --card-background-selected: #45464F;
         --card-text-color-secondary:  #c6c5d0;
 
-        --card-text-color-tertiary: #93eed8;
+        --card-text-color-tertiary: #cdfdf1;
         --card-separator-color: #90909a97;
     }
 }
@@ -166,16 +166,16 @@
         --pre-text-color: var(--code-text-color) !important;
 
         // chroma
-        --k-colors: #93eed8;
-        --n-colors: #93eed8;
-        --b-colors: #93eed8;
-        --p-colors: #93eed8;
-        --s-colors: #93eed8;
-        --v-colors: #93eed8;
-        --o-colors: #93eed8;
-        --deleted-color: #93eed8;
-        --comment-color: #93eed8;
-        --numbers-color: #93eed8;
+        --k-colors: #99ebd7;
+        --n-colors: #99ebd7;
+        --b-colors: #99ebd7;
+        --p-colors: #99ebd7;
+        --s-colors: #99ebd7;
+        --v-colors: #99ebd7;
+        --o-colors: #99ebd7;
+        --deleted-color: #99ebd7;
+        --comment-color: #99ebd7;
+        --numbers-color: #99ebd7;
 
 
     }
