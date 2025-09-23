@@ -5,7 +5,7 @@
 <title>Square CTF</title>
 
 <link rel='canonical' href='https://pho3nix-jacki3.github.io/p/square-ctf/'> 
-<link rel="stylesheet" href="/scss/style.min.7e25752da02be3d43ff6eb2384c8a9c2c26ecf308b9cb3b7bd8c7ae7562e6e6e.css" />
+<link rel="stylesheet" href="/scss/style.min.74689d7cddcb788e65b245a0fe9b417af35716f1d7898b7fef751d9facb9c653.css" />
 <meta property='og:title' content="Square CTF">
 <meta property='og:description' content="\r#\rDescription\rOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?\nSquareCTF Going In Blind is the second of two MySQL injection challenges. The\u00a0first challenge\u00a0was a MySQL injection to bypass log in, where we logged in using\u00a0username=ahanlon'-- -\u00a0to get the flag.\nFor the Square CTF Going In Blind challenge, using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.\n">
 <meta property='og:url' content='https://pho3nix-jacki3.github.io/p/square-ctf/'>
@@ -21,9 +21,7 @@
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "dark");
-            }
+            localStorage.setItem(colorSchemeKey, "dark");
         })();
     </script><script>
     (function() {
@@ -158,26 +156,6 @@
         <li class="menu-bottom-section">
             <ol class="menu">
 
-                
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>Dark Mode</span>
-                    </li>
                 
             </ol>
         </li>

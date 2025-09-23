@@ -8,12 +8,12 @@
         --main-top-padding: 50px;
     }
 
-    --body-background: #dadada;
+    --body-background: #ffff;
     --body-text-color: #080808;
 
-    --accent-color:  #004AF2;
-    --accent-color-text: #FFF;
-    --accent-color-darker: #0034da;
+    --accent-color: #018663;
+    --accent-color-text: #202020;
+    --accent-color-darker: #1ffad5;
 
     --tag-border-radius: 4px;
 
@@ -52,14 +52,14 @@
 *   Card style
 */
 :root {
-    --card-background: #FBF8FD;
-    --card-text-color-main: hsla(240, 7%, 11%, 0.839);
+     --card-background:  #0c0e15e1; 
+    --card-text-color-main: #C8C6CA;
 
     --card-background-selected: #FBF8FD;
     --card-text-color-secondary: #1B1B1F;
 
-    --card-text-color-tertiary:  #1e48f2;
-    --card-separator-color: hsla(240, 4%, 48%, 0.441);
+    --card-text-color-tertiary:  #93eed8;
+    --card-separator-color: #90909a97;
 
     --card-border-radius: 10px;
 
@@ -119,8 +119,8 @@
     --link-background-opacity: 0.5;
     --link-background-opacity-hover: 0.7;
 
-    --code-background-color: #dbdbdb !important;
-    --code-text-color: #0026cf !important;
+    --code-background-color: #00020c     !important; 
+    --code-text-color:  #93eed8 !important;
     
     --pre-background-color: var(--card-background) !important;
     --pre-text-color: var(--code-text-color) !important;
@@ -132,18 +132,20 @@
 
             // chroma
         // chroma
-        --k-colors: #0026cf;
-        --n-colors: #0026cf;
-        --b-colors: #0026cf;
-        --p-colors: #0026cf;
-        --s-colors: #0026cf;
-        --v-colors: #0026cf;
-        --o-colors: #0026cf;
-        --deleted-color: #0026cf;
-        --comment-color: #0026cf;
-        --numbers-color: #0026cf;
-    &[data-scheme="light"] .chroma .err {
-        color: #0026cf !important;
+        --k-colors: #93eed8;
+        --n-colors: #93eed8;
+        --b-colors: #93eed8;
+        --p-colors: #93eed8;
+        --s-colors: #93eed8;
+        --v-colors: #93eed8;
+        --o-colors: #93eed8;
+        --deleted-color: #93eed8;
+        --comment-color: #93eed8;
+        --numbers-color: #93eed8;
+
+
+    &[data-scheme="dark"] .chroma .err {
+        color: #93eed8 !important;
     }
     &[data-scheme="dark"] .chroma .err {
         color: #93eed8 !important;

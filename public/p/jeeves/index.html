@@ -5,7 +5,7 @@
 <title>Jeeves</title>
 
 <link rel='canonical' href='https://pho3nix-jacki3.github.io/p/jeeves/'> 
-<link rel="stylesheet" href="/scss/style.min.7e25752da02be3d43ff6eb2384c8a9c2c26ecf308b9cb3b7bd8c7ae7562e6e6e.css" />
+<link rel="stylesheet" href="/scss/style.min.74689d7cddcb788e65b245a0fe9b417af35716f1d7898b7fef751d9facb9c653.css" />
 <meta property='og:title' content="Jeeves">
 <meta property='og:description' content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80, 135,445, and 50000. Video timestamp 0:10\n1 nmap -Pn -p- --min-rate=1000 -T4 10.10.10.63 -vv -oN ports We run -sCV on the open ports.\n1 ls 1 ports=$(cat ports | grep &#39;^[0-9]&#39; | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 echo $ports 1 nmap -p$ports 10.10.10.63 -sCV -oN version-basescripts We try to login to SMB, but it requires a password. Video timestamp 0:15\n1 smbclient -N -L \\\\\\\\10.10.10.63\\\\ ">
 <meta property='og:url' content='https://pho3nix-jacki3.github.io/p/jeeves/'>
@@ -21,9 +21,7 @@
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "dark");
-            }
+            localStorage.setItem(colorSchemeKey, "dark");
         })();
     </script><script>
     (function() {
@@ -158,26 +156,6 @@
         <li class="menu-bottom-section">
             <ol class="menu">
 
-                
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>Dark Mode</span>
-                    </li>
                 
             </ol>
         </li>
