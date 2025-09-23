@@ -27,11 +27,10 @@
         --accent-color: #85c4ff;
         --accent-color-text: #010d27;
 
-        --body-text-color: #E4E1E6;
-        --body-background: #1a2229;  
+        --body-text-color: #f2eef5;
+        --body-background: #11131d;
 
-
-        --accent-color-darker: #97ccfa;
+        --accent-color-darker: #90c9fa;
         --scrollbar-thumb: hsla(240, 5%, 58%, 0.146);
         --scrollbar-track: var(--body-background);
     }
@@ -58,7 +57,7 @@
     --card-background-selected: #FBF8FD;
     --card-text-color-secondary: #1B1B1F;
 
-    --card-text-color-tertiary:  #97ccfa;
+    --card-text-color-tertiary:  #a4d2fa;
     --card-separator-color: #90909a97;
 
     --card-border-radius: 10px;
@@ -80,14 +79,14 @@
     }
 
     &[data-scheme="dark"] {
-        --card-background:  #0c0e15d7; 
-        --card-text-color-main: #C8C6CA;
+        --card-background:  #090a0fe0; 
+        --card-text-color-main: #e7e7e7;
 
 
         --card-background-selected: #45464F;
         --card-text-color-secondary:  #c6c5d0;
 
-        --card-text-color-tertiary: #cdfdf1;
+        --card-text-color-tertiary: #a4d2fa;
         --card-separator-color: #90909a97;
     }
 }
@@ -166,16 +165,16 @@
         --pre-text-color: var(--code-text-color) !important;
 
         // chroma
-        --k-colors: #97ccfa;
-        --n-colors: #97ccfa;
-        --b-colors: #97ccfa;
-        --p-colors: #97ccfa;
-        --s-colors: #97ccfa;
-        --v-colors: #97ccfa;
-        --o-colors: #97ccfa;
-        --deleted-color: #97ccfa;
-        --comment-color: #97ccfa;
-        --numbers-color: #97ccfa;
+        --k-colors: #a4d2fa;
+        --n-colors: #a4d2fa;
+        --b-colors: #a4d2fa;
+        --p-colors: #a4d2fa;
+        --s-colors: #a4d2fa;
+        --v-colors: #a4d2fa;
+        --o-colors: #a4d2fa;
+        --deleted-color: #a4d2fa;
+        --comment-color: #a4d2fa;
+        --numbers-color: #a4d2fa;
 
 
     }
