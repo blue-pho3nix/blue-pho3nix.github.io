@@ -774,7 +774,23 @@
     <a href="#privilege-escalation" class="header-anchor">#</a>
     Privilege Escalation
 </h2><p>We don&rsquo;t have any special privileges, but we find a folder called &lsquo;SQL2019&rsquo; in the C:\ directory.</p>
-<p><img src="/p/sharethepainad/img/025.png"
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">whoami /priv
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dir c:\
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/025.png"
 	width="997"
 	height="260"
 	
@@ -871,7 +887,15 @@
 ></p>
 <p>We have <code>SeImpersonatePrivilege</code> privileges so we can use <a class="link" href="https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe"  target="_blank" rel="noopener"
     >PrintSpoofer</a> to change the Administrator&rsquo;s password.</p>
-<p><img src="/p/sharethepainad/img/018.png"
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlcmd -S tcp:127.0.0.1,1433 -E -Q &#34;EXEC xp_cmdshell &#39;whoami /priv&#39;;&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/sharethepainad/img/018.png"
 	width="1373"
 	height="555"
 	

