@@ -102,7 +102,7 @@ Host script results:
 We add the domain and FQDN to `/etc/hosts`.
 
 ```bash
-echo '<your-box-ip> hack.smarter DC01.hack.smarter' | sudo tee -a /etc/hosts
+echo '<your-box-ip> DC01.hack.smarter hack.smarter' | sudo tee -a /etc/hosts
 ```
 
 ![](img/1.png)
