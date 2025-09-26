@@ -2,7 +2,7 @@
 author = "Blue Pho3nix"
 title = "ShareThePainAD"
 categories = ["hack-smarter"]
-tags = [ "Medium", "Windows", "OSCP Prep" ]
+tags = [ "Medium", "Active Directory", "OSCP Prep" ]
 image = "img/hack-smarter.png"
 +++
 

