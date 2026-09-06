@@ -5,7 +5,7 @@
         <link>https://pho3nix-jacki3.github.io/post/</link>
         <description>Recent content in Posts on Blue Pho3nix</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language><atom:link href="https://pho3nix-jacki3.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en-us</language><atom:link href="https://pho3nix-jacki3.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Arasaka</title>
         <link>https://pho3nix-jacki3.github.io/p/arasaka/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -274,7 +274,8 @@
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://portswigger.net/web-security/xxe/lab-exploiting-xxe-to-retrieve-files&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;This lab&lt;/a&gt; has a &amp;ldquo;Check stock&amp;rdquo; feature that parses XML input and returns any unexpected values in the response.&lt;/br&gt; To solve the lab, inject an XML external entity to retrieve the contents of the &lt;code&gt;/etc/passwd&lt;/code&gt; file.&lt;/p&gt;&lt;/blockquote&gt;
+    &gt;This lab&lt;/a&gt; has a &amp;ldquo;Check stock&amp;rdquo; feature that parses XML input and returns any unexpected values in the response.&lt;/br&gt; To solve the lab, inject an XML external entity to retrieve the contents of the &lt;code&gt;/etc/passwd&lt;/code&gt; file.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h1 id=&#34;solution&#34;&gt;
     &lt;a href=&#34;#solution&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Solution

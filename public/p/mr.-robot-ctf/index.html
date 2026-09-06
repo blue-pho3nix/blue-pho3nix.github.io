@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\n#\rSolution\r#\rFinding the vulnerability\rnmap shows open ports 80 and 443.\n1 mkdir nmap &amp;&amp; nmap -p- -Pn -vv 10.10.231.235 -oN nmap/10.10.231.235-ports We run -A on the open ports.\n1 ports=$(grep &#39;^[0-9]&#39; nmap/10.10.231.235-ports | cut -d &#39;/&#39; -f 1 | tr &#39;\\n&#39; &#39;,&#39; | sed s/,$//) 1 nmap -A -p $ports -vv 10.10.231.235 -oA nmap/10.10.231.235-aggressive-scan We find the first key on /robots.txt. ">
 <title>Mr. Robot CTF</title>
@@ -55,7 +55,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_2f3062cb4e01dc1b.png" width="300"
+                        <img src="/img/avatar_hu_d8d93812fb51dbf4.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -796,7 +796,7 @@
         
         
             <div class="article-image">
-                <img src="/p/jeeves/img/jeeves-icon.aa783c41141fe2a0afd5c54c1c709ac6_hu_16ffec5202558f5c.png" 
+                <img src="/p/jeeves/img/jeeves-icon.aa783c41141fe2a0afd5c54c1c709ac6_hu_901036b4364e3ec6.png" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -820,7 +820,7 @@
         
         
             <div class="article-image">
-                <img src="/p/sharethepainad/img/hack-smarter.2f83e1cfce06ec9b18d7cfa9ffca014f_hu_d2911f9a9feded44.png" 
+                <img src="/p/sharethepainad/img/hack-smarter.2f83e1cfce06ec9b18d7cfa9ffca014f_hu_e583c4dd9bbf1c31.png" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -853,7 +853,7 @@
         
             2024 - 
         
-        2025 Blue Pho3nix
+        2026 Blue Pho3nix
     </section>
     
     <section class="powerby">
