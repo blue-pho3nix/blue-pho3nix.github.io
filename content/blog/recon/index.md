@@ -1,5 +1,6 @@
 ---
 title: "Recon"
+description: "Picked your target? Learn basic recon… find assets… We'll find apex domains… subdomains… and grab screenshots…"
 draft: false
 hideMeta: false
 comments: false
@@ -13,9 +14,6 @@ cover:
   alt: "Cover Image Alt Text"
   relative: false
 ---
-
-Picked your target? Learn basic recon... find assets... We'll find apex domains... subdomains... and grab screenshots...
-
 
 # 1. Asset Discovery: Find Apex Domains
 

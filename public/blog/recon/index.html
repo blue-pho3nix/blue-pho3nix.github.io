@@ -7,31 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Recon | Blue Pho3nix</title>
 <meta name="keywords" content="Bug Bounty">
-<meta name="description" content="Picked your target? Learn basic recon&hellip; find assets&hellip; We&rsquo;ll find apex domains&hellip; subdomains&hellip; and grab screenshots&hellip;
-1. Asset Discovery: Find Apex Domains
-
-Whois or DNSChecker
-Get Your Target&rsquo;s Organization Name&hellip;
-
-
-   Whois
-
-Example: For IBM
-Whois works: 
-   https://www.whois.com/whois/ibm.com
-
-
-
-   DNSChecker
-
-Example: For Uber
-DNSChecker works: 
-   https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&rtype=ALL&dns=google
-
-
-
-ASNs &#43; IP Ranges
-Get your target&rsquo;s Autonomous System Numbers (ASNs) and/or IP ranges&hellip;">
+<meta name="description" content="Picked your target? Learn basic recon… find assets… We&#39;ll find apex domains… subdomains… and grab screenshots…">
 <meta name="author" content="">
 <link rel="canonical" href="https://pho3nix-jacki3.github.io/blog/recon/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.04bd17960a2bc575a4ef69e8a590e423e99596bfec605569ce7a76db5975bdbf.css" integrity="sha256-BL0XlgorxXWk72nopZDkI&#43;mVlr/sYFVpznp221l1vb8=" rel="preload stylesheet" as="style">
@@ -91,9 +67,7 @@ Get your target&rsquo;s Autonomous System Numbers (ASNs) and/or IP ranges&hellip
 </script><meta property="og:url" content="https://pho3nix-jacki3.github.io/blog/recon/">
   <meta property="og:site_name" content="Blue Pho3nix">
   <meta property="og:title" content="Recon">
-  <meta property="og:description" content="Picked your target? Learn basic recon… find assets… We’ll find apex domains… subdomains… and grab screenshots…
-1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target’s Organization Name…
-WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheckerExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&amp;rtype=ALL&amp;dns=googleASNs &#43; IP Ranges Get your target’s Autonomous System Numbers (ASNs) and/or IP ranges…">
+  <meta property="og:description" content="Picked your target? Learn basic recon… find assets… We&#39;ll find apex domains… subdomains… and grab screenshots…">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
@@ -102,9 +76,7 @@ WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheck
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://pho3nix-jacki3.github.io/images/recon-header.png">
   <meta name="twitter:title" content="Recon">
-  <meta name="twitter:description" content="Picked your target? Learn basic recon… find assets… We’ll find apex domains… subdomains… and grab screenshots…
-1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target’s Organization Name…
-WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheckerExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&amp;rtype=ALL&amp;dns=googleASNs &#43; IP Ranges Get your target’s Autonomous System Numbers (ASNs) and/or IP ranges…">
+  <meta name="twitter:description" content="Picked your target? Learn basic recon… find assets… We&#39;ll find apex domains… subdomains… and grab screenshots…">
 
 
 <script type="application/ld+json">
@@ -133,12 +105,12 @@ WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheck
   "@type": "BlogPosting",
   "headline": "Recon",
   "name": "Recon",
-  "description": "Picked your target? Learn basic recon\u0026hellip; find assets\u0026hellip; We\u0026rsquo;ll find apex domains\u0026hellip; subdomains\u0026hellip; and grab screenshots\u0026hellip;\n1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target\u0026rsquo;s Organization Name\u0026hellip;\nWhois\rExample: For IBM Whois works: https://www.whois.com/whois/ibm.com\rDNSChecker\rExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com\u0026rtype=ALL\u0026dns=google\rASNs + IP Ranges Get your target\u0026rsquo;s Autonomous System Numbers (ASNs) and/or IP ranges\u0026hellip;\n",
+  "description": "Picked your target? Learn basic recon… find assets… We'll find apex domains… subdomains… and grab screenshots…",
   "keywords": [
     "Bug Bounty"
   ],
-  "articleBody": "Picked your target? Learn basic recon… find assets… We’ll find apex domains… subdomains… and grab screenshots…\n1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target’s Organization Name…\nWhois\rExample: For IBM Whois works: https://www.whois.com/whois/ibm.com\rDNSChecker\rExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com\u0026rtype=ALL\u0026dns=google\rASNs + IP Ranges Get your target’s Autonomous System Numbers (ASNs) and/or IP ranges…\nYou can use the data scraper chrome extension\rto copy the IPs and ASNs.\rhttps://bgp.he.net/\rSearch for organization’s names. There may be multiple names. Save the ASN numbers. Click on the ASN# -\u003e Prefixes v4 to get the IP ranges and save them to a ips.txt file. Asrank\rSearch for organization names. There may be multiple names. Save the ASN number. Go to https://bgp.he.net/\rto get the IPv4 ranges and save them to a ips.txt file. You can use org2ip-asn\rinstead, but you might miss some ASNs or IP ranges.\rArin\rand Ripe\rSearch for organization names. Tere may be multiple names. Save the IP ranges as CIDR (Example: 66.90.225.72/29) to a ips.txt file. Caduceus Use Caduceus to get subdomains and apex domains…\nInstall Caduceus\rsudo apt update \u0026\u0026 sudo apt install -y gcc golang CGO_ENABLED=1 go install github.com/g0ldencybersec/Caduceus/cmd/caduceus@latest Add the following path to the end of your .zshrc or .bashrc\nexport PATH=$HOME/go/bin:$PATH Restart your shell: source ~/.zshrc or source ~/.bashrc.\nCat your IP text file and run it to Caduceus\ncat ips.txt | caduceus | tee caduceus.txt Install unfurl\rgo install github.com/tomnomnom/unfurl@latest Get the apex domains from your Caduceus output.\ncat caduceus.txt | unfurl -u apexes | tee caduceus-apex-domains.txt Check your apex domains with my vibe coded python script\r, replacing with your target’s organization (example: International Business Machines Corporation).\nNote: My script isn’t perfect. Feel free to reach out on Discord or create an issue if anything comes up.\rwget https://raw.githubusercontent.com/blue-pho3nix/scripts/refs/heads/main/whois_check.py python whois_check.py --org \"\" -l caduceus-apex-domains.txt -o valid-caduceus-apex-domains.txt Whoxy Use Whoxy to get Apex Domains…\nBuy Reverse Whois API Queries\r. Note: 1,000 for $10 is fine for now.\rGet Apex domains, replacing ",
-  "wordCount" : "846",
+  "articleBody": "1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target’s Organization Name…\nWhois\rExample: For IBM Whois works: https://www.whois.com/whois/ibm.com\rDNSChecker\rExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com\u0026rtype=ALL\u0026dns=google\rASNs + IP Ranges Get your target’s Autonomous System Numbers (ASNs) and/or IP ranges…\nYou can use the data scraper chrome extension\rto copy the IPs and ASNs.\rhttps://bgp.he.net/\rSearch for organization’s names. There may be multiple names. Save the ASN numbers. Click on the ASN# -\u003e Prefixes v4 to get the IP ranges and save them to a ips.txt file. Asrank\rSearch for organization names. There may be multiple names. Save the ASN number. Go to https://bgp.he.net/\rto get the IPv4 ranges and save them to a ips.txt file. You can use org2ip-asn\rinstead, but you might miss some ASNs or IP ranges.\rArin\rand Ripe\rSearch for organization names. Tere may be multiple names. Save the IP ranges as CIDR (Example: 66.90.225.72/29) to a ips.txt file. Caduceus Use Caduceus to get subdomains and apex domains…\nInstall Caduceus\rsudo apt update \u0026\u0026 sudo apt install -y gcc golang CGO_ENABLED=1 go install github.com/g0ldencybersec/Caduceus/cmd/caduceus@latest Add the following path to the end of your .zshrc or .bashrc\nexport PATH=$HOME/go/bin:$PATH Restart your shell: source ~/.zshrc or source ~/.bashrc.\nCat your IP text file and run it to Caduceus\ncat ips.txt | caduceus | tee caduceus.txt Install unfurl\rgo install github.com/tomnomnom/unfurl@latest Get the apex domains from your Caduceus output.\ncat caduceus.txt | unfurl -u apexes | tee caduceus-apex-domains.txt Check your apex domains with my vibe coded python script\r, replacing with your target’s organization (example: International Business Machines Corporation).\nNote: My script isn’t perfect. Feel free to reach out on Discord or create an issue if anything comes up.\rwget https://raw.githubusercontent.com/blue-pho3nix/scripts/refs/heads/main/whois_check.py python whois_check.py --org \"\" -l caduceus-apex-domains.txt -o valid-caduceus-apex-domains.txt Whoxy Use Whoxy to get Apex Domains…\nBuy Reverse Whois API Queries\r. Note: 1,000 for $10 is fine for now.\rGet Apex domains, replacing ",
+  "wordCount" : "830",
   "inLanguage": "en",
   "image":"https://pho3nix-jacki3.github.io/images/recon-header.png","datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -212,6 +184,9 @@ WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheck
     <h1 class="post-title entry-hint-parent">
       Recon
     </h1>
+    <div class="post-description">
+      Picked your target? Learn basic recon… find assets… We&#39;ll find apex domains… subdomains… and grab screenshots…
+    </div>
     <div class="post-meta">
 
 
@@ -222,8 +197,7 @@ WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheck
         <img loading="eager" src="https://pho3nix-jacki3.github.io/images/recon-header.png" alt="Cover Image Alt Text">
         
 </figure>
-  <div class="post-content md-content"><p>Picked your target? Learn basic recon&hellip; find assets&hellip; We&rsquo;ll find apex domains&hellip; subdomains&hellip; and grab screenshots&hellip;</p>
-<h1 id="1-asset-discovery-find-apex-domains">1. Asset Discovery: Find Apex Domains<a hidden class="anchor" aria-hidden="true" href="#1-asset-discovery-find-apex-domains">#</a></h1>
+  <div class="post-content md-content"><h1 id="1-asset-discovery-find-apex-domains">1. Asset Discovery: Find Apex Domains<a hidden class="anchor" aria-hidden="true" href="#1-asset-discovery-find-apex-domains">#</a></h1>
 <hr>
 <h2 id="whois-or-dnschecker">Whois or DNSChecker<a hidden class="anchor" aria-hidden="true" href="#whois-or-dnschecker">#</a></h2>
 <p>Get Your Target&rsquo;s Organization Name&hellip;</p>
