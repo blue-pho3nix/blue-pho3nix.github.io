@@ -1,0 +1,51 @@
+baseURL: https://pho3nix-jacki3.github.io
+locale: en-us
+title: Blue Pho3nix
+theme: ["PaperMod"]
+params:
+  ShowBreadCrumbs: false
+  assets:
+    favicon: "/images/favicon.ico"
+    favicon16x16: "/images/favicon-16x16.png"
+    favicon32x32: "/images/favicon-32x32.png"
+    apple_touch_icon: "/images/apple-touch-icon.png"
+  defaultTheme: auto
+  homeInfoParams:
+    Title: General Pentester. Wannabe Bug Hunter.
+    Content: Walkthroughs, Discord, and Fun?
+  socialIcons:
+    - name: "Discord"
+      url: "https://discord.gg/FrftA7xarw"
+    - name: "GitHub"
+      url: "https://github.com/blue-pho3nix"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/jackie-friedberg"
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about
+      weight: 10
+    - identifier: posts
+      name: Blog
+      url: /blog/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30

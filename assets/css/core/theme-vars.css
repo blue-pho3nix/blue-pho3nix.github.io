@@ -1,0 +1,42 @@
+:root {
+  --gap: 24px;
+  --content-gap: 20px;
+  --nav-width: 1024px;
+  --main-width: 720px;
+  --header-height: 60px;
+  --footer-height: 60px;
+  --radius: 8px;
+  --theme: rgb(239, 239, 239); /* cool off-white */
+  --entry: rgb(255, 255, 255); /* cards stay pure white */
+  --primary: rgb(11, 13, 28); /* #0b0d1c banner navy as ink */
+  --secondary: rgb(96, 102, 134); /* muted indigo grey */
+  --tertiary: rgb(210, 214, 232); /* light indigo tint */
+  --content: rgb(31, 34, 52); /* body text */
+  --code-block-bg: rgb(11, 13, 28); /* banner navy */
+  --code-bg: rgb(238, 240, 248);
+  --border: rgb(226, 229, 240);
+  --accent: rgb(255, 0, 144); /* #ff0090 pink */
+  --accent-2: rgb(91, 124, 255); /* #5b7cff blue */
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --theme: rgb(11, 13, 28); /* #0b0d1c banner base */
+  --entry: rgb(20, 23, 44); /* card, one step lighter */
+  --primary: rgb(243, 242, 242); /* #f3f2f2 headline white */
+  --secondary: rgb(155, 160, 190); /* muted cool grey */
+  --tertiary: rgb(46, 64, 170); /* indigo glow, solid */
+  --content: rgb(200, 202, 214); /* body text */
+  --code-block-bg: rgb(16, 19, 36);
+  --code-bg: rgb(28, 32, 58);
+  --border: rgb(38, 43, 72);
+  color-scheme: dark;
+}
+
+.list {
+  background: var(--code-bg);
+}
+
+[data-theme="dark"] .list {
+  background: var(--theme);
+}

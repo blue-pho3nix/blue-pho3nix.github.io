@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bug Bounty on Blue Pho3nix</title>
+    <link>https://pho3nix-jacki3.github.io/categories/bug-bounty/</link>
+    <description>Recent content in Bug Bounty on Blue Pho3nix</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://pho3nix-jacki3.github.io/categories/bug-bounty/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recon</title>
+      <link>https://pho3nix-jacki3.github.io/blog/recon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://pho3nix-jacki3.github.io/blog/recon/</guid>
+      <description>&lt;p&gt;Picked your target? Learn basic recon&amp;hellip; find assets&amp;hellip; We&amp;rsquo;ll find apex domains&amp;hellip; subdomains&amp;hellip; and grab screenshots&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;1-asset-discovery-find-apex-domains&#34;&gt;1. Asset Discovery: Find Apex Domains&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;whois-or-dnschecker&#34;&gt;Whois or DNSChecker&lt;/h2&gt;
+&lt;p&gt;Get Your Target&amp;rsquo;s Organization Name&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;whois&#34;&gt;&lt;a href=&#34;https://www.whois.com/whois&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+   Whois
+&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;example-for-ibm&#34;&gt;Example: For IBM&lt;/h4&gt;
+&lt;p&gt;Whois works: &lt;a href=&#34;https://www.whois.com/whois/ibm.com&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+   https://www.whois.com/whois/ibm.com
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://pho3nix-jacki3.github.io/blog/recon/image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;dnschecker&#34;&gt;&lt;a href=&#34;https://dnschecker.org/all-dns-records-of-domain.php&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+   DNSChecker
+&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;example-for-uber&#34;&gt;Example: For Uber&lt;/h4&gt;
+&lt;p&gt;DNSChecker works: &lt;a href=&#34;https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&amp;amp;rtype=ALL&amp;amp;dns=google&#34;
+   
+    target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+   https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&amp;rtype=ALL&amp;dns=google
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://pho3nix-jacki3.github.io/blog/recon/image-3.png&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;asns--ip-ranges&#34;&gt;ASNs + IP Ranges&lt;/h2&gt;
+&lt;p&gt;Get your target&amp;rsquo;s Autonomous System Numbers (ASNs) and/or IP ranges&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

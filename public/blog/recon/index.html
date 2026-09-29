@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Recon | Blue Pho3nix</title>
+<meta name="keywords" content="Bug Bounty">
+<meta name="description" content="Picked your target? Learn basic recon&hellip; find assets&hellip; We&rsquo;ll find apex domains&hellip; subdomains&hellip; and grab screenshots&hellip;
+1. Asset Discovery: Find Apex Domains
+
+Whois or DNSChecker
+Get Your Target&rsquo;s Organization Name&hellip;
+
+
+   Whois
+
+Example: For IBM
+Whois works: 
+   https://www.whois.com/whois/ibm.com
+
+
+
+   DNSChecker
+
+Example: For Uber
+DNSChecker works: 
+   https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&rtype=ALL&dns=google
+
+
+
+ASNs &#43; IP Ranges
+Get your target&rsquo;s Autonomous System Numbers (ASNs) and/or IP ranges&hellip;">
+<meta name="author" content="">
+<link rel="canonical" href="https://pho3nix-jacki3.github.io/blog/recon/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04bd17960a2bc575a4ef69e8a590e423e99596bfec605569ce7a76db5975bdbf.css" integrity="sha256-BL0XlgorxXWk72nopZDkI&#43;mVlr/sYFVpznp221l1vb8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://pho3nix-jacki3.github.io/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://pho3nix-jacki3.github.io/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://pho3nix-jacki3.github.io/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://pho3nix-jacki3.github.io/images/apple-touch-icon.png">
+<link rel="mask-icon" href="https://pho3nix-jacki3.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://pho3nix-jacki3.github.io/blog/recon/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://pho3nix-jacki3.github.io/blog/recon/">
+  <meta property="og:site_name" content="Blue Pho3nix">
+  <meta property="og:title" content="Recon">
+  <meta property="og:description" content="Picked your target? Learn basic recon… find assets… We’ll find apex domains… subdomains… and grab screenshots…
+1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target’s Organization Name…
+WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheckerExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&amp;rtype=ALL&amp;dns=googleASNs &#43; IP Ranges Get your target’s Autonomous System Numbers (ASNs) and/or IP ranges…">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:tag" content="Bug Bounty">
+    <meta property="og:image" content="https://pho3nix-jacki3.github.io/images/recon-header.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pho3nix-jacki3.github.io/images/recon-header.png">
+  <meta name="twitter:title" content="Recon">
+  <meta name="twitter:description" content="Picked your target? Learn basic recon… find assets… We’ll find apex domains… subdomains… and grab screenshots…
+1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target’s Organization Name…
+WhoisExample: For IBM Whois works: https://www.whois.com/whois/ibm.comDNSCheckerExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&amp;rtype=ALL&amp;dns=googleASNs &#43; IP Ranges Get your target’s Autonomous System Numbers (ASNs) and/or IP ranges…">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://pho3nix-jacki3.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Recon",
+      "item": "https://pho3nix-jacki3.github.io/blog/recon/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Recon",
+  "name": "Recon",
+  "description": "Picked your target? Learn basic recon\u0026hellip; find assets\u0026hellip; We\u0026rsquo;ll find apex domains\u0026hellip; subdomains\u0026hellip; and grab screenshots\u0026hellip;\n1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target\u0026rsquo;s Organization Name\u0026hellip;\nWhois\rExample: For IBM Whois works: https://www.whois.com/whois/ibm.com\rDNSChecker\rExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com\u0026rtype=ALL\u0026dns=google\rASNs + IP Ranges Get your target\u0026rsquo;s Autonomous System Numbers (ASNs) and/or IP ranges\u0026hellip;\n",
+  "keywords": [
+    "Bug Bounty"
+  ],
+  "articleBody": "Picked your target? Learn basic recon… find assets… We’ll find apex domains… subdomains… and grab screenshots…\n1. Asset Discovery: Find Apex Domains Whois or DNSChecker Get Your Target’s Organization Name…\nWhois\rExample: For IBM Whois works: https://www.whois.com/whois/ibm.com\rDNSChecker\rExample: For Uber DNSChecker works: https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com\u0026rtype=ALL\u0026dns=google\rASNs + IP Ranges Get your target’s Autonomous System Numbers (ASNs) and/or IP ranges…\nYou can use the data scraper chrome extension\rto copy the IPs and ASNs.\rhttps://bgp.he.net/\rSearch for organization’s names. There may be multiple names. Save the ASN numbers. Click on the ASN# -\u003e Prefixes v4 to get the IP ranges and save them to a ips.txt file. Asrank\rSearch for organization names. There may be multiple names. Save the ASN number. Go to https://bgp.he.net/\rto get the IPv4 ranges and save them to a ips.txt file. You can use org2ip-asn\rinstead, but you might miss some ASNs or IP ranges.\rArin\rand Ripe\rSearch for organization names. Tere may be multiple names. Save the IP ranges as CIDR (Example: 66.90.225.72/29) to a ips.txt file. Caduceus Use Caduceus to get subdomains and apex domains…\nInstall Caduceus\rsudo apt update \u0026\u0026 sudo apt install -y gcc golang CGO_ENABLED=1 go install github.com/g0ldencybersec/Caduceus/cmd/caduceus@latest Add the following path to the end of your .zshrc or .bashrc\nexport PATH=$HOME/go/bin:$PATH Restart your shell: source ~/.zshrc or source ~/.bashrc.\nCat your IP text file and run it to Caduceus\ncat ips.txt | caduceus | tee caduceus.txt Install unfurl\rgo install github.com/tomnomnom/unfurl@latest Get the apex domains from your Caduceus output.\ncat caduceus.txt | unfurl -u apexes | tee caduceus-apex-domains.txt Check your apex domains with my vibe coded python script\r, replacing with your target’s organization (example: International Business Machines Corporation).\nNote: My script isn’t perfect. Feel free to reach out on Discord or create an issue if anything comes up.\rwget https://raw.githubusercontent.com/blue-pho3nix/scripts/refs/heads/main/whois_check.py python whois_check.py --org \"\" -l caduceus-apex-domains.txt -o valid-caduceus-apex-domains.txt Whoxy Use Whoxy to get Apex Domains…\nBuy Reverse Whois API Queries\r. Note: 1,000 for $10 is fine for now.\rGet Apex domains, replacing ",
+  "wordCount" : "846",
+  "inLanguage": "en",
+  "image":"https://pho3nix-jacki3.github.io/images/recon-header.png","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pho3nix-jacki3.github.io/blog/recon/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Pho3nix",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pho3nix-jacki3.github.io/images/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://pho3nix-jacki3.github.io/" accesskey="h" title="Blue Pho3nix (Alt + H)">Blue Pho3nix</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://pho3nix-jacki3.github.io/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://pho3nix-jacki3.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://pho3nix-jacki3.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Recon
+    </h1>
+    <div class="post-meta">
+
+
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://pho3nix-jacki3.github.io/images/recon-header.png" alt="Cover Image Alt Text">
+        
+</figure>
+  <div class="post-content md-content"><p>Picked your target? Learn basic recon&hellip; find assets&hellip; We&rsquo;ll find apex domains&hellip; subdomains&hellip; and grab screenshots&hellip;</p>
+<h1 id="1-asset-discovery-find-apex-domains">1. Asset Discovery: Find Apex Domains<a hidden class="anchor" aria-hidden="true" href="#1-asset-discovery-find-apex-domains">#</a></h1>
+<hr>
+<h2 id="whois-or-dnschecker">Whois or DNSChecker<a hidden class="anchor" aria-hidden="true" href="#whois-or-dnschecker">#</a></h2>
+<p>Get Your Target&rsquo;s Organization Name&hellip;</p>
+<hr>
+<h3 id="whois"><a href="https://www.whois.com/whois"
+   
+    target="_blank" rel="noopener noreferrer">
+   Whois
+</a></h3>
+<h4 id="example-for-ibm">Example: For IBM<a hidden class="anchor" aria-hidden="true" href="#example-for-ibm">#</a></h4>
+<p>Whois works: <a href="https://www.whois.com/whois/ibm.com"
+   
+    target="_blank" rel="noopener noreferrer">
+   https://www.whois.com/whois/ibm.com
+</a></p>
+<p><img alt="alt text" loading="lazy" src="/blog/recon/image.png"></p>
+<h3 id="dnschecker"><a href="https://dnschecker.org/all-dns-records-of-domain.php"
+   
+    target="_blank" rel="noopener noreferrer">
+   DNSChecker
+</a></h3>
+<h4 id="example-for-uber">Example: For Uber<a hidden class="anchor" aria-hidden="true" href="#example-for-uber">#</a></h4>
+<p>DNSChecker works: <a href="https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&amp;rtype=ALL&amp;dns=google"
+   
+    target="_blank" rel="noopener noreferrer">
+   https://dnschecker.org/all-dns-records-of-domain.php?query=uber.com&rtype=ALL&dns=google
+</a></p>
+<p><img alt="alt text" loading="lazy" src="/blog/recon/image-3.png"></p>
+<hr>
+<h2 id="asns--ip-ranges">ASNs + IP Ranges<a hidden class="anchor" aria-hidden="true" href="#asns--ip-ranges">#</a></h2>
+<p>Get your target&rsquo;s Autonomous System Numbers (ASNs) and/or IP ranges&hellip;</p>
+<div class="callout callout-info">
+  <div class="callout-content">
+    You can use the <a href="https://chromewebstore.google.com/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah?hl=en-US"
+   
+    target="_blank" rel="noopener noreferrer">
+   data scraper chrome extension
+</a> to copy the IPs and ASNs.
+  </div>
+</div>
+<hr>
+<h3><a href="https://bgp.he.net/"
+   
+    target="_blank" rel="noopener noreferrer">
+   https://bgp.he.net/
+</a></h3>
+<ol>
+<li>Search for organization&rsquo;s names. There may be multiple names.</li>
+<li>Save the ASN numbers.
+<img alt="alt text" loading="lazy" src="/blog/recon/image-1.png"></li>
+<li>Click on the ASN# -&gt; Prefixes v4 to get the IP ranges and save them to a <code>ips.txt</code> file.
+<img alt="alt text" loading="lazy" src="/blog/recon/image-2.png"></li>
+</ol>
+<h3 id="asrank"><a href="https://asrank.caida.org/asns/by-name/"
+   
+    target="_blank" rel="noopener noreferrer">
+   Asrank
+</a></h3>
+<ol>
+<li>Search for organization names. There may be multiple names.</li>
+<li>Save the ASN number.</li>
+<li>Go to <a href="https://bgp.he.net/"
+   
+    target="_blank" rel="noopener noreferrer">
+   https://bgp.he.net/
+</a> to get the IPv4 ranges and save them to a <code>ips.txt</code> file.</li>
+</ol>
+<div class="callout callout-info">
+  <div class="callout-content">
+    You can use <a href="https://github.com/blue-pho3nix/org2ip-asn"
+   
+    target="_blank" rel="noopener noreferrer">
+   org2ip-asn
+</a> instead, but you might miss some ASNs or IP ranges.
+  </div>
+</div>
+<h3 id="arin-and-ripe"><a href="https://whois.arin.net/ui/"
+   
+    target="_blank" rel="noopener noreferrer">
+   Arin
+</a> and <a href="https://apps.db.ripe.net/db-web-ui/fulltextsearch"
+   
+    target="_blank" rel="noopener noreferrer">
+   Ripe
+</a></h3>
+<ol>
+<li>Search for organization names. Tere may be multiple names.</li>
+<li>Save the IP ranges as CIDR (Example: 66.90.225.72/29) to a <code>ips.txt</code> file.</li>
+</ol>
+<hr>
+<h2 id="caduceus">Caduceus<a hidden class="anchor" aria-hidden="true" href="#caduceus">#</a></h2>
+<p>Use Caduceus to get subdomains and apex domains&hellip;</p>
+<hr>
+<ol>
+<li>
+<p>Install <a href="https://github.com/g0ldencybersec/Caduceus"
+   
+    target="_blank" rel="noopener noreferrer">
+   Caduceus
+</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install -y gcc golang
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go install github.com/g0ldencybersec/Caduceus/cmd/caduceus@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Add the following path to the end of your <code>.zshrc</code> or <code>.bashrc</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$HOME/go/bin:$PATH
+</span></span></code></pre></div></li>
+<li>
+<p>Restart your shell: <code>source ~/.zshrc</code> or <code>source ~/.bashrc</code>.</p>
+</li>
+<li>
+<p>Cat your IP text file and run it to Caduceus</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ips.txt | caduceus | tee caduceus.txt
+</span></span></code></pre></div></li>
+<li>
+<p>Install <a href="https://github.com/tomnomnom/unfurl"
+   
+    target="_blank" rel="noopener noreferrer">
+   unfurl
+</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install github.com/tomnomnom/unfurl@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Get the apex domains from your Caduceus output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat caduceus.txt | unfurl -u apexes | tee caduceus-apex-domains.txt
+</span></span></code></pre></div></li>
+<li>
+<p>Check your apex domains with my <a href="https://raw.githubusercontent.com/blue-pho3nix/scripts/refs/heads/main/whois_check.py"
+   
+    target="_blank" rel="noopener noreferrer">
+   vibe coded python script
+</a>, replacing <code>&lt;org&gt;</code> with your target&rsquo;s organization (example: International Business Machines Corporation).</p>
+<div class="callout callout-info">
+  <div class="callout-content">
+    Note: My script isn&rsquo;t perfect. Feel free to reach out on Discord or create an issue if anything comes up.
+  </div>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/blue-pho3nix/scripts/refs/heads/main/whois_check.py
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python whois_check.py --org <span style="color:#e6db74">&#34;&lt;org&gt;&#34;</span> -l caduceus-apex-domains.txt -o valid-caduceus-apex-domains.txt
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h2 id="whoxy">Whoxy<a hidden class="anchor" aria-hidden="true" href="#whoxy">#</a></h2>
+<p>Use Whoxy to get Apex Domains&hellip;</p>
+<hr>
+<ol>
+<li>
+<p>Buy <a href="https://www.whoxy.com/pricing.php"
+   
+    target="_blank" rel="noopener noreferrer">
+   Reverse Whois API Queries
+</a>.
+<div class="callout callout-info">
+  <div class="callout-content">
+    Note: 1,000 for $10 is fine for now.
+  </div>
+</div></p>
+</li>
+<li>
+<p>Get Apex domains, replacing <code>&lt;company</code> with the url encoded Organization (Example:
+International+Business+Machines+Corporation), and <code>&lt;api-key&gt;</code> with your <a href="https://www.whoxy.com/account/api.php"
+   
+    target="_blank" rel="noopener noreferrer">
+   API key
+</a>.</p>
+<div class="callout callout-info">
+  <div class="callout-content">
+    Note: This will get you the first 2,500 results. You can fetch more by page (start after page 25). More details <a href="https://www.whoxy.com/reverse-whois/"
+   
+    target="_blank" rel="noopener noreferrer">
+   here
+</a>. If you fetch by page, make sure to keep <code>tee -a whoxy-output</code> to get all the domains in step 3.
+  </div>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;https://api.whoxy.com/?key=&lt;api-key&gt;&amp;reverse=whois&amp;company=&lt;compay&gt;&amp;mode=micro&#34;</span> | tee -a whoxy-output
+</span></span></code></pre></div></li>
+<li>
+<p>Cat out your Whoxy output and get your apex domains.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat whoxy-output | jq -r <span style="color:#e6db74">&#39;.search_result[].domain_name&#39;</span> | tee whoxy-apex-domains.txt
+</span></span></code></pre></div></li>
+<li>
+<p>Check your apex domains with my <a href="https://raw.githubusercontent.com/blue-pho3nix/scripts/refs/heads/main/whois_check.py"
+   
+    target="_blank" rel="noopener noreferrer">
+   vibe coded python script
+</a>, replacing <code>&lt;org&gt;</code> with your target&rsquo;s organization (example: International Business Machines Corporation).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/blue-pho3nix/scripts/refs/heads/main/whois_check.py
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python whois_check.py --org <span style="color:#e6db74">&#34;&lt;org&gt;&#34;</span> -l whoxy-apex-domains.txt -o valid-whoxy-apex-domains.txt
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h2 id="apex-domains-sorta-done">Apex Domains Sorta Done!<a hidden class="anchor" aria-hidden="true" href="#apex-domains-sorta-done">#</a></h2>
+<p>Combine Your Apex Domain Files&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat valid-whoxy-apex-domains.txt valid-caduceus-apex-domains.txt | sort -u | tee valid-apex-domains.txt
+</span></span></code></pre></div><hr>
+<h1 id="2-subdomain-scraping-">2. Subdomain Scraping 🎉<a hidden class="anchor" aria-hidden="true" href="#2-subdomain-scraping-">#</a></h1>
+<hr>
+<h2 id="subfinder">Subfinder<a hidden class="anchor" aria-hidden="true" href="#subfinder">#</a></h2>
+<p>Use <a href="https://github.com/projectdiscovery/subfinder"
+   
+    target="_blank" rel="noopener noreferrer">
+   Subfinder
+</a> to get subdomains&hellip;</p>
+<hr>
+<div class="callout callout-info">
+  <div class="callout-content">
+    Make sure to add you API keys to <code>~/.config/subfinder/provider-config.yaml</code>
+  </div>
+</div>
+<ol>
+<li>
+<p>Install Subfinder</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Run the following command</p>
+<pre tabindex="0"><code>subfinder -dL valid-apex-domains.txt -all  -o subfinder-subdomains.txt
+</code></pre></li>
+</ol>
+<hr>
+<h2 id="assetfinder">Assetfinder<a hidden class="anchor" aria-hidden="true" href="#assetfinder">#</a></h2>
+<p>Use <a href="https://github.com/tomnomnom/assetfinder"
+   
+    target="_blank" rel="noopener noreferrer">
+   Assetfinder
+</a> to get subdomains&hellip;</p>
+<hr>
+<ol>
+<li>
+<p>Install Assetfinder</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install github.com/tomnomnom/assetfinder@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Run the following loop</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r domain; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$domain<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>  assetfinder --subs-only <span style="color:#e6db74">&#34;</span>$domain<span style="color:#e6db74">&#34;</span> | tee -a assetfinder-valid-apex-domains.txt
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; valid-apex-domains.txt
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h1 id="3-subdomain-mutations">3. Subdomain Mutations<a hidden class="anchor" aria-hidden="true" href="#3-subdomain-mutations">#</a></h1>
+<hr>
+<h2 id="alterx">Alterx<a hidden class="anchor" aria-hidden="true" href="#alterx">#</a></h2>
+<p>Use Alterx to create some subdomain mutations&hellip;</p>
+<hr>
+<ol>
+<li>
+<p>Install Alterx</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install github.com/projectdiscovery/alterx/cmd/alterx@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Run the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alterx -l subfinder-subdomains.txt -o alterx-subfinder-subdomains.txt
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h1 id="4-is-it-active--increase-attack-surface">4. Is it active? + Increase Attack Surface<a hidden class="anchor" aria-hidden="true" href="#4-is-it-active--increase-attack-surface">#</a></h1>
+<hr>
+<h2 id="compile-everything">Compile everything<a hidden class="anchor" aria-hidden="true" href="#compile-everything">#</a></h2>
+<p>Get all the domains, subdomains, and IPs into one file&hellip;</p>
+<div class="callout callout-info">
+  <div class="callout-content">
+    <code>cat</code> all your files into one <code>everything.txt</code> file. Don&rsquo;t include <code>ips.txt</code> if IPs are not in scope.
+  </div>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat valid-apex-domains.txt  alterx-subfinder-subdomains.txt assetfinder-valid-apex-domains.txt subfinder-subdomains.txt ips.txt | sort -u | tee everything.txt
+</span></span></code></pre></div><hr>
+<h2 id="dnsx--naabu--httpx">Dnsx + Naabu + Httpx<a hidden class="anchor" aria-hidden="true" href="#dnsx--naabu--httpx">#</a></h2>
+<p>Get the active assets&hellip; get open ports and increase your attack surface&hellip; find out what&rsquo;s serving web content&hellip;</p>
+<hr>
+<ol>
+<li>
+<p>Install Dnsx + <a href="https://github.com/projectdiscovery/naabu"
+   
+    target="_blank" rel="noopener noreferrer">
+   Naabu
+</a> + <a href="https://github.com/projectdiscovery/httpx"
+   
+    target="_blank" rel="noopener noreferrer">
+   Httpx
+</a>
+<div class="callout callout-info">
+  <div class="callout-content">
+    If this is your first time installing, you&rsquo;ll want to delete <code>which httpx</code> first.
+  </div>
+</div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Get the valid subdomains + ports + web content</p>
+<div class="callout callout-info">
+  <div class="callout-content">
+    For naabu, this just gets the top 100 ports. If you want more ports run <code>--top-ports full</code> or <code>--top-ports 1000</code>.  In addition, you can add / remove flags and even screenshot with httpx (if you don&rsquo;t want to screenshot with gowitness).
+  </div>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnsx -l everything.txt -r ./resolvers.txt | naabu -silent | httpx -title -sc -cl -location -fr -o httpx_naabu_dnsx_everything.txt
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h1 id="5-screenshots">5. Screenshots<a hidden class="anchor" aria-hidden="true" href="#5-screenshots">#</a></h1>
+<hr>
+<h2 id="gowitness">Gowitness<a hidden class="anchor" aria-hidden="true" href="#gowitness">#</a></h2>
+<p>Make it easier to see <code>/</code> of each (sub)domain/IP&hellip;</p>
+<div class="callout callout-info">
+  <div class="callout-content">
+    I use gowitness, but feel free to use whatever you want (<a href="https://github.com/RedSiege/EyeWitness"
+   
+    target="_blank" rel="noopener noreferrer">
+   Eyewitness
+</a>, <a href="https://github.com/BishopFox/eyeballer"
+   
+    target="_blank" rel="noopener noreferrer">
+   Eyeballer
+</a>)
+  </div>
+</div>
+<hr>
+<ol>
+<li>
+<p>Install <a href="https://github.com/sensepost/gowitness"
+   
+    target="_blank" rel="noopener noreferrer">
+   gowitness
+</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install github.com/sensepost/gowitness@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Get screenshots</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gowitness scan file -f input --write-db --screenshot-fullpage
+</span></span></code></pre></div></li>
+<li>
+<p>Open the server</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gowitness report server
+</span></span></code></pre></div></li>
+<li>
+<p>Navigate to <code>http://127.0.0.1:7171</code></p>
+</li>
+</ol>
+<p><img alt="alt text" loading="lazy" src="/blog/recon/image-4.png"></p>
+<hr>
+<h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
+<div class="callout callout-info">
+  <div class="callout-content">
+    You can also get subdomains via bruteforcing, <a href="https://github.com/gwen001/github-subdomains"
+   
+    target="_blank" rel="noopener noreferrer">
+   GitHub
+</a>, etc. And, feel free to pipe commands and/or make a script, etc&hellip; This is only the beginning of recon. You may also like using <a href="https://github.com/Dheerajmadhukar/karma_v2"
+   
+    target="_blank" rel="noopener noreferrer">
+   Karma v2
+</a>.
+  </div>
+</div>
+<hr>
+<h1 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h1>
+<p>This is where I learned a bunch of this&hellip;</p>
+<hr>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/SVfFpVig-nw?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+		</div>
+
+<ul>
+<li><a href="https://www.canva.com/design/DAG1RdVlHgA/T0rIrJniW2SJKj4bM94jYg/view?utm_content=DAG1RdVlHgA&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=hb059ca176f#1"
+   
+    target="_blank" rel="noopener noreferrer">
+   Modern Recon for Red Teamers and Pentestrs: Slides
+</a></li>
+</ul>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/evyxNUzl-HA?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+		</div>
+
+<ul>
+<li><a href="https://app.hackinghub.io/hubs/pd-tools"
+   
+    target="_blank" rel="noopener noreferrer">
+   hackinghub: Project Discovery Tools
+</a></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://pho3nix-jacki3.github.io/tags/bug-bounty/">Bug Bounty</a></li>
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://pho3nix-jacki3.github.io/">Blue Pho3nix</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
