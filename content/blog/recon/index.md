@@ -353,7 +353,7 @@ I use gowitness, but feel free to use whatever you want ([Eyewitness](https://gi
 # Note
 
 {{< callout type="info" >}}
-You can also get subdomains via bruteforcing, [GitHub](https://github.com/gwen001/github-subdomains), etc. And, feel free to pipe commands and/or make a script, etc... This is only the beginning of recon. You may also like using [Karma v2](https://github.com/Dheerajmadhukar/karma_v2).
+You can also get subdomains via bruteforcing, [GitHub](https://github.com/gwen001/github-subdomains), etc. And, feel free to pipe commands and/or make a script, etc... You may also like using [Karma v2](https://github.com/Dheerajmadhukar/karma_v2)... This is only the beginning of recon...
 {{</ callout >}}
 
 ---
