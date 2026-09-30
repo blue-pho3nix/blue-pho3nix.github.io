@@ -73,7 +73,7 @@ You can use [org2ip-asn](https://github.com/blue-pho3nix/org2ip-asn) instead, bu
 
 ### [Arin](https://whois.arin.net/ui/) and [Ripe](https://apps.db.ripe.net/db-web-ui/fulltextsearch)
 
-1. Search for organization names. Tere may be multiple names.
+1. Search for organization names. There may be multiple names.
 2. Save the IP ranges as CIDR (Example: 66.90.225.72/29) to a `ips.txt` file.
 
 ---
