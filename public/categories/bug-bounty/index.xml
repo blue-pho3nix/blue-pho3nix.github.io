@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bug Bounty on Blue Pho3nix</title>
-    <link>http://localhost:1313/categories/bug-bounty/</link>
+    <link>https://pho3nix-jacki3.github.io/categories/bug-bounty/</link>
     <description>Recent content in Bug Bounty on Blue Pho3nix</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/categories/bug-bounty/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pho3nix-jacki3.github.io/categories/bug-bounty/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recon</title>
-      <link>http://localhost:1313/blog/recon/</link>
+      <link>https://pho3nix-jacki3.github.io/blog/recon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/recon/</guid>
+      <guid>https://pho3nix-jacki3.github.io/blog/recon/</guid>
       <description>Picked your target? Learn basic recon… find assets… We&amp;#39;ll find apex domains… subdomains… and grab screenshots…</description>
     </item>
   </channel>

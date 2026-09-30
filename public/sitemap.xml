@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://pho3nix-jacki3.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/blog/recon/</loc>
+    <loc>https://pho3nix-jacki3.github.io/blog/recon/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/about/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>https://pho3nix-jacki3.github.io/blog/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://pho3nix-jacki3.github.io/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/blue-pho3nix/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/blue-pho3nix/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/bug-bounty/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/bug-bounty/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/bug-bounty/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/bug-bounty/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://pho3nix-jacki3.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://pho3nix-jacki3.github.io/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://pho3nix-jacki3.github.io/tags/</loc>
   </url>
 </urlset>

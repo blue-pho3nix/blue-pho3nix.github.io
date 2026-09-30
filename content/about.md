@@ -9,7 +9,7 @@ weight: 1
 tags: ["Blue Pho3nix"]
 categories: ["About"]
 cover:
-  image: "images/about-me.png"
+  image: "images/about-me1.png"
   alt: "Blue Pho3nix: Wannabe Bughunter + Pentester + Researcher"
   relative: false
 ---
