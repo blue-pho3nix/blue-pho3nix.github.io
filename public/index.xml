@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blue Pho3nix</title>
-    <link>https://pho3nix-jacki3.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Blue Pho3nix</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://pho3nix-jacki3.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://pho3nix-jacki3.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://pho3nix-jacki3.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I work as a pentester after spending two years teaching myself through CTFs, the PortSwigger Web Security Academy, Hack The Box, and other resources. I know how hard it is to land a pentesting job with nothing professional on your resume.&lt;/p&gt;
 &lt;p&gt;I built experience through volunteer pentesting, and it still took an internship to prove I could find real bugs. Looking back, I wish I&amp;rsquo;d started bug bounty hunting sooner. Having a public record of vulnerabilities I’d discovered would have given me evidence to show a hiring manager.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Recon</title>
-      <link>https://pho3nix-jacki3.github.io/blog/recon/</link>
+      <link>http://localhost:1313/blog/recon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://pho3nix-jacki3.github.io/blog/recon/</guid>
+      <guid>http://localhost:1313/blog/recon/</guid>
       <description>Picked your target? Learn basic recon… find assets… We&amp;#39;ll find apex domains… subdomains… and grab screenshots…</description>
     </item>
   </channel>

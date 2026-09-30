@@ -366,6 +366,8 @@ This is where I learned a bunch of this...
 
 {{< youtube SVfFpVig-nw >}}
 
+{{< youtube B1YcflQRvOI >}}
+
 - [Modern Recon for Red Teamers and Pentestrs: Slides](https://www.canva.com/design/DAG1RdVlHgA/T0rIrJniW2SJKj4bM94jYg/view?utm_content=DAG1RdVlHgA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb059ca176f#1)
 
 {{< youtube evyxNUzl-HA >}}
